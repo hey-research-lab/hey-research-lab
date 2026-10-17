@@ -24,7 +24,7 @@ context; what was shipped is the record. Browsing needs no wallet.
 | [hey-research-open](https://github.com/hey-research-lab/hey-research-open) | The open part of the platform's source |
 
 **Contribute:** small, well-described issues are labelled
-[good first issue](https://github.com/search?q=org%3Ahey-research-lab+label%3A%22good+first+issue%22+state%3Aopen&type=issues);
+[good first issue](https://github.com/search?q=user%3Ahey-research-lab+label%3A%22good+first+issue%22+state%3Aopen&type=issues);
 during Hacktoberfest, merged pull requests are labelled `hacktoberfest-accepted`.
 
 <sub>Community-run by Hey Research Lab · not affiliated with or endorsed by Robinhood · a HEY badge is verified from
