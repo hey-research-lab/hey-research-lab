@@ -6,7 +6,7 @@ context; what was shipped is the record. Browsing needs no wallet.
 
 **Start here**
 
-- 🔎 Look up any project or contract: [heyresearch.xyz](https://heyresearch.xyz)
+- 🔎 Look up any project or contract: [heyresearch.xyz](https://heyresearch.xyz), or from a terminal: `npx github:hey-research-lab/hey-check '$TICKER'`
 - 🗺️ Every builder that ships, by narrative: [awesome-robinhood-chain](https://github.com/hey-research-lab/awesome-robinhood-chain)
 - 🤖 For AI agents: the hosted MCP server at `https://heyresearch.xyz/mcp`, and [hey-agent-skills](https://github.com/hey-research-lab/hey-agent-skills)
 - 📦 For developers: [public API](https://heyresearch.xyz/developers), [`@hey-research-lab/sdk`](https://www.npmjs.com/package/@hey-research-lab/sdk), [API changelog](https://heyresearch.xyz/developers/changelog)
@@ -17,6 +17,7 @@ context; what was shipped is the record. Browsing needs no wallet.
 | Repository | What it is |
 | --- | --- |
 | [awesome-robinhood-chain](https://github.com/hey-research-lab/awesome-robinhood-chain) | Projects building on Robinhood Chain, regenerated weekly from the open dataset |
+| [hey-check](https://github.com/hey-research-lab/hey-check) | Dev check for any Robinhood Chain token: is anyone building it? A terminal answer and a shareable card |
 | [rhchain-registry](https://github.com/hey-research-lab/rhchain-registry) | A CI-validated registry of Robinhood Chain infrastructure, a public source for every entry |
 | [hey-cli](https://github.com/hey-research-lab/hey-cli) | HEY's research from the terminal |
 | [hey-ship-action](https://github.com/hey-research-lab/hey-ship-action) | A GitHub Action that writes evidence linking a commit or release to a Robinhood Chain deployment |
