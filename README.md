@@ -18,11 +18,15 @@ context; what was shipped is the record. Browsing needs no wallet.
 | --- | --- |
 | [awesome-robinhood-chain](https://github.com/hey-research-lab/awesome-robinhood-chain) | Projects building on Robinhood Chain, regenerated weekly from the open dataset |
 | [hey-check](https://github.com/hey-research-lab/hey-check) | Dev check for any Robinhood Chain token: is anyone building it? A terminal answer and a shareable card |
+| [chainprint](https://github.com/hey-research-lab/chainprint) | Offline scan of a source tree for evidence that the code targets Robinhood Chain, with a confidence anyone can recompute |
 | [rhchain-registry](https://github.com/hey-research-lab/rhchain-registry) | A CI-validated registry of Robinhood Chain infrastructure, a public source for every entry |
 | [hey-cli](https://github.com/hey-research-lab/hey-cli) | HEY's research from the terminal |
 | [hey-ship-action](https://github.com/hey-research-lab/hey-ship-action) | A GitHub Action that writes evidence linking a commit or release to a Robinhood Chain deployment |
 | [hey-agent-skills](https://github.com/hey-research-lab/hey-agent-skills) | An Agent Skill and Claude Code plugin for builder research |
 | [hey-research-open](https://github.com/hey-research-lab/hey-research-open) | The open part of the platform's source |
+
+Every public repository, including data snapshots, embeds and agent-framework plugins:
+[github.com/hey-research-lab](https://github.com/hey-research-lab?tab=repositories&type=source).
 
 **Contribute:** small, well-described issues are labelled
 [good first issue](https://github.com/search?q=user%3Ahey-research-lab+label%3A%22good+first+issue%22+state%3Aopen&type=issues);
