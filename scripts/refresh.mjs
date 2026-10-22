@@ -82,7 +82,7 @@ const fixes = [
   '| --- | --- |',
   ...shown.map((item) => `| [${md(repoOf(item))}](${item.html_url}) | ${md(item.title)} |`),
   '',
-  `Every fix, open, merged or closed: **[heyresearch.xyz/contributions](${HEY}/contributions)** · <sub>refreshed ${today}</sub>`,
+  `Every fix, open, merged or closed: **[heyresearch.xyz/contributions](${HEY}/contributions)** · <sub>refreshed daily</sub>`,
 ].join('\n');
 
 let readme = readFileSync('README.md', 'utf8');
