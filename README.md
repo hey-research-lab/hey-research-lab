@@ -43,7 +43,7 @@ Browsing needs no wallet, and nothing on HEY is for sale.
 | [lain-labs/os](https://github.com/lain-labs/os/pull/1) | fix(chain): recognise explorer buys when the router is verified |
 | [use-agent-os/agent-os](https://github.com/use-agent-os/agent-os/pull/3657) | fix(trading): convert base units exactly beyond 28 significant digits |
 
-Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://heyresearch.xyz/contributions)** · <sub>refreshed 2026-10-22</sub>
+Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://heyresearch.xyz/contributions)** · <sub>refreshed daily</sub>
 <!-- FIXES:END -->
 
 ## 🔎 Use it
