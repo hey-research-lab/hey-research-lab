@@ -26,10 +26,12 @@ Browsing needs no wallet, and nothing on HEY is for sale.
 ## 🛠️ Fixes we sent upstream
 
 <!-- FIXES:START -->
-**145 pull requests** sent to **119 repositories** we don’t own, **15 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
+**145 pull requests** sent to **119 repositories** we don’t own, **17 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
 
 | Merged into | The fix |
 | --- | --- |
+| [cryptoduke01/gloam](https://github.com/cryptoduke01/gloam/pull/6) | Point the issue chooser at SECURITY.md for vulnerability reports |
+| [cordialsys/crosschain](https://github.com/cordialsys/crosschain/pull/281) | evm: report the fee from the receipt's effectiveGasPrice |
 | [ethereum-lists/chains](https://github.com/ethereum-lists/chains/pull/8891) | Remove unreachable ArrowRPC endpoint from Robinhood Chain (eip155-4663) |
 | [chainstacklabs/robinhood-chain-sequencer-feed](https://github.com/chainstacklabs/robinhood-chain-sequencer-feed/pull/19) | fix: void the whole l2Msg when arbos rejects one batch entry |
 | [sherwoodagent/sherwood-protocol](https://github.com/sherwoodagent/sherwood-protocol/pull/396) | docs(adapter): document UniswapSwapAdapter extraData as abi.encodePacked(uint8 mode, route) |
@@ -40,8 +42,6 @@ Browsing needs no wallet, and nothing on HEY is for sale.
 | [antoncoding/monarch](https://github.com/antoncoding/monarch/pull/649) | fix: Unichain Morpho genesis date parses as Invalid Date (and 3 dates 12h early) |
 | [millw14/merrymen](https://github.com/millw14/merrymen/pull/351) | fix(desk): link token-published lore to a working explorer page |
 | [hyperlane-xyz/hyperlane-registry](https://github.com/hyperlane-xyz/hyperlane-registry/pull/1757) | fix: replace dead robinhood blockscout explorer url |
-| [lain-labs/os](https://github.com/lain-labs/os/pull/1) | fix(chain): recognise explorer buys when the router is verified |
-| [use-agent-os/agent-os](https://github.com/use-agent-os/agent-os/pull/3657) | fix(trading): convert base units exactly beyond 28 significant digits |
 
 Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://heyresearch.xyz/contributions)** · <sub>refreshed daily</sub>
 <!-- FIXES:END -->
