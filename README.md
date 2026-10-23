@@ -26,10 +26,11 @@ Browsing needs no wallet, and nothing on HEY is for sale.
 ## 🛠️ Fixes we sent upstream
 
 <!-- FIXES:START -->
-**145 pull requests** sent to **119 repositories** we don’t own, **17 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
+**168 pull requests** sent to **135 repositories** we don’t own, **18 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
 
 | Merged into | The fix |
 | --- | --- |
+| [DefiLlama/dimension-adapters](https://github.com/DefiLlama/dimension-adapters/pull/10386) | catnip: count the 1/3 protocol fee the pairs mint to the NIP maker |
 | [cryptoduke01/gloam](https://github.com/cryptoduke01/gloam/pull/6) | Point the issue chooser at SECURITY.md for vulnerability reports |
 | [cordialsys/crosschain](https://github.com/cordialsys/crosschain/pull/281) | evm: report the fee from the receipt's effectiveGasPrice |
 | [ethereum-lists/chains](https://github.com/ethereum-lists/chains/pull/8891) | Remove unreachable ArrowRPC endpoint from Robinhood Chain (eip155-4663) |
@@ -41,7 +42,6 @@ Browsing needs no wallet, and nothing on HEY is for sale.
 | [assetfare/assetfare-mcp](https://github.com/assetfare/assetfare-mcp/pull/62) | examples: allow 45 s for a quote, as the MCP server does |
 | [antoncoding/monarch](https://github.com/antoncoding/monarch/pull/649) | fix: Unichain Morpho genesis date parses as Invalid Date (and 3 dates 12h early) |
 | [millw14/merrymen](https://github.com/millw14/merrymen/pull/351) | fix(desk): link token-published lore to a working explorer page |
-| [hyperlane-xyz/hyperlane-registry](https://github.com/hyperlane-xyz/hyperlane-registry/pull/1757) | fix: replace dead robinhood blockscout explorer url |
 
 Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://heyresearch.xyz/contributions)** · <sub>refreshed daily</sub>
 <!-- FIXES:END -->
