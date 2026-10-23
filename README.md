@@ -73,6 +73,7 @@ Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://hey
 | [RHTools](https://x.com/RHToolsXYZ) | RHTools draws the chart, HEY answers who built the token; each links to the other |
 | [HoodLock](https://x.com/HoodLockRH) | HEY reads HoodLock's locks on chain and shows each on the token's page |
 | [Axon](https://x.com/axon402) | shows its live HEY badge on its own site |
+| [PFWA](https://x.com/pfwafun) | shows HEY's builder card on every Robinhood Chain token market, our badge in its footer and HEY in its "Powered by" strip |
 
 Building on Robinhood Chain and want builder context in your product? The API, the embed and the badge are free:
 [heyresearch.xyz/developers/partners](https://heyresearch.xyz/developers/partners).
