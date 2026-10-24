@@ -26,10 +26,13 @@ Browsing needs no wallet, and nothing on HEY is for sale.
 ## 🛠️ Fixes we sent upstream
 
 <!-- FIXES:START -->
-**168 pull requests** sent to **135 repositories** we don’t own, **18 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
+**181 pull requests** sent to **147 repositories** we don’t own, **21 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
 
 | Merged into | The fix |
 | --- | --- |
+| [vfat-io/vfat-tools](https://github.com/vfat-io/vfat-tools/pull/2481) | Keep Robinhood Morpho and Equilibra log reads within the RPC block limit |
+| [vfat-io/vfat-tools](https://github.com/vfat-io/vfat-tools/pull/2492) | TETRAVAULT: read a wallet's bond vesting from its positions |
+| [1xGiraffe/hydration-neckwork](https://github.com/1xGiraffe/hydration-neckwork/pull/8) | fix(mcp): bound tool input size and bump the MCP SDK to 1.32 (GHSA-46jr-4wx8-v453) |
 | [DefiLlama/dimension-adapters](https://github.com/DefiLlama/dimension-adapters/pull/10386) | catnip: count the 1/3 protocol fee the pairs mint to the NIP maker |
 | [cryptoduke01/gloam](https://github.com/cryptoduke01/gloam/pull/6) | Point the issue chooser at SECURITY.md for vulnerability reports |
 | [cordialsys/crosschain](https://github.com/cordialsys/crosschain/pull/281) | evm: report the fee from the receipt's effectiveGasPrice |
@@ -39,9 +42,6 @@ Browsing needs no wallet, and nothing on HEY is for sale.
 | [sherwoodagent/sherwood-protocol](https://github.com/sherwoodagent/sherwood-protocol/pull/395) | docs: match the bondOf and pendingCertificationOf cast return tuples to TierRegistry |
 | [EqualFiLabs/statics-oracle](https://github.com/EqualFiLabs/statics-oracle/pull/22) | Record the live 3-of-5 sequencer quorum in the asset manifest |
 | [DefiLlama/chainlist](https://github.com/DefiLlama/chainlist/pull/3266) | fix(4663): remove Robinscan, whose domain no longer resolves |
-| [assetfare/assetfare-mcp](https://github.com/assetfare/assetfare-mcp/pull/62) | examples: allow 45 s for a quote, as the MCP server does |
-| [antoncoding/monarch](https://github.com/antoncoding/monarch/pull/649) | fix: Unichain Morpho genesis date parses as Invalid Date (and 3 dates 12h early) |
-| [millw14/merrymen](https://github.com/millw14/merrymen/pull/351) | fix(desk): link token-published lore to a working explorer page |
 
 Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://heyresearch.xyz/contributions)** · <sub>refreshed daily</sub>
 <!-- FIXES:END -->
