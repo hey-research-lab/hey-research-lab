@@ -61,6 +61,19 @@ Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://hey
 **Merged one of our fixes and liked it?** A shout-out on X helps a small team keep sending them: tag
 [x.com/HeyResearch](https://x.com/HeyResearch) and say what we fixed. That's the only thank-you we ask for.
 
+## 🛡️ Security credits
+
+When we find something that could put funds at risk, it goes to the team privately first, through their own channel.
+We publish nothing until they do.
+
+| Project | Advisory | Severity | Our credit |
+| --- | --- | --- | --- |
+| [Priors](https://github.com/priors-agents/priors) | [GHSA-3vg6-2f3m-j5qm](https://github.com/priors-agents/priors/security/advisories/GHSA-3vg6-2f3m-j5qm): a new PT-USDG price tape started at round 1 once the feed had dropped its old rounds | Low | Finder · fixed on chain, listed as [SV-20](https://github.com/priors-agents/priors/blob/main/docs/SECURITY-v2.md) |
+
+Maintain a Robinhood Chain project and want a second pair of eyes? Turn on
+[private vulnerability reporting](https://docs.github.com/en/code-security/security-advisories/working-with-repository-security-advisories/configuring-private-vulnerability-reporting-for-a-repository)
+on your repository, and we report there.
+
 ## 🔎 Use it
 
 | | |
