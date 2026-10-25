@@ -23,6 +23,18 @@ Browsing needs no wallet, and nothing on HEY is for sale.
   <img alt="Hey Research Lab in numbers" src="assets/stats-light.svg" width="100%">
 </picture>
 
+## 🧱 For builders
+
+Building on Robinhood Chain? Everything here is free, and none of it buys a place: what you ship decides.
+
+| | |
+| --- | --- |
+| **A page that shows your work** | every release, deployment and code week we read, each linked to its source: find yours on [heyresearch.xyz](https://heyresearch.xyz) or [submit it](https://heyresearch.xyz/submit) |
+| **Fixes, not just findings** | we read your public code; when we find a bug we can fix, we send a pull request, and anything security-related goes to you privately first |
+| **A live badge** | your HEY badge for your site or README, updated from public evidence: [heyresearch.xyz/badges](https://heyresearch.xyz/badges) |
+| **Funding for shipping** | backers can fund you in $WIF through [Proof of Ship](https://github.com/hey-research-lab/proof-of-ship), an escrow that pays only when HEY counts real ships |
+| **Your data, open** | the API, the embed and the open dataset are free for your own product: [heyresearch.xyz/developers](https://heyresearch.xyz/developers) |
+
 ## 🛠️ Fixes we sent upstream
 
 <!-- FIXES:START -->
