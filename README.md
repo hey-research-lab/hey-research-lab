@@ -26,7 +26,7 @@ Browsing needs no wallet, and nothing on HEY is for sale.
 ## 🛠️ Fixes we sent upstream
 
 <!-- FIXES:START -->
-**181 pull requests** sent to **147 repositories** we don’t own, **21 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
+**202 pull requests** sent to **165 repositories** we don’t own, **21 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
 
 | Merged into | The fix |
 | --- | --- |
