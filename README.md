@@ -46,6 +46,9 @@ Browsing needs no wallet, and nothing on HEY is for sale.
 Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://heyresearch.xyz/contributions)** · <sub>refreshed daily</sub>
 <!-- FIXES:END -->
 
+**Merged one of our fixes and liked it?** A shout-out on X helps a small team keep sending them: tag
+[x.com/HeyResearch](https://x.com/HeyResearch) and say what we fixed. That's the only thank-you we ask for.
+
 ## 🔎 Use it
 
 | | |
