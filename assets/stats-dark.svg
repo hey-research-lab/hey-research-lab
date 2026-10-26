@@ -1,24 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="170" viewBox="0 0 1200 170" role="img" aria-label="Hey Research Lab in numbers">
 <rect width="1200" height="170" rx="12" fill="#0d1117"/>
 <g><rect x="24" y="24" width="219.2" height="122" rx="10" fill="#161b22" stroke="#30363d"/>
-<text x="42" y="72" font-size="34" font-weight="700" fill="#e6edf3" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" letter-spacing="-1">1,659,943</text>
+<text x="42" y="72" font-size="34" font-weight="700" fill="#e6edf3" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" letter-spacing="-1">1,667,605</text>
 <text x="42" y="98" font-size="13" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">Robinhood Chain projects</text>
 <text x="42" y="115" font-size="13" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">and tokens on record</text></g>
 <g><rect x="257.2" y="24" width="219.2" height="122" rx="10" fill="#161b22" stroke="#30363d"/>
-<text x="275.2" y="72" font-size="34" font-weight="700" fill="#e6edf3" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" letter-spacing="-1">5,204</text>
+<text x="275.2" y="72" font-size="34" font-weight="700" fill="#e6edf3" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" letter-spacing="-1">5,228</text>
 <text x="275.2" y="98" font-size="13" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">project pages, every claim</text>
 <text x="275.2" y="115" font-size="13" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">linked to its source</text></g>
 <g><rect x="490.4" y="24" width="219.2" height="122" rx="10" fill="#161b22" stroke="#30363d"/>
-<text x="508.4" y="72" font-size="34" font-weight="700" fill="#e6edf3" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" letter-spacing="-1">1,139</text>
+<text x="508.4" y="72" font-size="34" font-weight="700" fill="#e6edf3" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" letter-spacing="-1">1,153</text>
 <text x="508.4" y="98" font-size="13" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">teams proven to be</text>
 <text x="508.4" y="115" font-size="13" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">building on Robinhood</text>
 <text x="508.4" y="132" font-size="13" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">Chain</text></g>
 <g><rect x="723.5999999999999" y="24" width="219.2" height="122" rx="10" fill="#161b22" stroke="#30363d"/>
-<text x="741.5999999999999" y="72" font-size="34" font-weight="700" fill="#3fb950" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" letter-spacing="-1">202</text>
-<text x="741.5999999999999" y="98" font-size="13" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">fixes sent to 165</text>
+<text x="741.5999999999999" y="72" font-size="34" font-weight="700" fill="#3fb950" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" letter-spacing="-1">243</text>
+<text x="741.5999999999999" y="98" font-size="13" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">fixes sent to 200</text>
 <text x="741.5999999999999" y="115" font-size="13" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">repositories we don’t own</text></g>
 <g><rect x="956.8" y="24" width="219.2" height="122" rx="10" fill="#161b22" stroke="#30363d"/>
-<text x="974.8" y="72" font-size="34" font-weight="700" fill="#3fb950" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" letter-spacing="-1">21</text>
+<text x="974.8" y="72" font-size="34" font-weight="700" fill="#3fb950" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" letter-spacing="-1">25</text>
 <text x="974.8" y="98" font-size="13" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">of those fixes merged by</text>
 <text x="974.8" y="115" font-size="13" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">their teams</text></g>
 </svg>
