@@ -78,10 +78,11 @@ on your repository, and we report there.
 
 | | |
 | --- | --- |
-| **Check any token or project** | [heyresearch.xyz](https://heyresearch.xyz) · from a terminal: `npx github:hey-research-lab/hey-check '$TICKER'` |
+| **Check any token or project** | [heyresearch.xyz](https://heyresearch.xyz) · from a terminal: `npx @hey-research-lab/check '$TICKER'` |
 | **Weekly builder report** | who shipped on Robinhood Chain this week, each ship with its source: [heyresearch.xyz/updates](https://heyresearch.xyz/updates) |
 | **Public API** | one call per token: `GET /api/v1/builder?chain=4663&token=0x…` · [docs](https://heyresearch.xyz/developers) · [changelog](https://heyresearch.xyz/developers/changelog) |
 | **Embed** | a live builder card on any site: `<hey-project contract="0x…">` · [embeds](https://heyresearch.xyz/developers) |
+| **Token Passport** | a token's page credits the Robinhood Chain protocols whose facts HEY reads (a HoodLock lock, the launchpad that minted it, its Uniswap v4 hooks), each with a link: [heyresearch.xyz/passport](https://heyresearch.xyz/passport) |
 | **Badge** | a project's live HEY badge for its site or README; projects showing one are thanked on [heyresearch.xyz/badges](https://heyresearch.xyz/badges) |
 | **Open data** | daily snapshots, CC BY 4.0: [heyresearch.xyz/data](https://heyresearch.xyz/data) |
 
@@ -105,7 +106,8 @@ on your repository, and we report there.
 | [PFWA](https://x.com/pfwafun) | shows HEY's builder card on every Robinhood Chain token market, our badge in its footer and HEY in its "Powered by" strip |
 
 Building on Robinhood Chain and want builder context in your product? The API, the embed and the badge are free:
-[heyresearch.xyz/developers/partners](https://heyresearch.xyz/developers/partners).
+[heyresearch.xyz/developers/partners](https://heyresearch.xyz/developers/partners). Running a protocol on Robinhood Chain with
+public on-chain data or a public API? Ask to join the [Token Passport](https://heyresearch.xyz/passport); nobody pays for a stamp.
 
 ## 📦 Open source
 
