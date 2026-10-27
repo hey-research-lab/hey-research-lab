@@ -38,10 +38,11 @@ Building on Robinhood Chain? Everything here is free, and none of it buys a plac
 ## 🛠️ Fixes we sent upstream
 
 <!-- FIXES:START -->
-**255 pull requests** sent to **212 repositories** we don’t own, **28 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
+**265 pull requests** sent to **213 repositories** we don’t own, **29 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
 
 | Merged into | The fix |
 | --- | --- |
+| [ChainBench/OpenChainBench](https://github.com/ChainBench/OpenChainBench/pull/3308) | token-quote-coverage: quote one USDC on BNB Chain, not 1e-12 USDC |
 | [pgen0x/azimuth](https://github.com/pgen0x/azimuth/pull/249) | test(scanner): look up true and false on PATH in the entry-routing test |
 | [mcpHQ/awesome-mcp-servers](https://github.com/mcpHQ/awesome-mcp-servers/pull/423) | Add HEY Research Lab |
 | [agentsea/nautilo](https://github.com/agentsea/nautilo/pull/136) | fix(sheets): read date-only strings as local calendar dates |
@@ -53,7 +54,6 @@ Building on Robinhood Chain? Everything here is free, and none of it buys a plac
 | [vfat-io/vfat-tools](https://github.com/vfat-io/vfat-tools/pull/2492) | TETRAVAULT: read a wallet's bond vesting from its positions |
 | [1xGiraffe/hydration-neckwork](https://github.com/1xGiraffe/hydration-neckwork/pull/8) | fix(mcp): bound tool input size and bump the MCP SDK to 1.32 (GHSA-46jr-4wx8-v453) |
 | [DefiLlama/dimension-adapters](https://github.com/DefiLlama/dimension-adapters/pull/10386) | catnip: count the 1/3 protocol fee the pairs mint to the NIP maker |
-| [cryptoduke01/gloam](https://github.com/cryptoduke01/gloam/pull/6) | Point the issue chooser at SECURITY.md for vulnerability reports |
 
 Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://heyresearch.xyz/contributions)** · <sub>refreshed daily</sub>
 <!-- FIXES:END -->
