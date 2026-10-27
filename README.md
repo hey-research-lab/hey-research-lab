@@ -38,10 +38,13 @@ Building on Robinhood Chain? Everything here is free, and none of it buys a plac
 ## 🛠️ Fixes we sent upstream
 
 <!-- FIXES:START -->
-**243 pull requests** sent to **200 repositories** we don’t own, **25 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
+**255 pull requests** sent to **212 repositories** we don’t own, **28 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
 
 | Merged into | The fix |
 | --- | --- |
+| [pgen0x/azimuth](https://github.com/pgen0x/azimuth/pull/249) | test(scanner): look up true and false on PATH in the entry-routing test |
+| [mcpHQ/awesome-mcp-servers](https://github.com/mcpHQ/awesome-mcp-servers/pull/423) | Add HEY Research Lab |
+| [agentsea/nautilo](https://github.com/agentsea/nautilo/pull/136) | fix(sheets): read date-only strings as local calendar dates |
 | [covenantx402/covenant](https://github.com/covenantx402/covenant/pull/8) | fix(chains): point Robinhood Chain's explorer at Blockscout |
 | [covenantx402/covenant](https://github.com/covenantx402/covenant/pull/7) | fix(kit): use the token's own EIP-712 domain for USDG and Base Sepolia USDC |
 | [marcelscruz/public-apis](https://github.com/marcelscruz/public-apis/pull/1520) | Add HEY Research Lab API |
@@ -51,9 +54,6 @@ Building on Robinhood Chain? Everything here is free, and none of it buys a plac
 | [1xGiraffe/hydration-neckwork](https://github.com/1xGiraffe/hydration-neckwork/pull/8) | fix(mcp): bound tool input size and bump the MCP SDK to 1.32 (GHSA-46jr-4wx8-v453) |
 | [DefiLlama/dimension-adapters](https://github.com/DefiLlama/dimension-adapters/pull/10386) | catnip: count the 1/3 protocol fee the pairs mint to the NIP maker |
 | [cryptoduke01/gloam](https://github.com/cryptoduke01/gloam/pull/6) | Point the issue chooser at SECURITY.md for vulnerability reports |
-| [cordialsys/crosschain](https://github.com/cordialsys/crosschain/pull/281) | evm: report the fee from the receipt's effectiveGasPrice |
-| [ethereum-lists/chains](https://github.com/ethereum-lists/chains/pull/8891) | Remove unreachable ArrowRPC endpoint from Robinhood Chain (eip155-4663) |
-| [chainstacklabs/robinhood-chain-sequencer-feed](https://github.com/chainstacklabs/robinhood-chain-sequencer-feed/pull/19) | fix: void the whole l2Msg when arbos rejects one batch entry |
 
 Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://heyresearch.xyz/contributions)** · <sub>refreshed daily</sub>
 <!-- FIXES:END -->
