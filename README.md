@@ -58,6 +58,13 @@ Building on Robinhood Chain? Everything here is free, and none of it buys a plac
 Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://heyresearch.xyz/contributions)** · <sub>refreshed daily</sub>
 <!-- FIXES:END -->
 
+Some teams take a fix into their own commit instead of merging ours. These count the same to us:
+
+| Shipped by | What landed |
+| --- | --- |
+| [Gloam](https://github.com/cryptoduke01/gloam/pull/124) | all six fixes from [#117](https://github.com/cryptoduke01/gloam/pull/117) to [#122](https://github.com/cryptoduke01/gloam/pull/122): MCP version pins, cash-out address guard, payment settlement, API key rename, MCP spend limits, access-key generation |
+| [HoodFi](https://github.com/RWA-ID/hoodfi-eth) | [#12](https://github.com/RWA-ID/hoodfi-eth/pull/12), [#13](https://github.com/RWA-ID/hoodfi-eth/pull/13) and [#14](https://github.com/RWA-ID/hoodfi-eth/pull/14) merged with our commits in #17, #19 and #20; [#15](https://github.com/RWA-ID/hoodfi-eth/pull/15) shipped as a narrower fix in #18 |
+
 **Merged one of our fixes and liked it?** A shout-out on X helps a small team keep sending them: tag
 [x.com/HeyResearch](https://x.com/HeyResearch) and say what we fixed. That's the only thank-you we ask for.
 
