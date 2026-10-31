@@ -13,7 +13,7 @@
   <a href="https://heyresearch.xyz/data"><img alt="Open data" src="https://img.shields.io/badge/open%20data-CC%20BY%204.0-4a5260?style=flat-square"></a>
 </p>
 
-Robinhood Chain has more than a million token contracts. We can prove about a thousand teams are building on it.
+Robinhood Chain has more than a million token contracts. We can prove more than 1,200 teams are building on it.
 **Hey Research Lab** reads their code, releases and contract deployments and answers one question with evidence:
 **who is still building, and what did they ship?** Every claim links to its source. Price is context, never the verdict.
 Browsing needs no wallet, and nothing on HEY is for sale.
@@ -34,6 +34,7 @@ Building on Robinhood Chain? Everything here is free, and none of it buys a plac
 | **A live badge** | your HEY badge for your site or README, updated from public evidence: [heyresearch.xyz/badges](https://heyresearch.xyz/badges) |
 | **Funding for shipping** | backers can fund you in $WIF through [Proof of Ship](https://github.com/hey-research-lab/proof-of-ship), an escrow that pays only when HEY counts real ships |
 | **Your data, open** | the API, the embed and the open dataset are free for your own product: [heyresearch.xyz/developers](https://heyresearch.xyz/developers) |
+| **Counted in Electric Capital's developer data** | we added Robinhood Chain to [Open Dev Data](https://github.com/electric-capital/open-dev-data/pull/3115) as its own ecosystem (1,183 repositories) and send it a monthly update, so builders here show up in the industry's developer numbers |
 
 ## 🛠️ Fixes we sent upstream
 
@@ -88,7 +89,7 @@ on your repository, and we report there.
 | | |
 | --- | --- |
 | **Check any token or project** | [heyresearch.xyz](https://heyresearch.xyz) · from a terminal: `npx @hey-research-lab/check '$TICKER'` |
-| **Weekly builder report** | who shipped on Robinhood Chain this week, each ship with its source: [heyresearch.xyz/this-week](https://heyresearch.xyz/this-week) |
+| **Weekly builder report** | who shipped on Robinhood Chain this week, each ship with its source: [heyresearch.xyz/reports/weekly](https://heyresearch.xyz/reports/weekly) |
 | **Public API** | one call per token: `GET /api/v1/builder?chain=4663&token=0x…` · [docs](https://heyresearch.xyz/developers) · [changelog](https://heyresearch.xyz/developers/changelog) |
 | **Embed** | a live builder card on any site: `<hey-project contract="0x…">` · [embeds](https://heyresearch.xyz/developers) |
 | **Token Passport** | a token's page credits the Robinhood Chain protocols whose facts HEY reads (a HoodLock lock, the launchpad that minted it, its Uniswap v4 hooks), each with a link: [heyresearch.xyz/passport](https://heyresearch.xyz/passport) |
