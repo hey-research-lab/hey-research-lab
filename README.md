@@ -100,7 +100,7 @@ on your repository, and we report there.
 
 - **Hosted MCP server:** `https://heyresearch.xyz/mcp`, no key. Listed as a community connector in
   [Claude's Connectors Directory](https://claude.ai/directory/hey-research-lab).
-- **On chain:** HEY is registered as an ERC-8004 agent on Robinhood Chain (agent #8783), with an A2A card at
+- **On chain:** HEY is registered as an ERC-8004 agent on Robinhood Chain (#8783), Ethereum (#56081) and Base (#1148006), with an A2A card at
   [`/.well-known/agent-card.json`](https://heyresearch.xyz/.well-known/agent-card.json).
 - **Skills and plugins:** [hey-agent-skills](https://github.com/hey-research-lab/hey-agent-skills) (an Agent Skill and Claude Code plugin).
 
