@@ -23,6 +23,16 @@ Browsing needs no wallet, and nothing on HEY is for sale.
   <img alt="Hey Research Lab in numbers" src="assets/stats-light.svg" width="100%">
 </picture>
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/chain-dark.svg">
+  <img alt="Every Robinhood Chain project HEY reads as shipping or active, newest ship at the centre" src="assets/chain-light.svg" width="100%">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/ships-dark.svg">
+  <img alt="This week's newest ships on Robinhood Chain, each with its source on heyresearch.xyz" src="assets/ships-light.svg" width="100%">
+</picture>
+
 ## 🧱 For builders
 
 Building on Robinhood Chain? Everything here is free, and none of it buys a place: what you ship decides.
@@ -38,11 +48,19 @@ Building on Robinhood Chain? Everything here is free, and none of it buys a plac
 
 ## 🛠️ Fixes we sent upstream
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/fixes-dark.svg">
+  <img alt="One square per repository we sent a fix to: merged, open or closed" src="assets/fixes-light.svg" width="100%">
+</picture>
+
 <!-- FIXES:START -->
-**266 pull requests** sent to **213 repositories** we don’t own, **36 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
+**284 pull requests** sent to **227 repositories** we don’t own, **39 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
 
 | Merged into | The fix |
 | --- | --- |
+| [nirholas/loxley](https://github.com/nirholas/loxley/pull/1) | fix(chain): point the testnet explorer at explorer.testnet.chain.robinhood.com |
+| [nirholas/hookforge](https://github.com/nirholas/hookforge/pull/2) | PriorityFeeTax: drop robinhood from recommended chains, where tx.gasprice equals block.basefee |
+| [GemachDAO/gdex-skill](https://github.com/GemachDAO/gdex-skill/pull/66) | fix: truncate decimals without floating-point error (truncateDecimals, perp preview size) |
 | [collabnix/awesome-mcp-lists](https://github.com/collabnix/awesome-mcp-lists/pull/272) | Add HEY Research Lab MCP server |
 | [abysshopper/black-market-python-sdk](https://github.com/abysshopper/black-market-python-sdk/pull/6) | default_hmm_launch_config: reject quote_decimals that differ from a catalogue quote |
 | [davepoon/buildwithclaude](https://github.com/davepoon/buildwithclaude/pull/563) | Add hey-research skill (category: research) |
@@ -52,9 +70,6 @@ Building on Robinhood Chain? Everything here is free, and none of it buys a plac
 | [electric-capital/open-dev-data](https://github.com/electric-capital/open-dev-data/pull/3115) | Add Robinhood Chain ecosystem (chain 4663) |
 | [ChainBench/OpenChainBench](https://github.com/ChainBench/OpenChainBench/pull/3308) | token-quote-coverage: quote one USDC on BNB Chain, not 1e-12 USDC |
 | [pgen0x/azimuth](https://github.com/pgen0x/azimuth/pull/249) | test(scanner): look up true and false on PATH in the entry-routing test |
-| [mcpHQ/awesome-mcp-servers](https://github.com/mcpHQ/awesome-mcp-servers/pull/423) | Add HEY Research Lab |
-| [agentsea/nautilo](https://github.com/agentsea/nautilo/pull/136) | fix(sheets): read date-only strings as local calendar dates |
-| [covenantx402/covenant](https://github.com/covenantx402/covenant/pull/8) | fix(chains): point Robinhood Chain's explorer at Blockscout |
 
 Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://heyresearch.xyz/contributions)** · <sub>refreshed daily</sub>
 <!-- FIXES:END -->
