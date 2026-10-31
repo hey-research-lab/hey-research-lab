@@ -4,6 +4,8 @@
 //   GITHUB_TOKEN=... node scripts/refresh.mjs
 import { readFileSync, writeFileSync } from 'node:fs';
 
+import { constellation, fixesMap, shipTicker } from './visuals.mjs';
+
 const ACCOUNT = 'hey-research-lab';
 const HEY = 'https://heyresearch.xyz';
 // Listings of HEY itself in other people's lists, not fixes (the same ones heyresearch.xyz/contributions leaves out).
@@ -69,6 +71,28 @@ ${body}
 }
 writeFileSync('assets/stats-light.svg', card('light'));
 writeFileSync('assets/stats-dark.svg', card('dark'));
+
+// ---------------------------------------------------------------- the live pictures (2026-11-01)
+const heyHeaders = { 'user-agent': 'hey-internal/profile-refresh' };
+async function listProjects(status) {
+  const items = [];
+  for (let offset = 0; offset < 5000; ) {
+    const res = await fetch(`${HEY}/api/projects?status=${status}&limit=100&offset=${offset}`, { headers: heyHeaders });
+    if (!res.ok) throw new Error(`HEY projects ${res.status}`);
+    const body = await res.json();
+    items.push(...body.items.map((p) => ({ slug: p.slug, lastShippedAt: p.lastShippedAt ?? null })));
+    if (body.nextOffset == null || body.items.length === 0) break;
+    offset = body.nextOffset;
+  }
+  return items;
+}
+const building = [...(await listProjects('SHIPPING')), ...(await listProjects('ACTIVE'))];
+const week = await (await fetch(`${HEY}/api/this-week`, { headers: heyHeaders })).json();
+for (const theme of ['light', 'dark']) {
+  writeFileSync(`assets/chain-${theme}.svg`, constellation(building, theme));
+  writeFileSync(`assets/ships-${theme}.svg`, shipTicker(week, theme));
+  writeFileSync(`assets/fixes-${theme}.svg`, fixesMap(prs, repoOf, theme));
+}
 
 // ---------------------------------------------------------------- the README's live sections
 const md = (s) => s.replace(/\|/g, '\\|').replace(/[<>]/g, '');
