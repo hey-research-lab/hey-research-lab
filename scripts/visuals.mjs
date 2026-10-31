@@ -55,11 +55,10 @@ export function shipTicker(week, theme) {
   // A title that is only a date says nothing about the ship (a changelog keyed by day): left out of the ticker.
   const items = (week.shipped?.items ?? []).filter((it) => it.latest?.title && !/^\d{4}-\d{2}-\d{2}$/.test(it.latest.title.trim())).slice(0, 7);
   const w = 1200, rowH = 44, top = 96, h = top + items.length * rowH + 52;
-  const cycle = 3 + items.length * 0.9 + 6;
-  const kind = (e) => ({ GITHUB_RELEASE: 'release', CODE_ACTIVITY: 'code', CONTRACT_DEPLOY_FOLLOWUP: 'deploy', CONTRACT_UPGRADE: 'upgrade', FEATURE_RELEASE: 'feature' }[e] ?? 'ship');
+    const kind = (e) => ({ GITHUB_RELEASE: 'release', CODE_ACTIVITY: 'code', CONTRACT_DEPLOY_FOLLOWUP: 'deploy', CONTRACT_UPGRADE: 'upgrade', FEATURE_RELEASE: 'feature' }[e] ?? 'ship');
   const rows = items.map((it, i) => {
     const y = top + i * rowH;
-    const delay = (0.6 + i * 0.9).toFixed(1);
+    const delay = (0.2 + i * 0.15).toFixed(2);
     const day = (it.latest.publishedAt ?? '').slice(0, 10);
     return `<g class="r" style="animation-delay:${delay}s">
 <rect x="32" y="${y - 26}" width="${w - 64}" height="${rowH - 8}" rx="9" fill="${t.panel}" stroke="${t.line}"/>
@@ -71,11 +70,13 @@ export function shipTicker(week, theme) {
   }).join('\n');
   const summary = week.shipped ? `${n(week.shipped.ships)} ships from ${n(week.shipped.projects)} projects in the last 7 days` : '';
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(`Shipped this week on Robinhood Chain: ${summary}`)}">
-<style>.r{opacity:0;animation:in ${cycle}s ease-out infinite}@keyframes in{0%{opacity:0;transform:translateY(6px)}6%{opacity:1;transform:none}88%{opacity:1}100%{opacity:0}}.c{animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}${REDUCED.replace('animation:none!important', 'animation:none!important;opacity:1!important')}</style>
+<style>.r{animation:in .7s ease-out both}@keyframes in{from{opacity:0;transform:translateY(6px)}}.s{animation:sweep ${(items.length * 1.2).toFixed(1)}s steps(${items.length}) infinite}@keyframes sweep{from{transform:translateY(0)}to{transform:translateY(${items.length * rowH}px)}}.c{animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}${REDUCED}</style>
 <rect width="${w}" height="${h}" rx="14" fill="${t.bg}"/>
 <text x="32" y="50" font-family="${MONO}" font-size="13" letter-spacing="2" fill="${t.lime}">SHIPPED THIS WEEK<tspan class="c"> ▌</tspan></text>
+
 <text x="${w - 32}" y="50" text-anchor="end" font-family="${FONT}" font-size="14" fill="${t.sec}">${esc(summary)}</text>
 ${rows}
+${items.length ? `<rect class="s" x="32" y="${top - 26}" width="4" height="${rowH - 8}" rx="2" fill="${t.lime}"/>` : ''}
 <text x="32" y="${h - 20}" font-family="${MONO}" font-size="12" fill="${t.sec}">Every ship with its source: heyresearch.xyz/ships</text>
 </svg>
 `;
@@ -189,7 +190,7 @@ function lineChart({ points, theme, title, caption, note, label, w = 1200, h = 3
     ? `<path class="ln" d="${path(series2.points)}" fill="none" stroke="${t.sec}" stroke-width="2.5" stroke-dasharray="1 0"/><circle cx="${X(series2.points.length - 1).toFixed(1)}" cy="${Y(series2.points.at(-1).y).toFixed(1)}" r="4.5" fill="${t.sec}"/><text x="${(X(series2.points.length - 1) + 12).toFixed(1)}" y="${(Y(series2.points.at(-1).y) + 5).toFixed(1)}" font-family="${FONT}" font-size="14" fill="${t.sec}">${esc(`${n(series2.points.at(-1).y)} ${series2.label}`)}</text>`
     : '';
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(`${title}: ${caption}`)}">
-<style>.ln{stroke-dasharray:3000;stroke-dashoffset:3000;animation:draw 2.4s ease-out forwards}@keyframes draw{to{stroke-dashoffset:0}}.ar{animation:fade 2.4s ease-out both}@keyframes fade{from{opacity:0}}${REDUCED.replace('animation:none!important', 'animation:none!important;stroke-dashoffset:0!important')}</style>
+<style>.ln{stroke-dasharray:3000;animation:draw 2.4s ease-out both}@keyframes draw{from{stroke-dashoffset:3000}}.ar{animation:fade 2.4s ease-out both}@keyframes fade{from{opacity:0}}${REDUCED}</style>
 <rect width="${w}" height="${h}" rx="14" fill="${t.bg}"/>
 <text x="40" y="44" font-family="${MONO}" font-size="13" letter-spacing="2" fill="${t.lime}">${esc(title)}</text>
 <text x="40" y="70" font-family="${FONT}" font-size="15" fill="${t.sec}">${esc(caption)}</text>
