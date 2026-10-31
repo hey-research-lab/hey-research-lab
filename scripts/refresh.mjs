@@ -4,7 +4,7 @@
 //   GITHUB_TOKEN=... node scripts/refresh.mjs
 import { readFileSync, writeFileSync } from 'node:fs';
 
-import { constellation, fixesMap, shipTicker } from './visuals.mjs';
+import { agentCard, agentsChart, constellation, fixesMap, fixesTimeline, launchesVsBuilders, shipTicker, THEMES } from './visuals.mjs';
 
 const ACCOUNT = 'hey-research-lab';
 const HEY = 'https://heyresearch.xyz';
@@ -42,9 +42,8 @@ const today = new Date().toISOString().slice(0, 10);
 
 // ---------------------------------------------------------------- the stats card
 function card(theme) {
-  const t = theme === 'dark'
-    ? { bg: '#0d1117', panel: '#161b22', line: '#30363d', ink: '#e6edf3', sec: '#8b949e', green: '#3fb950' }
-    : { bg: '#ffffff', panel: '#f6f8fa', line: '#d0d7de', ink: '#1f2328', sec: '#59636e', green: '#127a50' };
+  // The same palette as every other picture on this profile (2026-11-01): HEY's ground, panels and lime.
+  const t = { ...THEMES[theme], green: THEMES[theme].lime };
   const tiles = [
     [n(records), 'Robinhood Chain projects and tokens on record'],
     [n(pages), 'project pages, every claim linked to its source'],
@@ -64,7 +63,7 @@ function card(theme) {
 ${lines.map((line, j) => `<text x="${x + 18}" y="${98 + j * 17}" font-size="13" fill="${t.sec}" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">${esc(line)}</text>`).join('\n')}</g>`;
   }).join('\n');
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="Hey Research Lab in numbers">
-<rect width="${w}" height="${h}" rx="12" fill="${t.bg}"/>
+<rect width="${w}" height="${h}" rx="14" fill="${t.bg}"/>
 ${body}
 </svg>
 `;
@@ -88,10 +87,16 @@ async function listProjects(status) {
 }
 const building = [...(await listProjects('SHIPPING')), ...(await listProjects('ACTIVE'))];
 const week = await (await fetch(`${HEY}/api/this-week`, { headers: heyHeaders })).json();
+const chain = await (await fetch(`${HEY}/api/chain`, { headers: heyHeaders })).json();
+const agentStats = await (await fetch(`${HEY}/api/agent/stats`, { headers: heyHeaders })).json();
 for (const theme of ['light', 'dark']) {
   writeFileSync(`assets/chain-${theme}.svg`, constellation(building, theme));
   writeFileSync(`assets/ships-${theme}.svg`, shipTicker(week, theme));
   writeFileSync(`assets/fixes-${theme}.svg`, fixesMap(prs, repoOf, theme));
+  writeFileSync(`assets/launches-${theme}.svg`, launchesVsBuilders(chain, theme));
+  writeFileSync(`assets/agents-${theme}.svg`, agentsChart(agentStats, theme));
+  writeFileSync(`assets/fixes-timeline-${theme}.svg`, fixesTimeline(prs, theme));
+  writeFileSync(`assets/agent-${theme}.svg`, agentCard(theme));
 }
 
 // ---------------------------------------------------------------- the README's live sections
