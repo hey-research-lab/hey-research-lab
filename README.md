@@ -38,10 +38,11 @@ Building on Robinhood Chain? Everything here is free, and none of it buys a plac
 ## 🛠️ Fixes we sent upstream
 
 <!-- FIXES:START -->
-**266 pull requests** sent to **213 repositories** we don’t own, **35 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
+**266 pull requests** sent to **213 repositories** we don’t own, **36 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
 
 | Merged into | The fix |
 | --- | --- |
+| [collabnix/awesome-mcp-lists](https://github.com/collabnix/awesome-mcp-lists/pull/272) | Add HEY Research Lab MCP server |
 | [abysshopper/black-market-python-sdk](https://github.com/abysshopper/black-market-python-sdk/pull/6) | default_hmm_launch_config: reject quote_decimals that differ from a catalogue quote |
 | [davepoon/buildwithclaude](https://github.com/davepoon/buildwithclaude/pull/563) | Add hey-research skill (category: research) |
 | [qvotvm/hermes-team-kit](https://github.com/qvotvm/hermes-team-kit/pull/1) | fix(breaker): fall back to the ledger when the usage reply is stale |
@@ -53,7 +54,6 @@ Building on Robinhood Chain? Everything here is free, and none of it buys a plac
 | [mcpHQ/awesome-mcp-servers](https://github.com/mcpHQ/awesome-mcp-servers/pull/423) | Add HEY Research Lab |
 | [agentsea/nautilo](https://github.com/agentsea/nautilo/pull/136) | fix(sheets): read date-only strings as local calendar dates |
 | [covenantx402/covenant](https://github.com/covenantx402/covenant/pull/8) | fix(chains): point Robinhood Chain's explorer at Blockscout |
-| [covenantx402/covenant](https://github.com/covenantx402/covenant/pull/7) | fix(kit): use the token's own EIP-712 domain for USDG and Base Sepolia USDC |
 
 Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://heyresearch.xyz/contributions)** · <sub>refreshed daily</sub>
 <!-- FIXES:END -->
