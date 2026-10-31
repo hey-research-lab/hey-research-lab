@@ -117,3 +117,154 @@ ${cells}
 </svg>
 `;
 }
+
+// ---------------------------------------------------------------- charts (2026-11-01)
+
+/** Rounds a maximum up to a tidy axis top, and the ticks under it. */
+function axis(max, count = 4) {
+  if (max <= 0) return { top: 1, ticks: [0, 1] };
+  const raw = max / count;
+  const mag = 10 ** Math.floor(Math.log10(raw));
+  const step = [1, 2, 2.5, 5, 10].map((m) => m * mag).find((s) => s >= raw);
+  const top = Math.ceil(max / step) * step;
+  return { top, ticks: Array.from({ length: Math.round(top / step) + 1 }, (_, i) => i * step) };
+}
+const compact = (v) => (v >= 1000 ? `${(v / 1000).toFixed(v >= 10000 ? 0 : 1).replace(/\.0$/, '')}K` : n(v));
+const shortDay = (d) => { const [, m, day] = d.split('-'); return `${Number(day)} ${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][Number(m) - 1]}`; };
+
+/** Token launches a day against builders shipping a day, the same 14 days, each on its own scale. */
+export function launchesVsBuilders(chain, theme) {
+  const t = THEMES[theme];
+  const days = (chain.days ?? []).filter((d) => Number.isFinite(d.launches) && Number.isFinite(d.buildersShipping));
+  const w = 1200, h = 470, left = 92, right = 40, plotW = w - left - right;
+  const panels = [
+    { key: 'launches', label: 'Token launches a day', top: 104, height: 110, color: t.faint, value: (d) => d.launches },
+    { key: 'builders', label: 'Builders who shipped that day', top: 290, height: 110, color: t.lime, value: (d) => d.buildersShipping },
+  ];
+  const bw = plotW / Math.max(days.length, 1);
+  const today = days.at(-1)?.day;
+  const parts = panels.map((panel) => {
+    const max = Math.max(...days.map(panel.value));
+    const { top, ticks } = axis(max, 3);
+    const y = (v) => panel.top + panel.height - (v / top) * panel.height;
+    const grid = ticks.map((tick) => `<line x1="${left}" x2="${w - right}" y1="${y(tick).toFixed(1)}" y2="${y(tick).toFixed(1)}" stroke="${t.line}"/><text x="${left - 10}" y="${(y(tick) + 4).toFixed(1)}" text-anchor="end" font-family="${MONO}" font-size="11" fill="${t.sec}">${compact(tick)}</text>`).join('');
+    const bars = days.map((d, i) => {
+      const v = panel.value(d), x = left + i * bw + bw * 0.18, bh = (v / top) * panel.height;
+      const partial = d.day === today;
+      return `<rect class="b" style="animation-delay:${(i * 0.05).toFixed(2)}s" x="${x.toFixed(1)}" y="${(panel.top + panel.height - bh).toFixed(1)}" width="${(bw * 0.64).toFixed(1)}" height="${bh.toFixed(1)}" rx="3" fill="${panel.color}" opacity="${partial ? 0.45 : 1}"><title>${esc(`${d.day}: ${n(v)}${partial ? ' (day in progress)' : ''}`)}</title></rect>`;
+    }).join('');
+    return `<text x="${left}" y="${panel.top - 16}" font-family="${FONT}" font-size="15" font-weight="600" fill="${t.ink}">${esc(panel.label)}</text>${grid}${bars}`;
+  }).join('');
+  const labels = days.map((d, i) => (i % 2 === 0 || i === days.length - 1 ? `<text x="${(left + i * bw + bw / 2).toFixed(1)}" y="${h - 46}" text-anchor="middle" font-family="${MONO}" font-size="11" fill="${t.sec}">${esc(shortDay(d.day))}</text>` : '')).join('');
+  const first = days[0], last = days.at(-2) ?? days.at(-1);
+  const builders = days.slice(0, -1).map((d) => d.buildersShipping);
+  const range = builders.length ? `${Math.min(...builders)} to ${Math.max(...builders)}` : '';
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(`Token launches a day and builders who shipped a day on Robinhood Chain, ${first?.day} to ${days.at(-1)?.day}`)}">
+<style>.b{transform-box:fill-box;transform-origin:bottom;animation:grow .9s ease-out both}@keyframes grow{from{transform:scaleY(0)}}${REDUCED}</style>
+<rect width="${w}" height="${h}" rx="14" fill="${t.bg}"/>
+<text x="40" y="44" font-family="${MONO}" font-size="13" letter-spacing="2" fill="${t.lime}">THE LAST 14 DAYS ON ROBINHOOD CHAIN</text>
+<text x="${w - 40}" y="44" text-anchor="end" font-family="${FONT}" font-size="14" fill="${t.sec}">${esc(`Launches went from ${compact(first?.launches ?? 0)} to ${compact(last?.launches ?? 0)} a day. ${range} builders still shipped every day.`)}</text>
+${parts}
+${labels}
+<text x="40" y="${h - 20}" font-family="${MONO}" font-size="12" fill="${t.sec}">Today's bars are lighter: the day is still being read. Source: heyresearch.xyz/api/chain</text>
+</svg>
+`;
+}
+
+/** A cumulative line with its area, labelled at the end; points are { x: label, y: value }. */
+function lineChart({ points, theme, title, caption, note, label, w = 1200, h = 360, series2 }) {
+  const t = THEMES[theme];
+  const left = 76, right = 150, top = 92, plotH = h - top - 70, plotW = w - left - right;
+  const max = Math.max(...points.map((p) => p.y), ...(series2?.points ?? []).map((p) => p.y));
+  const { top: yTop, ticks } = axis(max, 4);
+  const X = (i) => left + (points.length === 1 ? plotW : (i / (points.length - 1)) * plotW);
+  const Y = (v) => top + plotH - (v / yTop) * plotH;
+  const path = (pts) => pts.map((p, i) => `${i ? 'L' : 'M'}${X(i).toFixed(1)},${Y(p.y).toFixed(1)}`).join('');
+  const area = `${path(points)}L${X(points.length - 1).toFixed(1)},${Y(0).toFixed(1)}L${X(0).toFixed(1)},${Y(0).toFixed(1)}Z`;
+  const grid = ticks.map((tick) => `<line x1="${left}" x2="${w - right}" y1="${Y(tick).toFixed(1)}" y2="${Y(tick).toFixed(1)}" stroke="${t.line}"/><text x="${left - 10}" y="${(Y(tick) + 4).toFixed(1)}" text-anchor="end" font-family="${MONO}" font-size="11" fill="${t.sec}">${compact(tick)}</text>`).join('');
+  const every = Math.max(1, Math.ceil(points.length / 7));
+  const xl = points.map((p, i) => (i % every === 0 || i === points.length - 1 ? `<text x="${X(i).toFixed(1)}" y="${top + plotH + 22}" text-anchor="middle" font-family="${MONO}" font-size="11" fill="${t.sec}">${esc(p.x)}</text>` : '')).join('');
+  const end = points.at(-1);
+  const second = series2
+    ? `<path class="ln" d="${path(series2.points)}" fill="none" stroke="${t.sec}" stroke-width="2.5" stroke-dasharray="1 0"/><circle cx="${X(series2.points.length - 1).toFixed(1)}" cy="${Y(series2.points.at(-1).y).toFixed(1)}" r="4.5" fill="${t.sec}"/><text x="${(X(series2.points.length - 1) + 12).toFixed(1)}" y="${(Y(series2.points.at(-1).y) + 5).toFixed(1)}" font-family="${FONT}" font-size="14" fill="${t.sec}">${esc(`${n(series2.points.at(-1).y)} ${series2.label}`)}</text>`
+    : '';
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(`${title}: ${caption}`)}">
+<style>.ln{stroke-dasharray:3000;stroke-dashoffset:3000;animation:draw 2.4s ease-out forwards}@keyframes draw{to{stroke-dashoffset:0}}.ar{animation:fade 2.4s ease-out both}@keyframes fade{from{opacity:0}}${REDUCED.replace('animation:none!important', 'animation:none!important;stroke-dashoffset:0!important')}</style>
+<rect width="${w}" height="${h}" rx="14" fill="${t.bg}"/>
+<text x="40" y="44" font-family="${MONO}" font-size="13" letter-spacing="2" fill="${t.lime}">${esc(title)}</text>
+<text x="40" y="70" font-family="${FONT}" font-size="15" fill="${t.sec}">${esc(caption)}</text>
+${grid}${xl}
+<path class="ar" d="${area}" fill="${t.limeSoft}"/>
+${second}
+<path class="ln" d="${path(points)}" fill="none" stroke="${t.lime}" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="${X(points.length - 1).toFixed(1)}" cy="${Y(end.y).toFixed(1)}" r="5" fill="${t.lime}"/>
+<text x="${(X(points.length - 1) + 12).toFixed(1)}" y="${(Y(end.y) + 5).toFixed(1)}" font-family="${FONT}" font-size="15" font-weight="700" fill="${t.ink}">${esc(`${n(end.y)} ${label}`)}</text>
+<text x="40" y="${h - 18}" font-family="${MONO}" font-size="12" fill="${t.sec}">${esc(note)}</text>
+</svg>
+`;
+}
+
+/** Agents registered on Robinhood Chain (ERC-8004), the running total by day; HEY is agent #8783. */
+export function agentsChart(stats, theme) {
+  const days = (stats.erc8004Registrations?.days ?? []).filter((d) => d.complete !== false);
+  const points = days.map((d) => ({ x: shortDay(d.day), y: d.cumulative }));
+  return lineChart({
+    points, theme,
+    title: 'AI AGENTS REGISTERED ON ROBINHOOD CHAIN',
+    caption: 'The ERC-8004 Identity Registry, read from the chain each day. HEY is one of them, agent #8783.',
+    note: 'Counts only, no owner or agent kept. Source: heyresearch.xyz/developers/agents/stats',
+    label: 'agents',
+  });
+}
+
+/** Pull requests sent upstream and merged, the running totals by day. */
+export function fixesTimeline(prs, theme) {
+  const day = (iso) => iso.slice(0, 10);
+  const first = prs.map((p) => day(p.created_at)).sort()[0];
+  const today = new Date().toISOString().slice(0, 10);
+  const days = [];
+  for (let d = new Date(`${first}T00:00:00Z`); day(d.toISOString()) <= today; d.setUTCDate(d.getUTCDate() + 1)) days.push(day(d.toISOString()));
+  const sent = days.map((d) => ({ x: shortDay(d), y: prs.filter((p) => day(p.created_at) <= d).length }));
+  const merged = days.map((d) => ({ x: shortDay(d), y: prs.filter((p) => p.pull_request?.merged_at && day(p.pull_request.merged_at) <= d).length }));
+  return lineChart({
+    points: sent, theme,
+    title: 'FIXES SENT UPSTREAM, DAY BY DAY',
+    caption: 'Pull requests we opened in repositories we do not own (lime), and how many their teams merged (grey).',
+    note: 'Every fix, open, merged or closed: heyresearch.xyz/contributions',
+    label: 'sent',
+    series2: { points: merged, label: 'merged' },
+  });
+}
+
+/** HEY as one agent on three chains: its ERC-8004 registrations and what an agent gets. */
+export function agentCard(theme) {
+  const t = THEMES[theme];
+  const w = 1200, h = 300;
+  const chains = [
+    ['Robinhood Chain', '#8783', 'eip155:4663'],
+    ['Ethereum', '#56081', 'eip155:1'],
+    ['Base', '#1148006', 'eip155:8453'],
+  ];
+  const tiles = chains.map(([name, id, caip], i) => {
+    const y = 74 + i * 66;
+    return `<g><rect x="40" y="${y}" width="380" height="54" rx="10" fill="${t.panel}" stroke="${t.line}"/>
+<rect x="40" y="${y + 12}" width="4" height="30" rx="2" fill="${t.lime}"/>
+<text x="62" y="${y + 24}" font-family="${FONT}" font-size="16" font-weight="600" fill="${t.ink}">${esc(name)}</text>
+<text x="62" y="${y + 43}" font-family="${MONO}" font-size="12" fill="${t.sec}">${esc(caip)}</text>
+<text x="400" y="${y + 34}" text-anchor="end" font-family="${MONO}" font-size="18" font-weight="600" fill="${t.ink}">${esc(id)}</text></g>`;
+  }).join('');
+  const wires = chains.map((_, i) => `<path class="w" style="animation-delay:${(i * 0.4).toFixed(1)}s" d="M420 ${101 + i * 66} C 480 ${101 + i * 66} 480 160 540 160" fill="none" stroke="${t.lime}" stroke-width="2" opacity=".55"/>`).join('');
+  const services = [['MCP server', 'heyresearch.xyz/mcp'], ['A2A agent card', '/.well-known/agent-card.json'], ['Public API', 'OpenAPI 3.1'], ['llms.txt', 'heyresearch.xyz/llms.txt']];
+  const svc = services.map(([a, b], i) => `<rect x="580" y="${92 + i * 44}" width="580" height="36" rx="8" fill="${t.panel}" stroke="${t.line}"/><text x="598" y="${115 + i * 44}" font-family="${FONT}" font-size="15" fill="${t.ink}">${esc(a)}</text><text x="1142" y="${115 + i * 44}" text-anchor="end" font-family="${MONO}" font-size="13" fill="${t.sec}">${esc(b)}</text>`).join('');
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="HEY Research Lab is one ERC-8004 agent on Robinhood Chain (#8783), Ethereum (#56081) and Base (#1148006), with an MCP server, an A2A card, a public API and llms.txt; free, no key, no wallet">
+<style>.w{stroke-dasharray:6 6;animation:flow 1.6s linear infinite}@keyframes flow{to{stroke-dashoffset:-24}}${REDUCED}</style>
+<rect width="${w}" height="${h}" rx="14" fill="${t.bg}"/>
+<text x="40" y="48" font-family="${MONO}" font-size="13" letter-spacing="2" fill="${t.lime}">ONE AGENT · THREE CHAINS · ERC-8004</text>
+<text x="580" y="48" font-family="${FONT}" font-size="15" fill="${t.sec}">What an agent gets, free, with no key and no wallet</text>
+${tiles}${wires}
+<circle cx="545" cy="160" r="6" fill="${t.lime}"/>
+${svc}
+<text x="40" y="${h - 20}" font-family="${MONO}" font-size="12" fill="${t.sec}">Registration file: heyresearch.xyz/.well-known/agent-registration.json</text>
+</svg>
+`;
+}
