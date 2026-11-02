@@ -96,10 +96,12 @@ Skills and plugins: [hey-agent-skills](https://github.com/hey-research-lab/hey-a
 <summary><b>The latest fixes merged</b></summary>
 
 <!-- FIXES:START -->
-**287 pull requests** sent to **229 repositories** we don’t own, **44 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
+**287 pull requests** sent to **229 repositories** we don’t own, **46 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
 
 | Merged into | The fix |
 | --- | --- |
+| [DefiLlama/chainlist](https://github.com/DefiLlama/chainlist/pull/3309) | fix(4663): remove OrdoFi RPC, whose domain no longer resolves |
+| [blockscout/chainscout](https://github.com/blockscout/chainscout/pull/319) | Robinhood Chain Testnet: settlement layer is Sepolia (11155111), not Ethereum mainnet |
 | [Hookr-fun/hookr-contracts](https://github.com/Hookr-fun/hookr-contracts/pull/22) | Add a security policy for private vulnerability reports |
 | [nirholas/robinhood-chain-trading-bot](https://github.com/nirholas/robinhood-chain-trading-bot/pull/7) | fix(agent): do not book a live swap whose transaction reverted |
 | [nirholas/robinhood-chain-alert-bot](https://github.com/nirholas/robinhood-chain-alert-bot/pull/9) | fix(engine): deliver an event once per subscriber when several subscriptions match |
@@ -110,8 +112,6 @@ Skills and plugins: [hey-agent-skills](https://github.com/hey-research-lab/hey-a
 | [GemachDAO/gdex-skill](https://github.com/GemachDAO/gdex-skill/pull/66) | fix: truncate decimals without floating-point error (truncateDecimals, perp preview size) |
 | [collabnix/awesome-mcp-lists](https://github.com/collabnix/awesome-mcp-lists/pull/272) | Add HEY Research Lab MCP server |
 | [abysshopper/black-market-python-sdk](https://github.com/abysshopper/black-market-python-sdk/pull/6) | default_hmm_launch_config: reject quote_decimals that differ from a catalogue quote |
-| [davepoon/buildwithclaude](https://github.com/davepoon/buildwithclaude/pull/563) | Add hey-research skill (category: research) |
-| [qvotvm/hermes-team-kit](https://github.com/qvotvm/hermes-team-kit/pull/1) | fix(breaker): fall back to the ledger when the usage reply is stale |
 
 Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://heyresearch.xyz/contributions)** · <sub>refreshed daily</sub>
 <!-- FIXES:END -->
