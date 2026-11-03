@@ -118,7 +118,8 @@ let readme = readFileSync('README.md', 'utf8');
 const between = (name, content) => {
   const re = new RegExp(`(<!-- ${name}:START -->)[\\s\\S]*?(<!-- ${name}:END -->)`);
   if (!re.test(readme)) throw new Error(`README has no ${name} markers`);
-  readme = readme.replace(re, `$1\n${content}\n$2`);
+  // A function replacer: a pull request title containing `$&` or `$1` must stay text, never a replacement pattern.
+  readme = readme.replace(re, (_whole, start, end) => `${start}\n${content}\n${end}`);
 };
 between('FIXES', fixes);
 writeFileSync('README.md', readme);
