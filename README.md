@@ -96,10 +96,14 @@ Skills and plugins: [hey-agent-skills](https://github.com/hey-research-lab/hey-a
 <summary><b>The latest fixes merged</b></summary>
 
 <!-- FIXES:START -->
-**287 pull requests** sent to **229 repositories** we don’t own, **46 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
+**287 pull requests** sent to **229 repositories** we don’t own, **50 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
 
 | Merged into | The fix |
 | --- | --- |
+| [0xfnzero/FnzSafe](https://github.com/0xfnzero/FnzSafe/pull/9) | extension: skip discovered tokens whose decimals are null instead of reading them as 0 |
+| [0xfnzero/FnzSafe](https://github.com/0xfnzero/FnzSafe/pull/7) | evm-services: fix Robinhood Chain explorer URL (robinscan.io does not resolve) |
+| [ahmet/awesome-web3](https://github.com/ahmet/awesome-web3/pull/863) | Add HEY Research Lab |
+| [1Shot-API/embedded-wallet](https://github.com/1Shot-API/embedded-wallet/pull/154) | Fix the Ethereum BTC/USD and PAXG/USD addresses in the trusted Chainlink feed list |
 | [DefiLlama/chainlist](https://github.com/DefiLlama/chainlist/pull/3309) | fix(4663): remove OrdoFi RPC, whose domain no longer resolves |
 | [blockscout/chainscout](https://github.com/blockscout/chainscout/pull/319) | Robinhood Chain Testnet: settlement layer is Sepolia (11155111), not Ethereum mainnet |
 | [Hookr-fun/hookr-contracts](https://github.com/Hookr-fun/hookr-contracts/pull/22) | Add a security policy for private vulnerability reports |
@@ -108,10 +112,6 @@ Skills and plugins: [hey-agent-skills](https://github.com/hey-research-lab/hey-a
 | [nirholas/robinhood-chain-launcher](https://github.com/nirholas/robinhood-chain-launcher/pull/9) | fix(auto): do not mark a proposal executed when its launch was blocked at preflight |
 | [nirholas/robinhood-chain-launcher](https://github.com/nirholas/robinhood-chain-launcher/pull/8) | fix(auto): store proposals whose preflight and config carry bigints |
 | [nirholas/loxley](https://github.com/nirholas/loxley/pull/1) | fix(chain): point the testnet explorer at explorer.testnet.chain.robinhood.com |
-| [nirholas/hookforge](https://github.com/nirholas/hookforge/pull/2) | PriorityFeeTax: drop robinhood from recommended chains, where tx.gasprice equals block.basefee |
-| [GemachDAO/gdex-skill](https://github.com/GemachDAO/gdex-skill/pull/66) | fix: truncate decimals without floating-point error (truncateDecimals, perp preview size) |
-| [collabnix/awesome-mcp-lists](https://github.com/collabnix/awesome-mcp-lists/pull/272) | Add HEY Research Lab MCP server |
-| [abysshopper/black-market-python-sdk](https://github.com/abysshopper/black-market-python-sdk/pull/6) | default_hmm_launch_config: reject quote_decimals that differ from a catalogue quote |
 
 Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://heyresearch.xyz/contributions)** · <sub>refreshed daily</sub>
 <!-- FIXES:END -->
