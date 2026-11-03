@@ -1,29 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="456" viewBox="0 0 1200 456" role="img" aria-label="Shipped this week on Robinhood Chain: 322 ships from 162 projects in the last 7 days">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="456" viewBox="0 0 1200 456" role="img" aria-label="Shipped this week on Robinhood Chain: 321 ships from 162 projects in the last 7 days">
 <style>.r{animation:in .7s ease-out both}@keyframes in{from{opacity:0;transform:translateY(6px)}}.s{animation:sweep 8.4s steps(7) infinite}@keyframes sweep{from{transform:translateY(0)}to{transform:translateY(308px)}}.c{animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}@media (prefers-reduced-motion: reduce){*{animation:none!important}}</style>
 <rect width="1200" height="456" rx="14" fill="#0B0E11"/>
 <text x="32" y="50" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" letter-spacing="2" fill="#C2FB03">SHIPPED THIS WEEK<tspan class="c"> ▌</tspan></text>
 
-<text x="1168" y="50" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" fill="#94A0AD">322 ships from 162 projects in the last 7 days</text>
+<text x="1168" y="50" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" fill="#94A0AD">321 ships from 162 projects in the last 7 days</text>
 <g class="r" style="animation-delay:0.20s">
 <rect x="32" y="70" width="1136" height="36" rx="9" fill="#14181D" stroke="#272D35"/>
 <text x="52" y="96" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#C2FB03">release</text>
-<text x="140" y="96" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">programmablehq</text>
-<text x="420" y="96" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">Programmable Launch CLI 4.3.0</text>
-<text x="1148" y="96" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-10-30</text>
+<text x="140" y="96" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">blockvectra</text>
+<text x="420" y="96" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">3 releases in blockvectra/agent-quickstart on 2 Nov</text>
+<text x="1148" y="96" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-11-02</text>
 </g>
 <g class="r" style="animation-delay:0.35s">
 <rect x="32" y="114" width="1136" height="36" rx="9" fill="#14181D" stroke="#272D35"/>
 <text x="52" y="140" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#C2FB03">release</text>
-<text x="140" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">0xfnzero</text>
-<text x="420" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">4 releases in 0xfnzero/fnzsafe today</text>
-<text x="1148" y="140" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-11-03</text>
+<text x="140" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">programmablehq</text>
+<text x="420" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">Programmable Launch CLI 4.3.0</text>
+<text x="1148" y="140" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-10-30</text>
 </g>
 <g class="r" style="animation-delay:0.50s">
 <rect x="32" y="158" width="1136" height="36" rx="9" fill="#14181D" stroke="#272D35"/>
 <text x="52" y="184" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#C2FB03">release</text>
-<text x="140" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">blockvectra</text>
-<text x="420" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">3 releases in blockvectra/agent-quickstart on 2 Nov</text>
-<text x="1148" y="184" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-11-02</text>
+<text x="140" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">0xfnzero</text>
+<text x="420" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">5 releases in 0xfnzero/fnzsafe today</text>
+<text x="1148" y="184" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-11-03</text>
 </g>
 <g class="r" style="animation-delay:0.65s">
 <rect x="32" y="202" width="1136" height="36" rx="9" fill="#14181D" stroke="#272D35"/>
