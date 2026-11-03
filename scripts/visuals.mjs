@@ -269,3 +269,77 @@ ${svc}
 </svg>
 `;
 }
+
+// ---------------------------------------------------------------- credited advisories (2026-11-03)
+
+const isoWeekStart = (iso) => {
+  const d = new Date(`${iso.slice(0, 10)}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() - ((d.getUTCDay() + 6) % 7));
+  return d.toISOString().slice(0, 10);
+};
+
+/**
+ * One square per private advisory we filed on GitHub. Published ones (read live, crediting hey-research-lab) are filled,
+ * accepted-but-unpublished ones outlined, the rest faint; then the published ones by the week GitHub published them.
+ * The unpublished side is counts only, from github.com/hey-research-lab/security's data/advisories.json: a project is
+ * named only when that file names it.
+ */
+export function creditedAdvisories({ hand, published }, theme, now = new Date()) {
+  const t = THEMES[theme];
+  const rows = hand.acceptedOrPublished.named.map((p) => {
+    const live = published.filter((a) => a.project === p.project).length;
+    return { label: p.project, published: live, accepted: Math.max(p.count - live, 0) };
+  });
+  if (hand.acceptedOrPublished.unnamed) rows.push({ label: `${hand.acceptedOrPublished.unnamed === 1 ? '1 more project' : 'More projects'}`, published: 0, accepted: hand.acceptedOrPublished.unnamed });
+  const acceptedOrPublished = Math.max(hand.acceptedOrPublished.total, rows.reduce((s, r) => s + r.published + r.accepted, 0));
+  const waiting = Math.max(hand.filed.advisories - acceptedOrPublished, 0);
+  if (waiting) rows.push({ label: 'Filed, not accepted or published', published: 0, accepted: 0, filed: waiting });
+  const publishedTotal = published.length;
+
+  const w = 1200, top = 112, rowH = 46, size = 22, gap = 7, sq = 650;
+  const weeksTop = top + rows.length * rowH + 40;
+  const h = weeksTop + 196;
+  const squares = rows.map((r, i) => {
+    const y = top + i * rowH;
+    const cells = [];
+    for (let k = 0; k < r.published; k++) cells.push(`<rect class="m" style="animation-delay:${((i + k) * 0.31 % 4).toFixed(2)}s" x="${sq + k * (size + gap)}" y="${y}" width="${size}" height="${size}" rx="5" fill="${t.lime}"/>`);
+    for (let k = 0; k < r.accepted; k++) { const x = sq + (r.published + k) * (size + gap); cells.push(`<rect x="${x + 0.75}" y="${y + 0.75}" width="${size - 1.5}" height="${size - 1.5}" rx="5" fill="${t.panel}" stroke="${t.lime}" stroke-width="1.5"/>`); }
+    for (let k = 0; k < (r.filed ?? 0); k++) cells.push(`<rect x="${sq + k * (size + gap)}" y="${y}" width="${size}" height="${size}" rx="5" fill="${t.line}"/>`);
+    const total = r.published + r.accepted + (r.filed ?? 0);
+    const note = r.filed ? `${r.filed}` : [r.published && `${r.published} published`, r.accepted && `${r.accepted} accepted`].filter(Boolean).join(' · ');
+    return `<text x="380" y="${y + 16}" font-family="${FONT}" font-size="15" font-weight="${r.filed ? 400 : 600}" fill="${r.filed ? t.sec : t.ink}">${esc(r.label)}</text>${cells.join('')}<text x="${sq + total * (size + gap) + 8}" y="${y + 16}" font-family="${MONO}" font-size="12" fill="${t.sec}">${esc(note)}</text>`;
+  }).join('\n');
+
+  // Published by the week GitHub published them, from the first such week to this one.
+  const weeks = [];
+  if (published.length) {
+    const first = published.map((a) => isoWeekStart(a.publishedAt)).sort()[0];
+    const last = isoWeekStart(now.toISOString());
+    for (let d = new Date(`${first}T00:00:00Z`); d.toISOString().slice(0, 10) <= last; d.setUTCDate(d.getUTCDate() + 7)) weeks.push(d.toISOString().slice(0, 10));
+  }
+  const bw = 64, unit = 14, baseY = weeksTop + 126;
+  const weekBars = weeks.map((wk, i) => {
+    const count = published.filter((a) => isoWeekStart(a.publishedAt) === wk).length;
+    const x = 380 + i * (bw + 16);
+    const stack = Array.from({ length: count }, (_, k) => `<rect x="${x + 12}" y="${baseY - (k + 1) * (unit + 3)}" width="${bw - 24}" height="${unit}" rx="3" fill="${t.lime}"/>`).join('');
+    return `${stack}<text x="${x + bw / 2}" y="${baseY + 20}" text-anchor="middle" font-family="${MONO}" font-size="11" fill="${t.sec}">${esc(shortDay(wk))}</text><text x="${x + bw / 2}" y="${baseY - count * (unit + 3) - 8}" text-anchor="middle" font-family="${MONO}" font-size="12" fill="${t.ink}">${count}</text>`;
+  }).join('');
+  const total = (value, label, y, lit) => `<text x="40" y="${y}" font-family="${FONT}" font-size="40" font-weight="700" letter-spacing="-1" fill="${lit ? t.lime : t.ink}">${esc(n(value))}</text><text x="40" y="${y + 24}" font-family="${FONT}" font-size="14" fill="${t.sec}">${esc(label)}</text>`;
+  const asOf = shortDay(hand.asOf);
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(`Security advisories that credit Hey Research Lab: ${hand.filed.advisories} filed privately on GitHub across ${hand.filed.projects} projects, ${acceptedOrPublished} accepted or published, ${publishedTotal} published`)}">
+<style>.m{animation:glow 4s ease-in-out infinite}@keyframes glow{0%,100%{opacity:.72}50%{opacity:1}}${REDUCED}</style>
+<rect width="${w}" height="${h}" rx="14" fill="${t.bg}"/>
+<text x="40" y="50" font-family="${MONO}" font-size="13" letter-spacing="2" fill="${t.lime}">SECURITY ADVISORIES THAT CREDIT US</text>
+<text x="40" y="78" font-family="${FONT}" font-size="15" fill="${t.sec}">One square per advisory we filed privately on GitHub. Filled: published with our credit. Outlined: accepted by the team, not yet published.</text>
+${total(hand.filed.advisories, `filed, across ${n(hand.filed.projects)} projects`, top + 30, false)}
+${total(acceptedOrPublished, 'accepted or published', top + 110, false)}
+${total(publishedTotal, 'published with our credit', top + 190, true)}
+<line x1="340" x2="340" y1="${top - 6}" y2="${h - 50}" stroke="${t.line}"/>
+${squares}
+<text x="380" y="${weeksTop + 6}" font-family="${FONT}" font-size="15" font-weight="600" fill="${t.ink}">Published, by week</text>
+<line x1="380" x2="${w - 40}" y1="${baseY}" y2="${baseY}" stroke="${t.line}"/>
+${weekBars}
+<text x="40" y="${h - 20}" font-family="${MONO}" font-size="12" fill="${t.sec}">${esc(`Published: read daily from GitHub. Unpublished: counts only, as of ${asOf}. Policy: github.com/hey-research-lab/security`)}</text>
+</svg>
+`;
+}
