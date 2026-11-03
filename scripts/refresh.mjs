@@ -30,7 +30,27 @@ const prs = (await search(`is:pr author:${ACCOUNT} -user:${ACCOUNT}`)).filter((i
 const merged = prs.filter((item) => item.pull_request?.merged_at).sort((a, b) => b.pull_request.merged_at.localeCompare(a.pull_request.merged_at));
 const repos = new Set(prs.map(repoOf));
 
-const status = await (await fetch(`${HEY}/api/status`, { headers: { 'user-agent': 'hey-internal/profile-refresh' } })).json();
+const heyHeaders = { 'user-agent': 'hey-internal/profile-refresh' };
+// HEY can answer a slow read with a 5xx at the edge: three tries, a pause between, then fail the run.
+async function heyFetch(url) {
+  for (let attempt = 1; ; attempt++) {
+    const res = await fetch(url, { headers: heyHeaders });
+    if (res.ok || res.status < 500 || attempt === 3) return res;
+    await new Promise((resolve) => setTimeout(resolve, attempt * 15_000));
+  }
+}
+// A read can also answer 200 while a figure is being recomputed: `complete` says what it must hold, three tries again.
+async function heyJson(path, complete = () => true) {
+  for (let attempt = 1; ; attempt++) {
+    const res = await heyFetch(`${HEY}${path}`);
+    if (!res.ok) throw new Error(`HEY ${path} ${res.status}`);
+    const body = await res.json();
+    if (complete(body) || attempt === 3) return body;
+    await new Promise((resolve) => setTimeout(resolve, attempt * 15_000));
+  }
+}
+const catalogComplete = (c) => [c?.published, c?.verifiedBuildersOnChain, c?.hidden].every((v) => Number.isFinite(v));
+const status = await heyJson('/api/status', (body) => catalogComplete(body.catalog));
 const catalog = status.catalog ?? {};
 const pages = catalog.published;
 const builders = catalog.verifiedBuildersOnChain;
@@ -72,15 +92,6 @@ writeFileSync('assets/stats-light.svg', card('light'));
 writeFileSync('assets/stats-dark.svg', card('dark'));
 
 // ---------------------------------------------------------------- the live pictures (2026-11-01)
-const heyHeaders = { 'user-agent': 'hey-internal/profile-refresh' };
-// HEY's listing can answer a slow page with a 503 at the edge: three tries, a pause between, then fail the run.
-async function heyFetch(url) {
-  for (let attempt = 1; ; attempt++) {
-    const res = await fetch(url, { headers: heyHeaders });
-    if (res.ok || res.status < 500 || attempt === 3) return res;
-    await new Promise((resolve) => setTimeout(resolve, attempt * 15_000));
-  }
-}
 async function listProjects(status) {
   const items = [];
   for (let offset = 0; offset < 5000; ) {
@@ -94,9 +105,9 @@ async function listProjects(status) {
   return items;
 }
 const building = [...(await listProjects('SHIPPING')), ...(await listProjects('ACTIVE'))];
-const week = await (await fetch(`${HEY}/api/this-week`, { headers: heyHeaders })).json();
-const chain = await (await fetch(`${HEY}/api/chain`, { headers: heyHeaders })).json();
-const agentStats = await (await fetch(`${HEY}/api/agent/stats`, { headers: heyHeaders })).json();
+const week = await heyJson('/api/this-week');
+const chain = await heyJson('/api/chain');
+const agentStats = await heyJson('/api/agent/stats');
 // Security advisories that credit this account (2026-11-03). The counts of unpublished ones are hand-kept in the
 // security repository (counts only, a project named only once its hall of fame lists it); published ones are read live.
 const securityData = await (await fetch('https://raw.githubusercontent.com/hey-research-lab/security/main/data/advisories.json', { headers: { 'user-agent': headers['user-agent'] } })).json();
