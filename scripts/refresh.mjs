@@ -73,10 +73,18 @@ writeFileSync('assets/stats-dark.svg', card('dark'));
 
 // ---------------------------------------------------------------- the live pictures (2026-11-01)
 const heyHeaders = { 'user-agent': 'hey-internal/profile-refresh' };
+// HEY's listing can answer a slow page with a 503 at the edge: three tries, a pause between, then fail the run.
+async function heyFetch(url) {
+  for (let attempt = 1; ; attempt++) {
+    const res = await fetch(url, { headers: heyHeaders });
+    if (res.ok || res.status < 500 || attempt === 3) return res;
+    await new Promise((resolve) => setTimeout(resolve, attempt * 15_000));
+  }
+}
 async function listProjects(status) {
   const items = [];
   for (let offset = 0; offset < 5000; ) {
-    const res = await fetch(`${HEY}/api/projects?status=${status}&limit=100&offset=${offset}`, { headers: heyHeaders });
+    const res = await heyFetch(`${HEY}/api/projects?status=${status}&limit=100&offset=${offset}`);
     if (!res.ok) throw new Error(`HEY projects ${res.status}`);
     const body = await res.json();
     items.push(...body.items.map((p) => ({ slug: p.slug, lastShippedAt: p.lastShippedAt ?? null })));
