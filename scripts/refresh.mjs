@@ -4,7 +4,7 @@
 //   GITHUB_TOKEN=... node scripts/refresh.mjs
 import { readFileSync, writeFileSync } from 'node:fs';
 
-import { agentCard, agentsChart, constellation, fixesMap, fixesTimeline, launchesVsBuilders, shipTicker, THEMES } from './visuals.mjs';
+import { agentCard, agentsChart, constellation, creditedAdvisories, fixesMap, fixesTimeline, launchesVsBuilders, shipTicker, THEMES } from './visuals.mjs';
 
 const ACCOUNT = 'hey-research-lab';
 const HEY = 'https://heyresearch.xyz';
@@ -89,7 +89,20 @@ const building = [...(await listProjects('SHIPPING')), ...(await listProjects('A
 const week = await (await fetch(`${HEY}/api/this-week`, { headers: heyHeaders })).json();
 const chain = await (await fetch(`${HEY}/api/chain`, { headers: heyHeaders })).json();
 const agentStats = await (await fetch(`${HEY}/api/agent/stats`, { headers: heyHeaders })).json();
+// Security advisories that credit this account (2026-11-03). The counts of unpublished ones are hand-kept in the
+// security repository (counts only, a project named only once its hall of fame lists it); published ones are read live.
+const securityData = await (await fetch('https://raw.githubusercontent.com/hey-research-lab/security/main/data/advisories.json', { headers: { 'user-agent': headers['user-agent'] } })).json();
+if (!Number.isInteger(securityData?.filed?.advisories) || !Number.isInteger(securityData?.acceptedOrPublished?.total)) throw new Error('security data/advisories.json did not parse');
+const publishedAdvisories = [];
+for (const { project, repository } of securityData.publishedReadFrom ?? []) {
+  const res = await fetch(`https://api.github.com/repos/${repository}/security-advisories?state=published&per_page=100`, { headers });
+  if (!res.ok) throw new Error(`GitHub advisories ${repository} ${res.status}`);
+  for (const a of await res.json()) {
+    if (a.state === 'published' && a.published_at && (a.credits ?? []).some((c) => c.login === ACCOUNT)) publishedAdvisories.push({ project, id: a.ghsa_id, publishedAt: a.published_at });
+  }
+}
 for (const theme of ['light', 'dark']) {
+  writeFileSync(`assets/advisories-${theme}.svg`, creditedAdvisories({ hand: securityData, published: publishedAdvisories }, theme));
   writeFileSync(`assets/chain-${theme}.svg`, constellation(building, theme));
   writeFileSync(`assets/ships-${theme}.svg`, shipTicker(week, theme));
   writeFileSync(`assets/fixes-${theme}.svg`, fixesMap(prs, repoOf, theme));
@@ -123,4 +136,4 @@ const between = (name, content) => {
 };
 between('FIXES', fixes);
 writeFileSync('README.md', readme);
-console.log(`prs=${prs.length} repos=${repos.size} merged=${merged.length} pages=${pages} builders=${builders} records=${records}`);
+console.log(`advisories=${publishedAdvisories.length} prs=${prs.length} repos=${repos.size} merged=${merged.length} pages=${pages} builders=${builders} records=${records}`);

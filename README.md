@@ -136,13 +136,22 @@ Merged one of our fixes and liked it? A shout-out on X helps a small team keep s
 ## Security credits
 
 When we find something that could put funds at risk, it goes to the team privately first, through their own channel.
-We publish nothing until they do.
+We publish nothing until they do. How we report, and the teams that fixed what we found:
+[github.com/hey-research-lab/security](https://github.com/hey-research-lab/security).
+
+<a href="https://github.com/hey-research-lab/security">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/advisories-dark.svg">
+    <img alt="Security advisories that credit Hey Research Lab: filed privately on GitHub, accepted, and published with our credit, by week" src="assets/advisories-light.svg" width="100%">
+  </picture>
+</a>
 
 <details>
-<summary><b>Published advisories we found (5)</b></summary>
+<summary><b>Published advisories we found (6)</b></summary>
 
 | Project | Advisory | Severity | Our credit |
 | --- | --- | --- | --- |
+| [Priors](https://github.com/priors-agents/priors) | [GHSA-p29w-c8p2-qfm5](https://github.com/priors-agents/priors/security/advisories/GHSA-p29w-c8p2-qfm5): the elizaOS plugin let any room member make the agent pay x402 merchants and open loans | Low | Reporter |
 | [Priors](https://github.com/priors-agents/priors) | [GHSA-4w7q-8vph-j5mr](https://github.com/priors-agents/priors/security/advisories/GHSA-4w7q-8vph-j5mr): a PT-USDG price tape resumed after the feed dropped its rounds held credit for about 15 days and seized the whole deposit on default | Low | Finder |
 | [Priors](https://github.com/priors-agents/priors) | [GHSA-jjxq-7r68-44m5](https://github.com/priors-agents/priors/security/advisories/GHSA-jjxq-7r68-44m5): Score v2 kept a market sale made after a plain transfer, carrying the intermediary's income | Low | Finder |
 | [Priors](https://github.com/priors-agents/priors) | [GHSA-qcrq-x8xg-25vg](https://github.com/priors-agents/priors/security/advisories/GHSA-qcrq-x8xg-25vg): the stock vault's `borrowRoom` quoted room the vault and pool refuse | Low | Finder · fixed in Priors' readers, listed as [SV-21](https://github.com/priors-agents/priors/blob/main/docs/SECURITY-v2.md) |
