@@ -24,6 +24,7 @@
   <a href="#for-builders">For builders</a> ·
   <a href="#for-ai-agents">For AI agents</a> ·
   <a href="#fixes-we-sent-upstream">Fixes we sent upstream</a> ·
+  <a href="#security-credits">Security credits</a> ·
   <a href="#use-it">Use it</a> ·
   <a href="#open-source">Open source</a>
 </p>
@@ -138,6 +139,20 @@ Merged one of our fixes and liked it? A shout-out on X helps a small team keep s
 When we find something that could put funds at risk, it goes to the team privately first, through their own channel.
 We publish nothing until they do. How we report, and the teams that fixed what we found:
 [github.com/hey-research-lab/security](https://github.com/hey-research-lab/security).
+
+<a href="https://github.com/hey-research-lab/security">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/hey-research-lab/security/main/assets/numbers-dark.svg">
+    <img alt="Security work in numbers: private advisories filed and accepted, pull requests sent and merged, teams in the hall of fame" src="https://raw.githubusercontent.com/hey-research-lab/security/main/assets/numbers-light.svg" width="100%">
+  </picture>
+</a>
+
+<a href="https://github.com/hey-research-lab/security/blob/main/HALL_OF_FAME.md">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/hey-research-lab/security/main/assets/hall-dark.svg">
+    <img alt="Hall of fame: the teams that fixed what we reported and credited us, with how fast each fixed it" src="https://raw.githubusercontent.com/hey-research-lab/security/main/assets/hall-light.svg" width="100%">
+  </picture>
+</a>
 
 <a href="https://github.com/hey-research-lab/security">
   <picture>
