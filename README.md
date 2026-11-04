@@ -97,10 +97,12 @@ Skills and plugins: [hey-agent-skills](https://github.com/hey-research-lab/hey-a
 <summary><b>The latest fixes merged</b></summary>
 
 <!-- FIXES:START -->
-**287 pull requests** sent to **229 repositories** we don’t own, **50 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
+**287 pull requests** sent to **228 repositories** we don’t own, **52 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
 
 | Merged into | The fix |
 | --- | --- |
+| [RevokeCash/revoke.cash](https://github.com/RevokeCash/revoke.cash/pull/311) | fix: keep multicall3 in exploit stats for genesis predeploys |
+| [awesomedata/apd-core](https://github.com/awesomedata/apd-core/pull/955) | Add HEY Research Lab - Robinhood Chain Builder Records |
 | [0xfnzero/FnzSafe](https://github.com/0xfnzero/FnzSafe/pull/9) | extension: skip discovered tokens whose decimals are null instead of reading them as 0 |
 | [0xfnzero/FnzSafe](https://github.com/0xfnzero/FnzSafe/pull/7) | evm-services: fix Robinhood Chain explorer URL (robinscan.io does not resolve) |
 | [ahmet/awesome-web3](https://github.com/ahmet/awesome-web3/pull/863) | Add HEY Research Lab |
@@ -111,8 +113,6 @@ Skills and plugins: [hey-agent-skills](https://github.com/hey-research-lab/hey-a
 | [nirholas/robinhood-chain-trading-bot](https://github.com/nirholas/robinhood-chain-trading-bot/pull/7) | fix(agent): do not book a live swap whose transaction reverted |
 | [nirholas/robinhood-chain-alert-bot](https://github.com/nirholas/robinhood-chain-alert-bot/pull/9) | fix(engine): deliver an event once per subscriber when several subscriptions match |
 | [nirholas/robinhood-chain-launcher](https://github.com/nirholas/robinhood-chain-launcher/pull/9) | fix(auto): do not mark a proposal executed when its launch was blocked at preflight |
-| [nirholas/robinhood-chain-launcher](https://github.com/nirholas/robinhood-chain-launcher/pull/8) | fix(auto): store proposals whose preflight and config carry bigints |
-| [nirholas/loxley](https://github.com/nirholas/loxley/pull/1) | fix(chain): point the testnet explorer at explorer.testnet.chain.robinhood.com |
 
 Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://heyresearch.xyz/contributions)** · <sub>refreshed daily</sub>
 <!-- FIXES:END -->
