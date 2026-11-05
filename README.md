@@ -26,6 +26,7 @@
   <a href="#fixes-we-sent-upstream">Fixes we sent upstream</a> ·
   <a href="#security-credits">Security credits</a> ·
   <a href="#use-it">Use it</a> ·
+  <a href="#uniswap-v4-hooks-and-open-data">Hooks and open data</a> ·
   <a href="#open-source">Open source</a>
 </p>
 
@@ -62,7 +63,7 @@ Building on Robinhood Chain? Everything here is free, and none of it buys a plac
 | **A page that shows your work** | every release, deployment and code week we read, each linked to its source: find yours on [heyresearch.xyz](https://heyresearch.xyz) or [submit it](https://heyresearch.xyz/submit) |
 | **Fixes, not just findings** | we read your public code; when we find a bug we can fix, we send a pull request, and anything security-related goes to you privately first |
 | **A live badge** | your HEY badge for your site or README, updated from public evidence: [heyresearch.xyz/badges](https://heyresearch.xyz/badges) |
-| **Funding for shipping** | backers can fund you in $WIF through [Proof of Ship](https://github.com/hey-research-lab/proof-of-ship), an escrow that pays only when HEY counts real ships |
+| **Funding for shipping** | backers can fund you through Proof of Ship, an escrow that pays only when HEY signs that it counted real ships: in $WIF on Robinhood Chain ([proof-of-ship](https://github.com/hey-research-lab/proof-of-ship)) or in USDC on NEAR ([proof-of-ship-near](https://github.com/hey-research-lab/proof-of-ship-near), `escrow.heyresearch.near`) |
 | **Your data, open** | the API, the embed and the open dataset are free for your own product: [heyresearch.xyz/developers](https://heyresearch.xyz/developers) |
 | **Counted in Electric Capital's developer data** | we added Robinhood Chain to [Open Dev Data](https://github.com/electric-capital/open-dev-data/pull/3115) as its own ecosystem (1,183 repositories) and send it a monthly update, so builders here show up in the industry's developer numbers |
 
@@ -79,6 +80,9 @@ Building on Robinhood Chain? Everything here is free, and none of it buys a plac
 </picture>
 
 The hosted MCP server is listed as a community connector in [Claude's Connectors Directory](https://claude.ai/directory/hey-research-lab).
+<!-- MCP:START -->
+It is also listed in the [Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers/io.github.hey-research-lab%2Fhey-research/versions/latest) as `io.github.hey-research-lab/hey-research`, version 0.3.2, and on [mcptry](https://mcptry.com/servers/io.github.hey-research-lab/hey-research).
+<!-- MCP:END -->
 Skills and plugins: [hey-agent-skills](https://github.com/hey-research-lab/hey-agent-skills), an Agent Skill and Claude Code plugin.
 
 ## Fixes we sent upstream
@@ -97,10 +101,11 @@ Skills and plugins: [hey-agent-skills](https://github.com/hey-research-lab/hey-a
 <summary><b>The latest fixes merged</b></summary>
 
 <!-- FIXES:START -->
-**287 pull requests** sent to **228 repositories** we don’t own, **52 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
+**287 pull requests** sent to **228 repositories** we don’t own, **53 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
 
 | Merged into | The fix |
 | --- | --- |
+| [public-apis/public-apis](https://github.com/public-apis/public-apis/pull/8410) | Add HEY Research Lab API |
 | [RevokeCash/revoke.cash](https://github.com/RevokeCash/revoke.cash/pull/311) | fix: keep multicall3 in exploit stats for genesis predeploys |
 | [awesomedata/apd-core](https://github.com/awesomedata/apd-core/pull/955) | Add HEY Research Lab - Robinhood Chain Builder Records |
 | [0xfnzero/FnzSafe](https://github.com/0xfnzero/FnzSafe/pull/9) | extension: skip discovered tokens whose decimals are null instead of reading them as 0 |
@@ -112,7 +117,6 @@ Skills and plugins: [hey-agent-skills](https://github.com/hey-research-lab/hey-a
 | [Hookr-fun/hookr-contracts](https://github.com/Hookr-fun/hookr-contracts/pull/22) | Add a security policy for private vulnerability reports |
 | [nirholas/robinhood-chain-trading-bot](https://github.com/nirholas/robinhood-chain-trading-bot/pull/7) | fix(agent): do not book a live swap whose transaction reverted |
 | [nirholas/robinhood-chain-alert-bot](https://github.com/nirholas/robinhood-chain-alert-bot/pull/9) | fix(engine): deliver an event once per subscriber when several subscriptions match |
-| [nirholas/robinhood-chain-launcher](https://github.com/nirholas/robinhood-chain-launcher/pull/9) | fix(auto): do not mark a proposal executed when its launch was blocked at preflight |
 
 Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://heyresearch.xyz/contributions)** · <sub>refreshed daily</sub>
 <!-- FIXES:END -->
@@ -162,16 +166,29 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 </a>
 
 <details>
-<summary><b>Published advisories we found (6)</b></summary>
+<summary><b>Published advisories we found (7)</b></summary>
 
 | Project | Advisory | Severity | Our credit |
 | --- | --- | --- | --- |
+| [Priors](https://github.com/priors-agents/priors) | [GHSA-cqcw-9qjc-5qc7](https://github.com/priors-agents/priors/security/advisories/GHSA-cqcw-9qjc-5qc7): in @priors/mcp 0.16.0, the Rialto route sent a quote's transaction data unchecked, so a quote could pay another address or drop the minimum | Medium | Reporter |
 | [Priors](https://github.com/priors-agents/priors) | [GHSA-p29w-c8p2-qfm5](https://github.com/priors-agents/priors/security/advisories/GHSA-p29w-c8p2-qfm5): the elizaOS plugin let any room member make the agent pay x402 merchants and open loans | Low | Reporter |
-| [Priors](https://github.com/priors-agents/priors) | [GHSA-4w7q-8vph-j5mr](https://github.com/priors-agents/priors/security/advisories/GHSA-4w7q-8vph-j5mr): a PT-USDG price tape resumed after the feed dropped its rounds held credit for about 15 days and seized the whole deposit on default | Low | Finder |
-| [Priors](https://github.com/priors-agents/priors) | [GHSA-jjxq-7r68-44m5](https://github.com/priors-agents/priors/security/advisories/GHSA-jjxq-7r68-44m5): Score v2 kept a market sale made after a plain transfer, carrying the intermediary's income | Low | Finder |
+| [Priors](https://github.com/priors-agents/priors) | [GHSA-4w7q-8vph-j5mr](https://github.com/priors-agents/priors/security/advisories/GHSA-4w7q-8vph-j5mr): a PT-USDG price tape resumed after the feed dropped its rounds held credit for about 15 days and seized the whole deposit on default | Low | Reporter |
+| [Priors](https://github.com/priors-agents/priors) | [GHSA-jjxq-7r68-44m5](https://github.com/priors-agents/priors/security/advisories/GHSA-jjxq-7r68-44m5): Score v2 kept a market sale made after a plain transfer, carrying the intermediary's income | Low | Reporter |
 | [Priors](https://github.com/priors-agents/priors) | [GHSA-qcrq-x8xg-25vg](https://github.com/priors-agents/priors/security/advisories/GHSA-qcrq-x8xg-25vg): the stock vault's `borrowRoom` quoted room the vault and pool refuse | Low | Finder · fixed in Priors' readers, listed as [SV-21](https://github.com/priors-agents/priors/blob/main/docs/SECURITY-v2.md) |
 | [Priors](https://github.com/priors-agents/priors) | [GHSA-xccq-5ghg-w7mq](https://github.com/priors-agents/priors/security/advisories/GHSA-xccq-5ghg-w7mq): a V5 borrow over 10 days sent a transaction before it was refused | Low | Finder · fixed in @priors/x402 0.8.3 and @priors/mcp 0.12.1, listed as [P-49](https://github.com/priors-agents/priors/blob/main/docs/SECURITY-v2.md) |
 | [Priors](https://github.com/priors-agents/priors) | [GHSA-3vg6-2f3m-j5qm](https://github.com/priors-agents/priors/security/advisories/GHSA-3vg6-2f3m-j5qm): a new PT-USDG price tape started at round 1 once the feed had dropped its old rounds | Low | Finder · fixed on chain, listed as [SV-20](https://github.com/priors-agents/priors/blob/main/docs/SECURITY-v2.md) |
+
+</details>
+
+<details>
+<summary><b>Teams that credited us in their own channels (4)</b></summary>
+
+| Team | What we reported | Credit |
+| --- | --- | --- |
+| Agraris | public listings could set their own GitHub stars, activity and dates, and links accepted any URL scheme (Low) | [commit 177e360](https://github.com/agrarisai/agraris/commit/177e360) · [post on X](https://x.com/agrarisai/status/2117276441310335355) |
+| predict FWA (Sherwood arena) | two game-logic issues, found before launch (Low) | [security review in the README](https://github.com/MirakoolDev/sherwood#security-review-nov-2026) · [post on X](https://x.com/pfwafun/status/2117205853539353009) |
+| LoomDesk (loomdesk-sdk) | four gaps in the SDK's send gate (Low) | [0.7.1, commit 2e97226](https://github.com/loomdesk-hq/sdk/commit/2e97226) |
+| Gloam | eight items across the vault contracts, relay, SDK, MCP server and app (Low to Medium) | [joint post on X](https://x.com/HeyResearch/status/2117263881815118077) |
 
 </details>
 
@@ -189,7 +206,24 @@ on your repository, and we report there.
 | **Embed** | a live builder card on any site: `<hey-project contract="0x…">` · [embeds](https://heyresearch.xyz/developers) |
 | **Token Passport** | a token's page credits the Robinhood Chain protocols whose facts HEY reads (a HoodLock lock, the launchpad that minted it, its Uniswap v4 hooks), each with a link: [heyresearch.xyz/passport](https://heyresearch.xyz/passport) |
 | **Badge** | a project's live HEY badge for its site or README; projects showing one are thanked on [heyresearch.xyz/badges](https://heyresearch.xyz/badges) |
-| **Open data** | daily snapshots, CC BY 4.0: [heyresearch.xyz/data](https://heyresearch.xyz/data) |
+| **Open data** | daily snapshots and a weekly Hugging Face copy, CC BY 4.0: [below](#uniswap-v4-hooks-and-open-data) |
+
+## Uniswap v4 hooks and open data
+
+<!-- HOOKS:START -->
+Of the **31,050 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **154** are tied to **71 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
+<!-- HOOKS:END -->
+
+We proposed to Uniswap's public hooklist an optional way to name the project behind a hook, with its public evidence,
+starting with Robinhood Chain: [Uniswap/hooklist#10665](https://github.com/Uniswap/hooklist/issues/10665).
+
+| | |
+| --- | --- |
+| **Daily snapshot** | [heyresearch.xyz/data](https://heyresearch.xyz/data): projects, ships and changes as NDJSON and CSV, and every hook the hooks page shows as `hooks.ndjson.gz` and `hooks.csv` |
+| **Weekly on Hugging Face** | [heyresearch/robinhood-chain-builders](https://huggingface.co/datasets/heyresearch/robinhood-chain-builders): the newest `projects.csv`, `ships.csv` and `hooks.csv`, copied every Monday |
+| **hey-data** | [hey-data](https://github.com/hey-research-lab/hey-data): `hey-data generate` builds a full snapshot from the public API, `hey-data hooks` copies the newest hooks file checked against its `SHA256SUMS`, `hey-data huggingface` writes the Hugging Face copy |
+
+All of it is CC BY 4.0, with no price, market or holder field in any file.
 
 ## Working with
 
@@ -220,6 +254,9 @@ public on-chain data or a public API? Ask to join the [Token Passport](https://h
 | [hey-cli](https://github.com/hey-research-lab/hey-cli) | HEY's research from the terminal |
 | [hey-ship-action](https://github.com/hey-research-lab/hey-ship-action) | A GitHub Action that writes evidence linking a commit or release to a Robinhood Chain deployment |
 | [hey-agent-skills](https://github.com/hey-research-lab/hey-agent-skills) | An Agent Skill and Claude Code plugin for builder research |
+| [hey-data](https://github.com/hey-research-lab/hey-data) | Research snapshots of HEY's public builder records as NDJSON, the hooks file and the Hugging Face copy |
+| [proof-of-ship](https://github.com/hey-research-lab/proof-of-ship) | A $WIF bounty escrow on Robinhood Chain that pays a builder when HEY signs that it counted real ships |
+| [proof-of-ship-near](https://github.com/hey-research-lab/proof-of-ship-near) | The same escrow on NEAR, in USDC, verifying HEY's signature on chain with `ecrecover` |
 | [hey-research-open](https://github.com/hey-research-lab/hey-research-open) | The open part of the platform: SDK, MCP server, scoring and source adapters |
 
 </details>
@@ -230,5 +267,5 @@ Small, well-described issues are labelled
 [good first issue](https://github.com/search?q=user%3Ahey-research-lab+label%3A%22good+first+issue%22+state%3Aopen&type=issues).
 Found a security issue in one of our repositories? Write to hi@heyresearch.xyz or [x.com/HeyResearch](https://x.com/HeyResearch).
 
-<p align="center"><sub>Community-run by Hey Research Lab · not affiliated with or endorsed by Robinhood · a HEY badge is verified from
+<p align="center"><sub>Community-run by Hey Research Lab · not affiliated with or endorsed by Robinhood, Uniswap Labs, Hugging Face, NEAR or any other project named here · a HEY badge is verified from
 public evidence, not a Robinhood certification · not investment advice.</sub></p>
