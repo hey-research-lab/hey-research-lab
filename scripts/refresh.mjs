@@ -1,6 +1,7 @@
-// Refreshes the live parts of this profile: the stats card (light and dark) and the "fixes sent upstream" table.
-// Reads only public sources: GitHub's search API (pull requests this account opened in repositories it does not own)
-// and HEY's public /api/status. No dependency; Node 22.
+// Refreshes the live parts of this profile: the pictures (light and dark), the "fixes sent upstream" table, the Uniswap v4
+// hooks line and the MCP registry line. Reads only public sources: GitHub's API (pull requests this account opened in
+// repositories it does not own, advisories that credit it), HEY's public API and the Official MCP Registry. No
+// dependency; Node 22.
 //   GITHUB_TOKEN=... node scripts/refresh.mjs
 import { readFileSync, writeFileSync } from 'node:fs';
 
@@ -108,6 +109,18 @@ const building = [...(await listProjects('SHIPPING')), ...(await listProjects('A
 const week = await heyJson('/api/this-week');
 const chain = await heyJson('/api/chain');
 const agentStats = await heyJson('/api/agent/stats');
+// The Uniswap v4 hooks directory (2026-11-05): how many hooks HEY ties to a published project, of how many it has seen.
+const hooksAggregate = (await heyJson('/api/v4-hooks?limit=1', (body) => [body?.aggregate?.listed, body?.aggregate?.listedProjects, body?.aggregate?.seen].every((v) => Number.isInteger(v)))).aggregate;
+if (![hooksAggregate?.listed, hooksAggregate?.listedProjects, hooksAggregate?.seen].every((v) => Number.isInteger(v))) throw new Error('HEY v4-hooks did not answer with its aggregate counts');
+// The MCP server's newest version in the Official MCP Registry. Not HEY's own service: a failed read keeps yesterday's line.
+const MCP_NAME = 'io.github.hey-research-lab/hey-research';
+let mcpVersion = null;
+try {
+  const res = await fetch(`https://registry.modelcontextprotocol.io/v0/servers/${encodeURIComponent(MCP_NAME)}/versions/latest`, { headers: { 'user-agent': headers['user-agent'] } });
+  const body = res.ok ? await res.json() : null;
+  if (body?.server?.name === MCP_NAME && /^\d+\.\d+\.\d+$/.test(body.server.version ?? '')) mcpVersion = body.server.version;
+} catch {}
+if (!mcpVersion) console.warn('MCP registry not read: keeping the README line as it is');
 // Security advisories that credit this account (2026-11-03). The counts of unpublished ones are hand-kept in the
 // security repository (counts only, a project named only once its hall of fame lists it); published ones are read live.
 const securityData = await (await fetch('https://raw.githubusercontent.com/hey-research-lab/security/main/data/advisories.json', { headers: { 'user-agent': headers['user-agent'] } })).json();
@@ -154,5 +167,7 @@ const between = (name, content) => {
   readme = readme.replace(re, (_whole, start, end) => `${start}\n${content}\n${end}`);
 };
 between('FIXES', fixes);
+between('HOOKS', `Of the **${n(hooksAggregate.seen)} hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **${n(hooksAggregate.listed)}** are tied to **${n(hooksAggregate.listedProjects)} published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](${HEY}/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>`);
+if (mcpVersion) between('MCP', `It is also listed in the [Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers/${encodeURIComponent(MCP_NAME)}/versions/latest) as \`${MCP_NAME}\`, version ${mcpVersion}, and on [mcptry](https://mcptry.com/servers/${MCP_NAME}).`);
 writeFileSync('README.md', readme);
-console.log(`advisories=${publishedAdvisories.length} prs=${prs.length} repos=${repos.size} merged=${merged.length} pages=${pages} builders=${builders} records=${records}`);
+console.log(`hooks=${hooksAggregate.listed}/${hooksAggregate.seen} mcp=${mcpVersion ?? 'not read'} advisories=${publishedAdvisories.length} prs=${prs.length} repos=${repos.size} merged=${merged.length} pages=${pages} builders=${builders} records=${records}`);
