@@ -81,7 +81,7 @@ Building on Robinhood Chain? Everything here is free, and none of it buys a plac
 
 The hosted MCP server is listed as a community connector in [Claude's Connectors Directory](https://claude.ai/directory/hey-research-lab).
 <!-- MCP:START -->
-It is also listed in the [Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers/io.github.hey-research-lab%2Fhey-research/versions/latest) as `io.github.hey-research-lab/hey-research`, version 0.3.2, and on [mcptry](https://mcptry.com/servers/io.github.hey-research-lab/hey-research).
+It is also listed in the [Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers/io.github.hey-research-lab%2Fhey-research/versions/latest) as `io.github.hey-research-lab/hey-research`, version 0.3.3, and on [mcptry](https://mcptry.com/servers/io.github.hey-research-lab/hey-research).
 <!-- MCP:END -->
 Skills and plugins: [hey-agent-skills](https://github.com/hey-research-lab/hey-agent-skills), an Agent Skill and Claude Code plugin.
 
@@ -101,10 +101,11 @@ Skills and plugins: [hey-agent-skills](https://github.com/hey-research-lab/hey-a
 <summary><b>The latest fixes merged</b></summary>
 
 <!-- FIXES:START -->
-**287 pull requests** sent to **228 repositories** we don’t own, **53 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
+**287 pull requests** sent to **228 repositories** we don’t own, **54 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
 
 | Merged into | The fix |
 | --- | --- |
+| [1inch/sdks](https://github.com/1inch/sdks/pull/140) | fix(sdk-core): pad HexString.fromBigInt to whole bytes |
 | [public-apis/public-apis](https://github.com/public-apis/public-apis/pull/8410) | Add HEY Research Lab API |
 | [RevokeCash/revoke.cash](https://github.com/RevokeCash/revoke.cash/pull/311) | fix: keep multicall3 in exploit stats for genesis predeploys |
 | [awesomedata/apd-core](https://github.com/awesomedata/apd-core/pull/955) | Add HEY Research Lab - Robinhood Chain Builder Records |
@@ -116,7 +117,6 @@ Skills and plugins: [hey-agent-skills](https://github.com/hey-research-lab/hey-a
 | [blockscout/chainscout](https://github.com/blockscout/chainscout/pull/319) | Robinhood Chain Testnet: settlement layer is Sepolia (11155111), not Ethereum mainnet |
 | [Hookr-fun/hookr-contracts](https://github.com/Hookr-fun/hookr-contracts/pull/22) | Add a security policy for private vulnerability reports |
 | [nirholas/robinhood-chain-trading-bot](https://github.com/nirholas/robinhood-chain-trading-bot/pull/7) | fix(agent): do not book a live swap whose transaction reverted |
-| [nirholas/robinhood-chain-alert-bot](https://github.com/nirholas/robinhood-chain-alert-bot/pull/9) | fix(engine): deliver an event once per subscriber when several subscriptions match |
 
 Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://heyresearch.xyz/contributions)** · <sub>refreshed daily</sub>
 <!-- FIXES:END -->
@@ -211,7 +211,7 @@ on your repository, and we report there.
 ## Uniswap v4 hooks and open data
 
 <!-- HOOKS:START -->
-Of the **31,050 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **154** are tied to **71 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
+Of the **31,081 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **154** are tied to **71 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
 <!-- HOOKS:END -->
 
 We proposed to Uniswap's public hooklist an optional way to name the project behind a hook, with its public evidence,
