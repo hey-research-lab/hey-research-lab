@@ -14,43 +14,43 @@
 <g class="r" style="animation-delay:0.35s">
 <rect x="32" y="114" width="1136" height="36" rx="9" fill="#14181D" stroke="#272D35"/>
 <text x="52" y="140" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#C2FB03">release</text>
-<text x="140" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">quotum</text>
-<text x="420" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">2 releases in qvotvm/hermes-quotum today</text>
-<text x="1148" y="140" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-11-06</text>
+<text x="140" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">usebrainchain</text>
+<text x="420" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">7 releases in usebrainchain/brainchain-worker on 1 Nov</text>
+<text x="1148" y="140" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-11-01</text>
 </g>
 <g class="r" style="animation-delay:0.50s">
 <rect x="32" y="158" width="1136" height="36" rx="9" fill="#14181D" stroke="#272D35"/>
 <text x="52" y="184" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#C2FB03">release</text>
-<text x="140" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">Field Atlas</text>
-<text x="420" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">Field Atlas 1.4.9</text>
-<text x="1148" y="184" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-11-06</text>
+<text x="140" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">Autonolas</text>
+<text x="420" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">v0.15.52</text>
+<text x="1148" y="184" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-11-05</text>
 </g>
 <g class="r" style="animation-delay:0.65s">
 <rect x="32" y="202" width="1136" height="36" rx="9" fill="#14181D" stroke="#272D35"/>
 <text x="52" y="228" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#C2FB03">release</text>
-<text x="140" y="228" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">usebrainchain</text>
-<text x="420" y="228" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">7 releases in usebrainchain/brainchain-worker on 1 Nov</text>
-<text x="1148" y="228" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-11-01</text>
+<text x="140" y="228" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">quotum</text>
+<text x="420" y="228" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">2 releases in qvotvm/hermes-quotum today</text>
+<text x="1148" y="228" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-11-06</text>
 </g>
 <g class="r" style="animation-delay:0.80s">
 <rect x="32" y="246" width="1136" height="36" rx="9" fill="#14181D" stroke="#272D35"/>
 <text x="52" y="272" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#C2FB03">release</text>
-<text x="140" y="272" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">AgentOS</text>
-<text x="420" y="272" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">3 releases in use-agent-os/agent-os on 5 Nov</text>
-<text x="1148" y="272" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-11-05</text>
+<text x="140" y="272" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">Field Atlas</text>
+<text x="420" y="272" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">Field Atlas 1.4.9</text>
+<text x="1148" y="272" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-11-06</text>
 </g>
 <g class="r" style="animation-delay:0.95s">
 <rect x="32" y="290" width="1136" height="36" rx="9" fill="#14181D" stroke="#272D35"/>
 <text x="52" y="316" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#C2FB03">release</text>
-<text x="140" y="316" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">azimuth</text>
-<text x="420" y="316" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">v2.15.0</text>
-<text x="1148" y="316" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-11-06</text>
+<text x="140" y="316" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">AgentOS</text>
+<text x="420" y="316" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">3 releases in use-agent-os/agent-os on 5 Nov</text>
+<text x="1148" y="316" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-11-05</text>
 </g>
 <g class="r" style="animation-delay:1.10s">
 <rect x="32" y="334" width="1136" height="36" rx="9" fill="#14181D" stroke="#272D35"/>
 <text x="52" y="360" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#C2FB03">release</text>
-<text x="140" y="360" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">Polydash</text>
-<text x="420" y="360" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">v1.2.0</text>
+<text x="140" y="360" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">azimuth</text>
+<text x="420" y="360" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">v2.15.0</text>
 <text x="1148" y="360" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-11-06</text>
 </g>
 <rect class="s" x="32" y="70" width="4" height="36" rx="2" fill="#C2FB03"/>
