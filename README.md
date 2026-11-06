@@ -166,10 +166,11 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 </a>
 
 <details>
-<summary><b>Published advisories we found (10)</b></summary>
+<summary><b>Published advisories we found (11)</b></summary>
 
 | Project | Advisory | Severity | Our credit |
 | --- | --- | --- | --- |
+| [Hookr](https://github.com/Hookr-fun/hookr-contracts) | [GHSA-m3fx-pjvg-cmf7](https://github.com/Hookr-fun/hookr-contracts/security/advisories/GHSA-m3fx-pjvg-cmf7): the per-wallet launch cap counted per contract for router swaps, so one buyer could hold many caps | Low | Reporter |
 | [Hookr](https://github.com/Hookr-fun/hookr-contracts) | [GHSA-43mv-935h-rpm7](https://github.com/Hookr-fun/hookr-contracts/security/advisories/GHSA-43mv-935h-rpm7): in the first-release time shares, a lock made after a drop could share in that drop | Low | Finder · fixed in the 29 Oct release |
 | [Agent402](https://github.com/MikeyPetrillo/Agent402) | [GHSA-q7vw-c7hm-m885](https://github.com/MikeyPetrillo/Agent402/security/advisories/GHSA-q7vw-c7hm-m885): the x402 buyer signed the seller's `maxAmountRequired` while its spend caps checked `amount` | High | Reporter · fixed the same day |
 | [Agent402](https://github.com/MikeyPetrillo/Agent402) | [GHSA-gcw5-6259-gh72](https://github.com/MikeyPetrillo/Agent402/security/advisories/GHSA-gcw5-6259-gh72): the Stellar settle fallback took any recent transfer from the payer to the treasury as payment | High | Reporter · fixed the same day |
