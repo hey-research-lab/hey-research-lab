@@ -7,23 +7,23 @@
 <g class="r" style="animation-delay:0.20s">
 <rect x="32" y="70" width="1136" height="36" rx="9" fill="#14181D" stroke="#272D35"/>
 <text x="52" y="96" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#C2FB03">release</text>
-<text x="140" y="96" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">blockvectra</text>
-<text x="420" y="96" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">Python first read for Robinhood Chain</text>
+<text x="140" y="96" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">Autonolas</text>
+<text x="420" y="96" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">v1.12.8</text>
 <text x="1148" y="96" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-11-06</text>
 </g>
 <g class="r" style="animation-delay:0.35s">
 <rect x="32" y="114" width="1136" height="36" rx="9" fill="#14181D" stroke="#272D35"/>
 <text x="52" y="140" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#C2FB03">release</text>
-<text x="140" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">usebrainchain</text>
-<text x="420" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">7 releases in usebrainchain/brainchain-worker on 1 Nov</text>
-<text x="1148" y="140" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-11-01</text>
+<text x="140" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">blockvectra</text>
+<text x="420" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">Python first read for Robinhood Chain</text>
+<text x="1148" y="140" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-11-06</text>
 </g>
 <g class="r" style="animation-delay:0.50s">
 <rect x="32" y="158" width="1136" height="36" rx="9" fill="#14181D" stroke="#272D35"/>
 <text x="52" y="184" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#C2FB03">release</text>
-<text x="140" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">Autonolas</text>
-<text x="420" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">v0.15.52</text>
-<text x="1148" y="184" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-11-05</text>
+<text x="140" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">usebrainchain</text>
+<text x="420" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">7 releases in usebrainchain/brainchain-worker on 1 Nov</text>
+<text x="1148" y="184" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-11-01</text>
 </g>
 <g class="r" style="animation-delay:0.65s">
 <rect x="32" y="202" width="1136" height="36" rx="9" fill="#14181D" stroke="#272D35"/>
