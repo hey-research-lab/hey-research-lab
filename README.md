@@ -101,10 +101,11 @@ Skills and plugins: [hey-agent-skills](https://github.com/hey-research-lab/hey-a
 <summary><b>The latest fixes merged</b></summary>
 
 <!-- FIXES:START -->
-**287 pull requests** sent to **228 repositories** we don’t own, **55 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
+**287 pull requests** sent to **228 repositories** we don’t own, **56 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
 
 | Merged into | The fix |
 | --- | --- |
+| [graphprotocol/networks-registry](https://github.com/graphprotocol/networks-registry/pull/261) | Fix uniqueness check for firehose.firstStreamableBlock.id |
 | [Twigpine/openlaunch](https://github.com/Twigpine/openlaunch/pull/109) | fix(math): fmtCompact promotes the suffix when rounding reaches 1000 |
 | [1inch/sdks](https://github.com/1inch/sdks/pull/140) | fix(sdk-core): pad HexString.fromBigInt to whole bytes |
 | [public-apis/public-apis](https://github.com/public-apis/public-apis/pull/8410) | Add HEY Research Lab API |
@@ -116,7 +117,6 @@ Skills and plugins: [hey-agent-skills](https://github.com/hey-research-lab/hey-a
 | [1Shot-API/embedded-wallet](https://github.com/1Shot-API/embedded-wallet/pull/154) | Fix the Ethereum BTC/USD and PAXG/USD addresses in the trusted Chainlink feed list |
 | [DefiLlama/chainlist](https://github.com/DefiLlama/chainlist/pull/3309) | fix(4663): remove OrdoFi RPC, whose domain no longer resolves |
 | [blockscout/chainscout](https://github.com/blockscout/chainscout/pull/319) | Robinhood Chain Testnet: settlement layer is Sepolia (11155111), not Ethereum mainnet |
-| [Hookr-fun/hookr-contracts](https://github.com/Hookr-fun/hookr-contracts/pull/22) | Add a security policy for private vulnerability reports |
 
 Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://heyresearch.xyz/contributions)** · <sub>refreshed daily</sub>
 <!-- FIXES:END -->
@@ -215,7 +215,7 @@ on your repository, and we report there.
 ## Uniswap v4 hooks and open data
 
 <!-- HOOKS:START -->
-Of the **31,548 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **157** are tied to **73 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
+Of the **31,625 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **158** are tied to **74 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
 <!-- HOOKS:END -->
 
 We proposed to Uniswap's public hooklist an optional way to name the project behind a hook, with its public evidence,
