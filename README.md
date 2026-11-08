@@ -6,11 +6,11 @@
 </a>
 
 <p align="center">
-  <a href="https://heyresearch.xyz"><img alt="Website" src="https://img.shields.io/badge/web-heyresearch.xyz-C2FB03?style=flat-square&color=0B0E11&labelColor=1F242B"></a>
-  <a href="https://x.com/HeyResearch"><img alt="X" src="https://img.shields.io/badge/X-HeyResearch-C2FB03?style=flat-square&color=0B0E11&labelColor=1F242B&logo=x"></a>
-  <a href="https://heyresearch.xyz/mcp"><img alt="MCP server" src="https://img.shields.io/badge/MCP-heyresearch.xyz%2Fmcp-C2FB03?style=flat-square&color=0B0E11&labelColor=1F242B"></a>
+  <a href="https://heyresearch.xyz"><img alt="Website" src="assets/badges/web-heyresearch-xyz.svg"></a>
+  <a href="https://x.com/HeyResearch"><img alt="X" src="assets/badges/x-heyresearch.svg"></a>
+  <a href="https://heyresearch.xyz/mcp"><img alt="MCP server" src="assets/badges/mcp-heyresearch-xyz-mcp.svg"></a>
   <a href="https://www.npmjs.com/package/@hey-research-lab/sdk"><img alt="npm" src="https://img.shields.io/npm/v/@hey-research-lab/sdk?style=flat-square&color=0B0E11&labelColor=1F242B&label=sdk"></a>
-  <a href="https://heyresearch.xyz/data"><img alt="Open data" src="https://img.shields.io/badge/open%20data-CC%20BY%204.0-C2FB03?style=flat-square&color=0B0E11&labelColor=1F242B"></a>
+  <a href="https://heyresearch.xyz/data"><img alt="Open data" src="assets/badges/open-data-cc-by-4-0.svg"></a>
 </p>
 
 <p align="center">
