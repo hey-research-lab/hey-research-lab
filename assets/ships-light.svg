@@ -1,57 +1,57 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="456" viewBox="0 0 1200 456" role="img" aria-label="Shipped this week on Robinhood Chain: 259 ships from 147 projects in the last 7 days">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="456" viewBox="0 0 1200 456" role="img" aria-label="Shipped this week on Robinhood Chain: 261 ships from 146 projects in the last 7 days">
 <style>.r{animation:in .7s ease-out both}@keyframes in{from{opacity:0;transform:translateY(6px)}}.s{animation:sweep 8.4s steps(7) infinite}@keyframes sweep{from{transform:translateY(0)}to{transform:translateY(308px)}}.c{animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}@media (prefers-reduced-motion: reduce){*{animation:none!important}}</style>
 <rect width="1200" height="456" rx="14" fill="#F5F6F8"/>
 <text x="32" y="50" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" letter-spacing="2" fill="#4F7A00">SHIPPED THIS WEEK<tspan class="c"> ▌</tspan></text>
 
-<text x="1168" y="50" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" fill="#535B66">259 ships from 147 projects in the last 7 days</text>
+<text x="1168" y="50" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" fill="#535B66">261 ships from 146 projects in the last 7 days</text>
 <g class="r" style="animation-delay:0.20s">
 <rect x="32" y="70" width="1136" height="36" rx="9" fill="#FFFFFF" stroke="#DDE1E7"/>
-<text x="52" y="96" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#4F7A00">release</text>
-<text x="140" y="96" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#0B0E11">blockvectra</text>
-<text x="420" y="96" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#535B66">Python first read for Robinhood Chain</text>
-<text x="1148" y="96" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#535B66">2026-11-06</text>
+<text x="52" y="96" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#4F7A00">upgrade</text>
+<text x="140" y="96" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#0B0E11">fly.ai</text>
+<text x="420" y="96" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#535B66">Contract upgraded: 0xa3de…3323</text>
+<text x="1148" y="96" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#535B66">2026-11-07</text>
 </g>
 <g class="r" style="animation-delay:0.35s">
 <rect x="32" y="114" width="1136" height="36" rx="9" fill="#FFFFFF" stroke="#DDE1E7"/>
 <text x="52" y="140" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#4F7A00">release</text>
-<text x="140" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#0B0E11">shieldbot</text>
-<text x="420" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#535B66">Browser extension 3.4.0</text>
-<text x="1148" y="140" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#535B66">2026-11-07</text>
+<text x="140" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#0B0E11">Letronna</text>
+<text x="420" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#535B66">4 releases in gadlus/letronna on 5 Nov</text>
+<text x="1148" y="140" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#535B66">2026-11-05</text>
 </g>
 <g class="r" style="animation-delay:0.50s">
 <rect x="32" y="158" width="1136" height="36" rx="9" fill="#FFFFFF" stroke="#DDE1E7"/>
 <text x="52" y="184" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#4F7A00">release</text>
-<text x="140" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#0B0E11">azimuth</text>
-<text x="420" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#535B66">v2.15.0</text>
-<text x="1148" y="184" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#535B66">2026-11-06</text>
+<text x="140" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#0B0E11">AgentOS</text>
+<text x="420" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#535B66">AgentOS 2026.11.7</text>
+<text x="1148" y="184" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#535B66">2026-11-07</text>
 </g>
 <g class="r" style="animation-delay:0.65s">
 <rect x="32" y="202" width="1136" height="36" rx="9" fill="#FFFFFF" stroke="#DDE1E7"/>
-<text x="52" y="228" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#4F7A00">release</text>
-<text x="140" y="228" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#0B0E11">AgentOS</text>
-<text x="420" y="228" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#535B66">AgentOS 2026.11.7</text>
-<text x="1148" y="228" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#535B66">2026-11-07</text>
+<text x="52" y="228" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#4F7A00">feature</text>
+<text x="140" y="228" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#0B0E11">predict FWA</text>
+<text x="420" y="228" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#535B66">Sherwood: The arena’s full guide, flips by HoodRand in second…</text>
+<text x="1148" y="228" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#535B66">2026-11-03</text>
 </g>
 <g class="r" style="animation-delay:0.80s">
 <rect x="32" y="246" width="1136" height="36" rx="9" fill="#FFFFFF" stroke="#DDE1E7"/>
-<text x="52" y="272" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#4F7A00">release</text>
-<text x="140" y="272" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#0B0E11">Polydash</text>
-<text x="420" y="272" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#535B66">v1.2.0</text>
-<text x="1148" y="272" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#535B66">2026-11-06</text>
+<text x="52" y="272" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#4F7A00">upgrade</text>
+<text x="140" y="272" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#0B0E11">ASTERRA POOLS</text>
+<text x="420" y="272" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#535B66">Contract upgraded: 0x56b4…94d8</text>
+<text x="1148" y="272" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#535B66">2026-11-08</text>
 </g>
 <g class="r" style="animation-delay:0.95s">
 <rect x="32" y="290" width="1136" height="36" rx="9" fill="#FFFFFF" stroke="#DDE1E7"/>
 <text x="52" y="316" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#4F7A00">release</text>
-<text x="140" y="316" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#0B0E11">hivemindos</text>
-<text x="420" y="316" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#535B66">v1.0.1</text>
+<text x="140" y="316" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#0B0E11">blockvectra</text>
+<text x="420" y="316" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#535B66">Python first read for Robinhood Chain</text>
 <text x="1148" y="316" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#535B66">2026-11-06</text>
 </g>
 <g class="r" style="animation-delay:1.10s">
 <rect x="32" y="334" width="1136" height="36" rx="9" fill="#FFFFFF" stroke="#DDE1E7"/>
-<text x="52" y="360" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#4F7A00">release</text>
-<text x="140" y="360" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#0B0E11">usebrainchain</text>
-<text x="420" y="360" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#535B66">7 releases in usebrainchain/brainchain-worker on 1 Nov</text>
-<text x="1148" y="360" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#535B66">2026-11-01</text>
+<text x="52" y="360" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#4F7A00">feature</text>
+<text x="140" y="360" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#0B0E11">grift.world</text>
+<text x="420" y="360" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#535B66">6.0.0 · A widening of what a wallet can be asked to sign no l…</text>
+<text x="1148" y="360" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#535B66">2026-11-08</text>
 </g>
 <rect class="s" x="32" y="70" width="4" height="36" rx="2" fill="#4F7A00"/>
 <text x="32" y="436" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="12" fill="#535B66">Every ship with its source: heyresearch.xyz/ships</text>
