@@ -9,8 +9,14 @@ import { agentCard, agentsChart, constellation, creditedAdvisories, fixesMap, fi
 
 const ACCOUNT = 'hey-research-lab';
 const HEY = 'https://heyresearch.xyz';
-// Listings of HEY itself in other people's lists, not fixes (the same ones heyresearch.xyz/contributions leaves out).
+// Listings of HEY itself in other people's lists, directories and awesome-lists are not fixes: a pull request that adds
+// (or re-points) one of HEY's own names — HEY Research Lab, hey-research, heyresearch.xyz, hey-check — is a listing
+// (public-apis#8410, awesome-web3#863, apd-core#955, buildwithclaude#563 …). They are left out of every fix count, table
+// and picture, and the merged ones are named on their own line ("Where HEY is listed").
 const NOT_FIXES = new Set(['punkpeye/awesome-remote-mcp-servers', 'punkpeye/awesome-mcp-servers']);
+const HEY_NAME = /hey research lab|hey-research|heyresearch|hey-check/i;
+const LISTING_VERB = /(^|:\s*)(add|point)\b/i;
+const isListing = (item) => NOT_FIXES.has(repoOf(item)) || (HEY_NAME.test(item.title) && LISTING_VERB.test(item.title));
 const headers = { accept: 'application/vnd.github+json', 'user-agent': 'hey-research-lab-profile' };
 if (process.env.GITHUB_TOKEN) headers.authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
 
@@ -27,7 +33,11 @@ async function search(q) {
 }
 
 const repoOf = (item) => item.repository_url.replace('https://api.github.com/repos/', '');
-const prs = (await search(`is:pr author:${ACCOUNT} -user:${ACCOUNT}`)).filter((item) => !NOT_FIXES.has(repoOf(item)));
+const allPrs = await search(`is:pr author:${ACCOUNT} -user:${ACCOUNT}`);
+const prs = allPrs.filter((item) => !isListing(item));
+const listedIn = allPrs
+  .filter((item) => isListing(item) && item.pull_request?.merged_at)
+  .sort((a, b) => a.pull_request.merged_at.localeCompare(b.pull_request.merged_at));
 const merged = prs.filter((item) => item.pull_request?.merged_at).sort((a, b) => b.pull_request.merged_at.localeCompare(a.pull_request.merged_at));
 const repos = new Set(prs.map(repoOf));
 
@@ -121,6 +131,16 @@ try {
   if (body?.server?.name === MCP_NAME && /^\d+\.\d+\.\d+$/.test(body.server.version ?? '')) mcpVersion = body.server.version;
 } catch {}
 if (!mcpVersion) console.warn('MCP registry not read: keeping the README line as it is');
+// The README's npm badge (2026-11-10), served from assets/badges like the others so GitHub's image proxy never waits on
+// shields.io in a reader's browser: redrawn here once a day. A failed read keeps yesterday's file.
+try {
+  const res = await fetch('https://img.shields.io/npm/v/@hey-research-lab/sdk?style=flat-square&color=0B0E11&labelColor=1F242B&label=sdk', { headers: { 'user-agent': headers['user-agent'] } });
+  const svg = res.ok ? await res.text() : '';
+  if (/^<svg [^>]*aria-label="sdk: v\d+\.\d+\.\d+"/.test(svg) && svg.length < 4_000) writeFileSync('assets/badges/npm-sdk.svg', svg);
+  else console.warn('npm badge not read: keeping the file as it is');
+} catch {
+  console.warn('npm badge not read: keeping the file as it is');
+}
 // Security advisories that credit this account (2026-11-03). The counts of unpublished ones are hand-kept in the
 // security repository (counts only, a project named only once its hall of fame lists it); published ones are read live.
 const securityData = await (await fetch('https://raw.githubusercontent.com/hey-research-lab/security/main/data/advisories.json', { headers: { 'user-agent': headers['user-agent'] } })).json();
@@ -167,7 +187,11 @@ const between = (name, content) => {
   readme = readme.replace(re, (_whole, start, end) => `${start}\n${content}\n${end}`);
 };
 between('FIXES', fixes);
+const listedLinks = [...new Map(listedIn.map((item) => [repoOf(item), item])).values()].map((item) => `[${md(repoOf(item))}](${item.html_url})`);
+between('LISTED', listedLinks.length
+  ? `**Where HEY is listed:** ${listedLinks.join(' · ')}. These are pull requests that add HEY to someone else's list or directory, so they are not counted as fixes.`
+  : '**Where HEY is listed:** none merged yet.');
 between('HOOKS', `Of the **${n(hooksAggregate.seen)} hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **${n(hooksAggregate.listed)}** are tied to **${n(hooksAggregate.listedProjects)} published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](${HEY}/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>`);
 if (mcpVersion) between('MCP', `It is also listed in the [Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers/${encodeURIComponent(MCP_NAME)}/versions/latest) as \`${MCP_NAME}\`, version ${mcpVersion}, and on [mcptry](https://mcptry.com/servers/${MCP_NAME}).`);
 writeFileSync('README.md', readme);
-console.log(`hooks=${hooksAggregate.listed}/${hooksAggregate.seen} mcp=${mcpVersion ?? 'not read'} advisories=${publishedAdvisories.length} prs=${prs.length} repos=${repos.size} merged=${merged.length} pages=${pages} builders=${builders} records=${records}`);
+console.log(`hooks=${hooksAggregate.listed}/${hooksAggregate.seen} mcp=${mcpVersion ?? 'not read'} advisories=${publishedAdvisories.length} prs=${prs.length} repos=${repos.size} merged=${merged.length} listings=${allPrs.length - prs.length} listed=${listedIn.length} pages=${pages} builders=${builders} records=${records}`);
