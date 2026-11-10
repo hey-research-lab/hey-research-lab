@@ -93,7 +93,7 @@ function card(theme) {
 <text x="${x + 18}" y="72" font-size="34" font-weight="700" fill="${i >= 3 ? t.green : t.ink}" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" letter-spacing="-1">${esc(value)}</text>
 ${lines.map((line, j) => `<text x="${x + 18}" y="${98 + j * 17}" font-size="13" fill="${t.sec}" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">${esc(line)}</text>`).join('\n')}</g>`;
   }).join('\n');
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="Hey Research Lab in numbers">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="HEY Research Lab in numbers">
 <rect width="${w}" height="${h}" rx="14" fill="${t.bg}"/>
 ${body}
 </svg>

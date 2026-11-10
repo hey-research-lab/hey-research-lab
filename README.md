@@ -1,7 +1,7 @@
 <a href="https://heyresearch.xyz">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
-    <img alt="Hey Research Lab: the public record of building on Robinhood Chain" src="assets/banner-light.svg" width="100%">
+    <img alt="HEY Research Lab: the public record of building on Robinhood Chain" src="assets/banner-light.svg" width="100%">
   </picture>
 </a>
 
@@ -15,7 +15,7 @@
 
 <p align="center">
   Robinhood Chain has more than a million token contracts. We prove which teams are actually building on it.<br>
-  <b>Hey Research Lab</b> reads their code, releases and contract deployments and answers one question with evidence:<br>
+  <b>HEY Research Lab</b> reads their code, releases and contract deployments and answers one question with evidence:<br>
   <b>who is still building, and what did they ship?</b> Every claim links to its source. Price is context, never the verdict.
 </p>
 
@@ -32,7 +32,7 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg">
-  <img alt="Hey Research Lab in numbers" src="assets/stats-light.svg" width="100%">
+  <img alt="HEY Research Lab in numbers" src="assets/stats-light.svg" width="100%">
 </picture>
 
 ## Robinhood Chain, live
@@ -173,7 +173,7 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 <a href="https://github.com/hey-research-lab/security">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/advisories-dark.svg">
-    <img alt="Security advisories that credit Hey Research Lab: filed privately on GitHub, accepted, and published with our credit, by week" src="assets/advisories-light.svg" width="100%">
+    <img alt="Security advisories that credit HEY Research Lab: filed privately on GitHub, accepted, and published with our credit, by week" src="assets/advisories-light.svg" width="100%">
   </picture>
 </a>
 
@@ -288,5 +288,5 @@ Small, well-described issues are labelled
 [good first issue](https://github.com/search?q=user%3Ahey-research-lab+label%3A%22good+first+issue%22+state%3Aopen&type=issues).
 Found a security issue in one of our repositories? Write to hi@heyresearch.xyz or [x.com/HeyResearch](https://x.com/HeyResearch).
 
-<p align="center"><sub>Community-run by Hey Research Lab · not affiliated with or endorsed by Robinhood, Uniswap Labs, Hugging Face, NEAR or any other project named here · a HEY badge is verified from
+<p align="center"><sub>Community-run by HEY Research Lab · not affiliated with or endorsed by Robinhood, Uniswap Labs, Hugging Face, NEAR or any other project named here · a HEY badge is verified from
 public evidence, not a Robinhood certification · not investment advice.</sub></p>
