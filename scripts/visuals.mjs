@@ -12,6 +12,9 @@ export const THEMES = {
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const clip = (s, max) => (s.length > max ? `${s.slice(0, max - 1).trimEnd()}…` : s);
 const n = (v) => v.toLocaleString('en-US');
+// HEY's own brand is spelled "HEY Research Lab" (founder, 2026-11-10); a feed that still carries the older spelling of
+// HEY's own name is drawn in the current one. Every other project's name is drawn as HEY's API gives it.
+const brand = (s) => String(s).replace(/\bHey(?= Research Lab\b)/g, 'HEY');
 const REDUCED = '@media (prefers-reduced-motion: reduce){*{animation:none!important}}';
 
 /** Every shipping or active project as a star; the newest ship at the centre, last week's ships lit. */
@@ -63,7 +66,7 @@ export function shipTicker(week, theme) {
     return `<g class="r" style="animation-delay:${delay}s">
 <rect x="32" y="${y - 26}" width="${w - 64}" height="${rowH - 8}" rx="9" fill="${t.panel}" stroke="${t.line}"/>
 <text x="52" y="${y}" font-family="${MONO}" font-size="13" fill="${t.lime}">${esc(kind(it.latest.eventType))}</text>
-<text x="140" y="${y}" font-family="${FONT}" font-size="16" font-weight="600" fill="${t.ink}">${esc(clip(it.project?.name ?? '', 28))}</text>
+<text x="140" y="${y}" font-family="${FONT}" font-size="16" font-weight="600" fill="${t.ink}">${esc(clip(brand(it.project?.name ?? ''), 28))}</text>
 <text x="420" y="${y}" font-family="${FONT}" font-size="15" fill="${t.sec}">${esc(clip(it.latest.title, 62))}</text>
 <text x="${w - 52}" y="${y}" text-anchor="end" font-family="${MONO}" font-size="13" fill="${t.sec}">${esc(day)}</text>
 </g>`;
@@ -326,7 +329,7 @@ export function creditedAdvisories({ hand, published }, theme, now = new Date())
   }).join('');
   const total = (value, label, y, lit) => `<text x="40" y="${y}" font-family="${FONT}" font-size="40" font-weight="700" letter-spacing="-1" fill="${lit ? t.lime : t.ink}">${esc(n(value))}</text><text x="40" y="${y + 24}" font-family="${FONT}" font-size="14" fill="${t.sec}">${esc(label)}</text>`;
   const asOf = shortDay(hand.asOf);
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(`Security advisories that credit Hey Research Lab: ${hand.filed.advisories} filed privately on GitHub across ${hand.filed.projects} projects, ${acceptedOrPublished} accepted or published, ${publishedTotal} published`)}">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(`Security advisories that credit HEY Research Lab: ${hand.filed.advisories} filed privately on GitHub across ${hand.filed.projects} projects, ${acceptedOrPublished} accepted or published, ${publishedTotal} published`)}">
 <style>.m{animation:glow 4s ease-in-out infinite}@keyframes glow{0%,100%{opacity:.72}50%{opacity:1}}${REDUCED}</style>
 <rect width="${w}" height="${h}" rx="14" fill="${t.bg}"/>
 <text x="40" y="50" font-family="${MONO}" font-size="13" letter-spacing="2" fill="${t.lime}">SECURITY ADVISORIES THAT CREDIT US</text>
