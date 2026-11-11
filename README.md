@@ -279,6 +279,13 @@ public on-chain data or a public API? Ask to join the [Token Passport](https://h
 | [proof-of-ship](https://github.com/hey-research-lab/proof-of-ship) | A $WIF bounty escrow on Robinhood Chain that pays a builder when HEY signs that it counted real ships |
 | [proof-of-ship-near](https://github.com/hey-research-lab/proof-of-ship-near) | The same escrow on NEAR, in USDC, verifying HEY's signature on chain with `ecrecover` |
 | [hey-research-open](https://github.com/hey-research-lab/hey-research-open) | The open part of the platform: SDK, MCP server, scoring and source adapters |
+| [hey-embed](https://github.com/hey-research-lab/hey-embed) | A dependency-free `<hey-project>` web component, with a React wrapper, to embed a project's builder evidence |
+| [hey-telegram-bot](https://github.com/hey-research-lab/hey-telegram-bot) | A self-hostable, read-only Telegram bot for HEY lookups, powered only by the public API |
+| [hey-agent-contract](https://github.com/hey-research-lab/hey-agent-contract) | The public contract of HEY's agent answers: schemas, types, fixtures and test vectors |
+| [hey-project-manifest](https://github.com/hey-research-lab/hey-project-manifest) | `/.well-known/hey-project.json`, a format for a project to declare its repos, contracts and sites |
+| [hey-research-receipts](https://github.com/hey-research-lab/hey-research-receipts) | A spec and validator for what an agent cited and concluded about a project |
+| [security](https://github.com/hey-research-lab/security) | How we report security issues to Robinhood Chain projects, and the teams that fixed them |
+| [hey-edge-probe](https://github.com/hey-research-lab/hey-edge-probe) | An hourly outside check of heyresearch.xyz against our own performance budget |
 
 </details>
 
