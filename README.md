@@ -54,6 +54,14 @@
 
 Redrawn every day from [heyresearch.xyz](https://heyresearch.xyz)'s public API. Browsing HEY needs no wallet, and nothing on it is for sale.
 
+**Now on Base too.** Robinhood Chain is home; Base is the first chain we've added. A chain switcher sits in the top bar of
+every page, and [heyresearch.xyz/base](https://heyresearch.xyz/base) lists Base builders, each checked by hand with a
+contract of its own on Base, a ship from the last four weeks and the source for both. The list grows every week, and
+daily tracking comes next.
+
+**Launchpads credited.** HEY reads launches from the chain's launchpads, Pons, Torch, FOBO and more, and credits each
+token to the launchpad that made it, same rules for every one. Run a launchpad on Robinhood Chain? Send us your factory.
+
 ## For builders
 
 Building on Robinhood Chain? Everything here is free, and none of it buys a place: what you ship decides.
@@ -254,6 +262,12 @@ All of it is CC BY 4.0, with no price, market or holder field in any file.
 | [Orus](https://x.com/Orus_agent) | Orus's trading agents can use HEY's builder evidence as an optional entry filter |
 | [Axon](https://x.com/axon402) | shows its live HEY badge on its own site |
 | [PFWA](https://x.com/pfwafun) | shows HEY's builder card on every Robinhood Chain token market, our badge in its footer and HEY in its "Powered by" strip |
+| [Trnch](https://x.com/trnchfun) | puts a Team box from HEY on every token page: one check for the token, one for the team behind it |
+| [HoodRugCheck](https://hoodrugcheck.com) | shows a Team check from HEY right next to its own contract score, kept as a separate box |
+| [Quotum](https://x.com/quotumorg) | rh-preflight, a Hermes agent plugin, reads HEY's builder record before an agent touches a Robinhood Chain address |
+| [Insula World](https://x.com/insulaworld) | its agent sent the first request to HEY's ERC-8004 validator, which answered on chain from the counted ships |
+| [Torch](https://x.com/Torchpaddotfun) | sent HEY its launch factory: every Torch launch carries "Launched via Torch" and a Launched stamp in its Token Passport |
+| [FOBO](https://x.com/fobodotfun) | HEY reads FOBO's launch factory: every FOBO launch carries "Launched via FOBO" and a Launched stamp in its Token Passport |
 
 Building on Robinhood Chain and want builder context in your product? The API, the embed and the badge are free:
 [heyresearch.xyz/developers/partners](https://heyresearch.xyz/developers/partners). Running a protocol on Robinhood Chain with
