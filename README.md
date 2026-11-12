@@ -14,19 +14,22 @@
 </p>
 
 <p align="center">
-  Robinhood Chain has more than a million token contracts. We prove which teams are actually building on it.<br>
-  <b>HEY Research Lab</b> reads their code, releases and contract deployments and answers one question with evidence:<br>
-  <b>who is still building, and what did they ship?</b> Every claim links to its source. Price is context, never the verdict.
+  <b>Reads</b> the code, releases and deployments of teams building on Robinhood Chain, and now Base.<br>
+  <b>Answers</b> one question with evidence: who is still building, and what did they ship?<br>
+  <b>Links</b> every claim to its source. Price is context, never the verdict. Free, no wallet, nothing for sale.
 </p>
 
 <p align="center">
   <a href="#robinhood-chain-live">The chain, live</a> ·
+  <a href="#now-on-base">Now on Base</a> ·
+  <a href="#launchpads">Launchpads</a> ·
+  <a href="#built-on-hey">Built on HEY</a> ·
+  <a href="#agents-checking-agents">Agents checking agents</a> ·
+  <a href="#proof-of-ship">Proof of Ship</a> ·
   <a href="#for-builders">For builders</a> ·
-  <a href="#for-ai-agents">For AI agents</a> ·
-  <a href="#fixes-we-sent-upstream">Fixes we sent upstream</a> ·
+  <a href="#fixes-we-sent-upstream">Fixes upstream</a> ·
   <a href="#security-credits">Security credits</a> ·
   <a href="#use-it">Use it</a> ·
-  <a href="#uniswap-v4-hooks-and-open-data">Hooks and open data</a> ·
   <a href="#open-source">Open source</a>
 </p>
 
@@ -54,28 +57,68 @@
 
 Redrawn every day from [heyresearch.xyz](https://heyresearch.xyz)'s public API. Browsing HEY needs no wallet, and nothing on it is for sale.
 
-**Now on Base too.** Robinhood Chain is home; Base is the first chain we've added. A chain switcher sits in the top bar of
-every page, and [heyresearch.xyz/base](https://heyresearch.xyz/base) lists Base builders, each checked by hand with a
-contract of its own on Base, a ship from the last four weeks and the source for both. The list grows every week, and
-daily tracking comes next.
+## Now on Base
 
-**Launchpads credited.** HEY reads launches from the chain's launchpads, Pons, Torch, FOBO and more, and credits each
-token to the launchpad that made it, same rules for every one. Run a launchpad on Robinhood Chain? Send us your factory.
+Robinhood Chain is home. Base is the first chain HEY has added (12 Nov), and a chain switcher sits in the top bar of every
+page on [heyresearch.xyz](https://heyresearch.xyz).
 
-## For builders
+**[heyresearch.xyz/base](https://heyresearch.xyz/base)** lists **63 Base builders**, each checked by hand: a contract of
+its own on Base, a ship in the last four weeks, and the source for both.
+Each one has its own page at `heyresearch.xyz/base/<slug>`. The list is refreshed every week, and daily tracking comes
+next.
 
-Building on Robinhood Chain? Everything here is free, and none of it buys a place: what you ship decides.
+## Launchpads
 
-| | |
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/launchpads-dark.svg">
+  <img alt="The launchpads HEY credits, A to Z: FOBO, Pons and Torch, with how many published project pages on HEY were launched on each, and the launch factories HEY indexes" src="assets/launchpads-light.svg" width="100%">
+</picture>
+
+HEY reads launches from the chain's launch factories and credits every token to the launchpad that made it, with a
+Launched stamp in its [Token Passport](https://heyresearch.xyz/passport). The same rules hold for every launchpad, and
+nobody pays for a stamp.
+
+| Launchpad | What HEY reads |
 | --- | --- |
-| **A page that shows your work** | every release, deployment and code week we read, each linked to its source: find yours on [heyresearch.xyz](https://heyresearch.xyz) or [submit it](https://heyresearch.xyz/submit) |
-| **Fixes, not just findings** | we read your public code; when we find a bug we can fix, we send a pull request, and anything security-related goes to you privately first |
-| **A live badge** | your HEY badge for your site or README, updated from public evidence: [heyresearch.xyz/badges](https://heyresearch.xyz/badges) |
-| **Funding for shipping** | backers can fund you through Proof of Ship, an escrow that pays only when HEY signs that it counted real ships: in $WIF on Robinhood Chain ([proof-of-ship](https://github.com/hey-research-lab/proof-of-ship)) or in USDC on NEAR ([proof-of-ship-near](https://github.com/hey-research-lab/proof-of-ship-near), `escrow.heyresearch.near`) |
-| **Your data, open** | the API, the embed and the open dataset are free for your own product: [heyresearch.xyz/developers](https://heyresearch.xyz/developers) |
-| **Counted in Electric Capital's developer data** | we added Robinhood Chain to [Open Dev Data](https://github.com/electric-capital/open-dev-data/pull/3115) as its own ecosystem (1,183 repositories) and send it a monthly update, so builders here show up in the industry's developer numbers |
+| [FOBO](https://fobo.fun) | its launch factory, read on chain: more than 1,200 FOBO launches so far, each marked "Launched via FOBO" |
+| [Pons](https://ponsfamily.com) | each launch record, and the day a launch graduates into a Uniswap v4 pool, with its receipt |
+| [Torch](https://torchpad.fun) | the launch factory the Torch team sent us: more than 2,100 Torch launches so far, each marked "Launched via Torch" |
 
-## For AI agents
+Run a launchpad on Robinhood Chain? Send us your factory: [heyresearch.xyz/passport](https://heyresearch.xyz/passport).
+
+## Built on HEY
+
+Products that put HEY's builder record in front of their own users, and protocols whose facts HEY reads, A to Z:
+
+| Project | What it does with HEY |
+| --- | --- |
+| [Axon](https://x.com/axon402) | shows its live HEY badge on its own site |
+| [Chit](https://x.com/usechit) | Chit's bot shows HEY's builder card for a token, where people trade |
+| [HoodLock](https://x.com/HoodLockRH) | HEY reads HoodLock's locks on chain and shows each on the token's page, credited to HoodLock in its Token Passport |
+| [HoodRugCheck](https://hoodrugcheck.com) | shows a Team check from HEY right next to its own contract score, kept as a separate box |
+| [Insula World](https://x.com/insulaworld) | its agent sent the first request to HEY's ERC-8004 validator, which answered on chain from the counted ships |
+| [Orus](https://x.com/Orus_agent) | Orus's trading agents can use HEY's builder evidence as an optional entry filter |
+| [PFWA](https://x.com/pfwafun) | shows HEY's builder card on every Robinhood Chain token market, our badge in its footer and HEY in its "Powered by" strip |
+| [Quotum](https://x.com/quotumorg) | rh-preflight, a Hermes agent plugin, reads HEY's builder record before an agent touches a Robinhood Chain address |
+| [RHTools](https://x.com/RHToolsXYZ) | RHTools draws the chart, HEY answers who built the token; each links to the other |
+| [Trnch](https://x.com/trnchfun) | puts a Team box from HEY on every token page: one check for the token, one for the team behind it |
+
+Want builder context in your product? The API, the embed and the badge are free:
+[heyresearch.xyz/developers/partners](https://heyresearch.xyz/developers/partners). Running a protocol on Robinhood Chain
+with public on-chain data or a public API? Ask to join the [Token Passport](https://heyresearch.xyz/passport).
+
+## Agents checking agents
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/validator-dark.svg">
+  <img alt="HEY's ERC-8004 validator: the one claim it answers, and the requests it read and answered on Robinhood Chain, Base and Ethereum" src="assets/validator-light.svg" width="100%">
+</picture>
+
+HEY is an ERC-8004 agent: **#8783** on Robinhood Chain, **#56081** on Ethereum and **#1148006** on Base. It is also an
+ERC-8004 validator on Robinhood Chain and Base for one claim: that a project HEY publishes shipped between two times. It
+answers only from its counted ships, only for an agent tied to the project, and a response endorses nothing.
+[Insula World](https://x.com/insulaworld)'s agent sent the first request, and HEY answered it on chain. How to ask:
+[heyresearch.xyz/developers/agents](https://heyresearch.xyz/developers/agents#validate).
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/agent-dark.svg">
@@ -87,19 +130,42 @@ Building on Robinhood Chain? Everything here is free, and none of it buys a plac
   <img alt="AI agents registered on Robinhood Chain over the last 30 days" src="assets/agents-light.svg" width="100%">
 </picture>
 
+Registrations, feedback and validations are counted live, with their definitions:
+[heyresearch.xyz/developers/agents/stats](https://heyresearch.xyz/developers/agents/stats).
+
 The hosted MCP server is listed as a community connector in [Claude's Connectors Directory](https://claude.ai/directory/hey-research-lab).
 <!-- MCP:START -->
 It is also listed in the [Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers/io.github.hey-research-lab%2Fhey-research/versions/latest) as `io.github.hey-research-lab/hey-research`, version 0.3.5, and on [mcptry](https://mcptry.com/servers/io.github.hey-research-lab/hey-research).
 <!-- MCP:END -->
-HEY is also an ERC-8004 validator on Robinhood Chain and Base for one claim: that a project HEY publishes shipped between
-two times. It answers only from its counted ships, only for an agent tied to the project, and a response endorses nothing:
-[heyresearch.xyz/developers/agents](https://heyresearch.xyz/developers/agents#validate).
 
 Skills and plugins: [hey-agent-skills](https://github.com/hey-research-lab/hey-agent-skills), an Agent Skill and Claude Code plugin,
 and plugins on npm for [Coinbase AgentKit](https://github.com/hey-research-lab/hey-agentkit) (`@hey-research-lab/agentkit`),
 [GOAT](https://github.com/hey-research-lab/hey-goat-plugin) (`@hey-research-lab/goat-plugin`),
 [Virtuals GAME](https://github.com/hey-research-lab/hey-virtuals-plugin) (`@hey-research-lab/virtuals-plugin`) and
 [ElizaOS](https://github.com/hey-research-lab/plugin-hey-research) (`@hey-research-lab/plugin-hey-research`).
+
+## Proof of Ship
+
+An open-source escrow that pays a builder only when HEY signs that it counted real ships. Backers fund a bounty, the
+contract checks HEY's signature, and HEY holds, moves and earns nothing in it.
+
+| Escrow | Where it pays |
+| --- | --- |
+| [proof-of-ship](https://github.com/hey-research-lab/proof-of-ship) | on Robinhood Chain, bounties in $WIF; the first bounty paid out to [predict FWA](https://x.com/pfwafun) |
+| [proof-of-ship-near](https://github.com/hey-research-lab/proof-of-ship-near) | on NEAR, bounties in USDC (`escrow.heyresearch.near`), verifying HEY's signature on chain with `ecrecover` |
+
+## For builders
+
+Building on Robinhood Chain? Everything here is free, and none of it buys a place: what you ship decides.
+
+| | |
+| --- | --- |
+| **A page that shows your work** | every release, deployment and code week we read, each linked to its source: find yours on [heyresearch.xyz](https://heyresearch.xyz) or [submit it](https://heyresearch.xyz/submit) |
+| **Fixes, not just findings** | we read your public code; when we find a bug we can fix, we send a pull request, and anything security-related goes to you privately first |
+| **A live badge** | your HEY badge for your site or README, updated from public evidence: [heyresearch.xyz/badges](https://heyresearch.xyz/badges) |
+| **Funding for shipping** | backers can fund you through [Proof of Ship](#proof-of-ship), an escrow that pays only when HEY signs that it counted real ships |
+| **Your data, open** | the API, the embed and the open dataset are free for your own product: [heyresearch.xyz/developers](https://heyresearch.xyz/developers) |
+| **Counted in Electric Capital's developer data** | we added Robinhood Chain to [Open Dev Data](https://github.com/electric-capital/open-dev-data/pull/3115) as its own ecosystem (1,183 repositories) and send it a monthly update, so builders here show up in the industry's developer numbers |
 
 ## Fixes we sent upstream
 
@@ -238,7 +304,7 @@ on your repository, and we report there.
 ## Uniswap v4 hooks and open data
 
 <!-- HOOKS:START -->
-Of the **32,264 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **152** are tied to **69 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
+Of the **32,290 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **152** are tied to **69 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
 <!-- HOOKS:END -->
 
 We proposed to Uniswap's public hooklist an optional way to name the project behind a hook, with its public evidence,
@@ -251,27 +317,6 @@ starting with Robinhood Chain: [Uniswap/hooklist#10665](https://github.com/Unisw
 | **hey-data** | [hey-data](https://github.com/hey-research-lab/hey-data): `hey-data generate` builds a full snapshot from the public API, `hey-data hooks` copies the newest hooks file checked against its `SHA256SUMS`, `hey-data huggingface` writes the Hugging Face copy |
 
 All of it is CC BY 4.0, with no price, market or holder field in any file.
-
-## Working with
-
-| Project | How |
-| --- | --- |
-| [Chit](https://x.com/usechit) | Chit's bot shows HEY's builder card for a token, where people trade |
-| [RHTools](https://x.com/RHToolsXYZ) | RHTools draws the chart, HEY answers who built the token; each links to the other |
-| [HoodLock](https://x.com/HoodLockRH) | HEY reads HoodLock's locks on chain and shows each on the token's page |
-| [Orus](https://x.com/Orus_agent) | Orus's trading agents can use HEY's builder evidence as an optional entry filter |
-| [Axon](https://x.com/axon402) | shows its live HEY badge on its own site |
-| [PFWA](https://x.com/pfwafun) | shows HEY's builder card on every Robinhood Chain token market, our badge in its footer and HEY in its "Powered by" strip |
-| [Trnch](https://x.com/trnchfun) | puts a Team box from HEY on every token page: one check for the token, one for the team behind it |
-| [HoodRugCheck](https://hoodrugcheck.com) | shows a Team check from HEY right next to its own contract score, kept as a separate box |
-| [Quotum](https://x.com/quotumorg) | rh-preflight, a Hermes agent plugin, reads HEY's builder record before an agent touches a Robinhood Chain address |
-| [Insula World](https://x.com/insulaworld) | its agent sent the first request to HEY's ERC-8004 validator, which answered on chain from the counted ships |
-| [Torch](https://x.com/Torchpaddotfun) | sent HEY its launch factory: every Torch launch carries "Launched via Torch" and a Launched stamp in its Token Passport |
-| [FOBO](https://x.com/fobodotfun) | HEY reads FOBO's launch factory: every FOBO launch carries "Launched via FOBO" and a Launched stamp in its Token Passport |
-
-Building on Robinhood Chain and want builder context in your product? The API, the embed and the badge are free:
-[heyresearch.xyz/developers/partners](https://heyresearch.xyz/developers/partners). Running a protocol on Robinhood Chain with
-public on-chain data or a public API? Ask to join the [Token Passport](https://heyresearch.xyz/passport); nobody pays for a stamp.
 
 ## Open source
 
@@ -309,5 +354,5 @@ Small, well-described issues are labelled
 [good first issue](https://github.com/search?q=user%3Ahey-research-lab+label%3A%22good+first+issue%22+state%3Aopen&type=issues).
 Found a security issue in one of our repositories? Write to hi@heyresearch.xyz or [x.com/HeyResearch](https://x.com/HeyResearch).
 
-<p align="center"><sub>Community-run by HEY Research Lab · not affiliated with or endorsed by Robinhood, Uniswap Labs, Hugging Face, NEAR or any other project named here · a HEY badge is verified from
+<p align="center"><sub>Community-run by HEY Research Lab · not affiliated with or endorsed by Robinhood, Base, Uniswap Labs, Hugging Face, NEAR or any other project named here · a HEY badge is verified from
 public evidence, not a Robinhood certification · not investment advice.</sub></p>
