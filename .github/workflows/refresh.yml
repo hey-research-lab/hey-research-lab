@@ -1,5 +1,5 @@
-# Refreshes the profile's live numbers once a day: the stats card and the "fixes sent upstream" table.
-# Public sources only (GitHub search, heyresearch.xyz/api/status); free on a public repository.
+# Refreshes the profile's live parts once a day: the hero, the pictures, the stats card and the README's live lines.
+# Public sources only (GitHub search and advisories, heyresearch.xyz's public API, the MCP registry); free on a public repository.
 name: Refresh profile
 
 on:

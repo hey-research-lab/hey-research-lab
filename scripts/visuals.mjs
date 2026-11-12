@@ -346,3 +346,140 @@ ${weekBars}
 </svg>
 `;
 }
+
+// ---------------------------------------------------------------- the hero, launchpads and the validator (2026-11-13)
+
+/**
+ * The profile's hero: HEY's line on the left, and on the right the last 14 days on Robinhood Chain as columns of squares,
+ * one square for every five builders HEY read shipping that day (rounded up), today's column lighter while it is read.
+ * Complete at rest: the squares only rise in.
+ */
+export function hero({ chain, builders, pages }, theme) {
+  const t = THEMES[theme];
+  const w = 1200, h = 380;
+  const days = (chain.days ?? []).filter((d) => Number.isFinite(d.buildersShipping)).slice(-14);
+  const today = days.at(-1)?.day;
+  const per = 5, base = 286;
+  const rowsMax = Math.max(1, ...days.map((d) => Math.ceil(d.buildersShipping / per)));
+  const colW = Math.max(12, Math.min(20, Math.floor(186 / rowsMax))), gap = colW >= 16 ? 5 : 4, size = colW - gap;
+  const gridRight = w - 56, gridLeft = gridRight - days.length * colW + gap;
+  const cols = days.map((d, i) => {
+    const count = Math.ceil(d.buildersShipping / per);
+    const x = gridLeft + i * colW;
+    const partial = d.day === today;
+    const cells = Array.from({ length: count }, (_, k) => {
+      const y = base - (k + 1) * colW + gap;
+      const delay = (i * 0.06 + k * 0.035).toFixed(2);
+      return `<rect class="q" style="animation-delay:${delay}s" x="${x}" y="${y}" width="${size}" height="${size}" rx="${(size / 4).toFixed(1)}" fill="${t.lime}" opacity="${partial ? 0.4 : k === count - 1 ? 1 : 0.82}"/>`;
+    }).join('');
+    const label = i === 0 || i === days.length - 1 ? `<text x="${x + size / 2}" y="${base + 22}" text-anchor="middle" font-family="${MONO}" font-size="11" fill="${t.sec}">${esc(shortDay(d.day))}</text>` : '';
+    return `<g><title>${esc(`${d.day}: ${n(d.buildersShipping)} builders shipped${partial ? ' (day in progress)' : ''}`)}</title>${cells}</g>${label}`;
+  }).join('');
+  const chip = (x, label, sub, filled) => {
+    const wch = 24 + label.length * 8.6 + sub.length * 7.2 + 16;
+    return `<g><rect x="${x}" y="300" width="${wch.toFixed(0)}" height="36" rx="18" fill="${filled ? t.limeSoft : t.panel}" stroke="${filled ? t.lime : t.line}"/>
+<circle cx="${x + 20}" cy="318" r="4.5" fill="${filled ? t.lime : t.sec}"/>
+<text x="${x + 34}" y="323" font-family="${FONT}" font-size="15" font-weight="600" fill="${t.ink}">${esc(label)}<tspan font-weight="400" fill="${t.sec}">${esc(sub)}</tspan></text></g>`;
+  };
+  const homeW = 24 + 'Robinhood Chain'.length * 8.6 + ' · home'.length * 7.2 + 16;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(`HEY Research Lab: the public record of building on Robinhood Chain, every ship with its source. ${n(builders)} teams proven building, ${n(pages)} project pages. Robinhood Chain is home; Base is the first chain added.`)}">
+<style>.q{transform-box:fill-box;transform-origin:bottom;animation:rise .6s ease-out both}@keyframes rise{from{opacity:0;transform:scaleY(.2)}}.k{animation:blink 1.1s steps(1) infinite}@keyframes blink{50%{opacity:0}}${REDUCED}</style>
+<rect width="${w}" height="${h}" rx="16" fill="${t.bg}"/>
+<rect x="0.5" y="0.5" width="${w - 1}" height="${h - 1}" rx="15.5" fill="none" stroke="${t.line}"/>
+<rect x="48" y="50" width="14" height="14" rx="3" fill="${t.lime}"/>
+<text x="72" y="63" font-family="${MONO}" font-size="14" letter-spacing="3" fill="${t.ink}">HEY RESEARCH LAB<tspan class="k" fill="${t.lime}"> _</tspan></text>
+<text x="48" y="128" font-family="${FONT}" font-size="48" font-weight="800" letter-spacing="-1.6" fill="${t.ink}">The public record</text>
+<text x="48" y="184" font-family="${FONT}" font-size="48" font-weight="800" letter-spacing="-1.6" fill="${t.ink}">of building on <tspan fill="${t.lime}">Robinhood Chain.</tspan></text>
+<text x="48" y="226" font-family="${FONT}" font-size="19" fill="${t.sec}">Every ship with its source. Price is context, never the verdict.</text>
+<text x="48" y="254" font-family="${FONT}" font-size="19" fill="${t.sec}">${esc(`${n(builders)} teams proven building · ${n(pages)} project pages · free, no wallet.`)}</text>
+${chip(48, 'Robinhood Chain', ' · home', true)}
+${chip(48 + homeW + 12, 'Base', ' · first chain added', false)}
+<text x="${gridRight}" y="63" text-anchor="end" font-family="${MONO}" font-size="12" letter-spacing="2" fill="${t.lime}">BUILDERS SHIPPING · 14 DAYS</text>
+<text x="${gridRight}" y="84" text-anchor="end" font-family="${FONT}" font-size="13" fill="${t.sec}">one square, five builders who shipped that day</text>
+<line x1="${gridLeft - 4}" x2="${gridRight + 4}" y1="${base + 4}" y2="${base + 4}" stroke="${t.line}"/>
+${cols}
+<text x="${w - 48}" y="${h - 30}" text-anchor="end" font-family="${MONO}" font-size="12" fill="${t.sec}">heyresearch.xyz</text>
+</svg>
+`;
+}
+
+/**
+ * The launchpads HEY credits by name, A to Z (never ordered by a count): what HEY reads from each, and how many published
+ * project pages on HEY were launched there, read live; then the launch factories HEY indexes in all.
+ */
+export function launchpads({ pads, factories }, theme) {
+  const t = THEMES[theme];
+  const w = 1200, h = 340, top = 96, gap = 18, tw = (w - 80 - gap * (pads.length - 1)) / pads.length, th = 178;
+  const tiles = pads.map((p, i) => {
+    const x = 40 + i * (tw + gap);
+    const lines = [];
+    for (const word of p.reads.split(' ')) {
+      const last = lines.at(-1);
+      if (last !== undefined && `${last} ${word}`.length <= 40) lines[lines.length - 1] = `${last} ${word}`;
+      else lines.push(word);
+    }
+    return `<g class="t" style="animation-delay:${(i * 0.15).toFixed(2)}s"><rect x="${x}" y="${top}" width="${tw}" height="${th}" rx="12" fill="${t.panel}" stroke="${t.line}"/>
+<rect x="${x}" y="${top + 18}" width="4" height="28" rx="2" fill="${t.lime}"/>
+<text x="${x + 22}" y="${top + 40}" font-family="${FONT}" font-size="22" font-weight="700" fill="${t.ink}">${esc(p.name)}</text>
+<text x="${x + tw - 20}" y="${top + 39}" text-anchor="end" font-family="${MONO}" font-size="12" fill="${t.sec}">${esc(p.host)}</text>
+${lines.map((line, j) => `<text x="${x + 22}" y="${top + 72 + j * 19}" font-family="${FONT}" font-size="14" fill="${t.sec}">${esc(line)}</text>`).join('')}
+<line x1="${x + 22}" x2="${x + tw - 20}" y1="${top + 124}" y2="${top + 124}" stroke="${t.line}"/>
+<text x="${x + 22}" y="${top + th - 20}" font-family="${FONT}" font-size="26" font-weight="700" letter-spacing="-0.5" fill="${t.lime}">${Number.isFinite(p.pages) ? esc(n(p.pages)) : 'not read'}</text>
+<text x="${x + tw - 20}" y="${top + th - 22}" text-anchor="end" font-family="${FONT}" font-size="13" fill="${t.sec}">published pages on HEY launched here</text></g>`;
+  }).join('\n');
+  const tail = Number.isFinite(factories) ? `${n(factories)} launch factories indexed in all` : 'Launch factories indexed: not read';
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(`Launchpads HEY credits on Robinhood Chain, A to Z: ${pads.map((p) => `${p.name}, ${Number.isFinite(p.pages) ? n(p.pages) : 'not read'} published pages`).join('; ')}. ${tail}.`)}">
+<style>.t{animation:in .7s ease-out both}@keyframes in{from{opacity:0;transform:translateY(6px)}}${REDUCED}</style>
+<rect width="${w}" height="${h}" rx="14" fill="${t.bg}"/>
+<text x="40" y="48" font-family="${MONO}" font-size="13" letter-spacing="2" fill="${t.lime}">LAUNCHPADS CREDITED · A TO Z</text>
+<text x="40" y="74" font-family="${FONT}" font-size="15" fill="${t.sec}">Every token credits the launchpad that made it, with a Launched stamp in its Token Passport. Same rules for every launchpad.</text>
+${tiles}
+<text x="40" y="${h - 22}" font-family="${MONO}" font-size="12" fill="${t.sec}">${esc(`${tail} · heyresearch.xyz/passport`)}</text>
+</svg>
+`;
+}
+
+/**
+ * HEY's ERC-8004 validator: the one claim it answers, and what it read and answered on each chain, live from
+ * /api/agent/stats. A chain HEY reads but does not answer on says so.
+ */
+export function validator(stats, theme) {
+  const t = THEMES[theme];
+  const v = stats.erc8004Validations ?? {};
+  const order = [4663, 8453, 1];
+  const chains = order.map((id) => (v.chains ?? []).find((c) => c.chainId === id)).filter(Boolean);
+  const w = 1200, h = 360;
+  const steps = [
+    ['1', 'An agent asks', 'it names a project and a window in the request itself'],
+    ['2', 'HEY checks the tie', 'only an agent tied to the project by evidence HEY holds'],
+    ['3', 'HEY answers on chain', 'from its counted ships; a response endorses nothing'],
+  ];
+  const flow = steps.map(([k, a, b], i) => {
+    const y = 150 + i * 60;
+    return `<g class="t" style="animation-delay:${(i * 0.25).toFixed(2)}s"><circle cx="58" cy="${y - 5}" r="13" fill="${t.limeSoft}" stroke="${t.lime}"/><text x="58" y="${y}" text-anchor="middle" font-family="${MONO}" font-size="13" font-weight="700" fill="${t.ink}">${k}</text>
+<text x="84" y="${y - 8}" font-family="${FONT}" font-size="16" font-weight="600" fill="${t.ink}">${esc(a)}</text><text x="84" y="${y + 12}" font-family="${FONT}" font-size="13" fill="${t.sec}">${esc(b)}</text></g>`;
+  }).join('') + `<path class="w" d="M58 159 L58 191 M58 219 L58 251" stroke="${t.lime}" stroke-width="2" fill="none"/>`;
+  const tile = (c, i) => {
+    const x = 560, y = 92 + i * 78, tw = 600;
+    const answers = c.answers !== false;
+    const fig = (value, label, dx, lit) => `<text x="${x + dx}" y="${y + 36}" text-anchor="end" font-family="${FONT}" font-size="24" font-weight="700" fill="${lit ? t.lime : t.ink}">${Number.isFinite(value) ? esc(n(value)) : '–'}</text><text x="${x + dx}" y="${y + 54}" text-anchor="end" font-family="${FONT}" font-size="12" fill="${t.sec}">${esc(label)}</text>`;
+    return `<g><rect x="${x}" y="${y}" width="${tw}" height="64" rx="10" fill="${t.panel}" stroke="${t.line}"/>
+<rect x="${x}" y="${y + 17}" width="4" height="30" rx="2" fill="${answers ? t.lime : t.faint}"/>
+<text x="${x + 22}" y="${y + 29}" font-family="${FONT}" font-size="16" font-weight="600" fill="${t.ink}">${esc(c.chain)}</text>
+<text x="${x + 22}" y="${y + 49}" font-family="${MONO}" font-size="12" fill="${t.sec}">${esc(answers ? `eip155:${c.chainId} · answers` : `eip155:${c.chainId} · read only`)}</text>
+${fig(c.requestsRead, 'requests read', 300, false)}${fig(c.answered, 'answered on chain', 440, false)}${fig(c.responses?.shipped, 'of them "shipped"', 580, true)}</g>`;
+  };
+  const tiles = chains.length ? chains.map(tile).join('\n') : `<text x="560" y="130" font-family="${FONT}" font-size="15" fill="${t.sec}">Validator counts: not read</text>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(`HEY's ERC-8004 validator answers one claim, that a project shipped between two times, from its counted ships. ${chains.map((c) => `${c.chain}: ${c.requestsRead ?? 'not read'} requests read, ${c.answered ?? 'not read'} answered`).join('; ')}.`)}">
+<style>.t{animation:in .7s ease-out both}@keyframes in{from{opacity:0;transform:translateX(-6px)}}.w{stroke-dasharray:4 5;animation:flow 1.4s linear infinite}@keyframes flow{to{stroke-dashoffset:-18}}${REDUCED}</style>
+<rect width="${w}" height="${h}" rx="14" fill="${t.bg}"/>
+<text x="40" y="48" font-family="${MONO}" font-size="13" letter-spacing="2" fill="${t.lime}">AGENTS CHECKING AGENTS · ERC-8004 VALIDATOR</text>
+<text x="560" y="48" font-family="${FONT}" font-size="15" fill="${t.sec}">One claim, read from the Validation Registry on each chain</text>
+<rect x="40" y="70" width="480" height="38" rx="8" fill="${t.panel}" stroke="${t.line}"/>
+<text x="56" y="94" font-family="${MONO}" font-size="13" fill="${t.ink}">hey-ship-claim:1:<tspan fill="${t.lime}">&lt;slug&gt;</tspan>:<tspan fill="${t.lime}">&lt;since&gt;</tspan>:<tspan fill="${t.lime}">&lt;until&gt;</tspan></text>
+${flow}
+${tiles}
+<text x="40" y="${h - 22}" font-family="${MONO}" font-size="12" fill="${t.sec}">How to ask: heyresearch.xyz/developers/agents#validate · counts: heyresearch.xyz/api/agent/stats</text>
+</svg>
+`;
+}

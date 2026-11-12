@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-label="Launchpads HEY credits on Robinhood Chain, A to Z: FOBO, 6 published pages; Pons, 1,395 published pages; Torch, 16 published pages. 57 launch factories indexed in all.">
+<style>.t{animation:in .7s ease-out both}@keyframes in{from{opacity:0;transform:translateY(6px)}}@media (prefers-reduced-motion: reduce){*{animation:none!important}}</style>
+<rect width="1200" height="340" rx="14" fill="#0B0E11"/>
+<text x="40" y="48" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" letter-spacing="2" fill="#C2FB03">LAUNCHPADS CREDITED · A TO Z</text>
+<text x="40" y="74" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">Every token credits the launchpad that made it, with a Launched stamp in its Token Passport. Same rules for every launchpad.</text>
+<g class="t" style="animation-delay:0.00s"><rect x="40" y="96" width="361.3333333333333" height="178" rx="12" fill="#14181D" stroke="#272D35"/>
+<rect x="40" y="114" width="4" height="28" rx="2" fill="#C2FB03"/>
+<text x="62" y="136" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="22" font-weight="700" fill="#E9ECF0">FOBO</text>
+<text x="381.3333333333333" y="135" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="12" fill="#94A0AD">fobo.fun</text>
+<text x="62" y="168" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" fill="#94A0AD">HEY reads its launch factory on chain,</text><text x="62" y="187" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" fill="#94A0AD">and every FOBO launch says &quot;Launched via</text><text x="62" y="206" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" fill="#94A0AD">FOBO&quot;.</text>
+<line x1="62" x2="381.3333333333333" y1="220" y2="220" stroke="#272D35"/>
+<text x="62" y="254" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" letter-spacing="-0.5" fill="#C2FB03">6</text>
+<text x="381.3333333333333" y="252" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" fill="#94A0AD">published pages on HEY launched here</text></g>
+<g class="t" style="animation-delay:0.15s"><rect x="419.3333333333333" y="96" width="361.3333333333333" height="178" rx="12" fill="#14181D" stroke="#272D35"/>
+<rect x="419.3333333333333" y="114" width="4" height="28" rx="2" fill="#C2FB03"/>
+<text x="441.3333333333333" y="136" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="22" font-weight="700" fill="#E9ECF0">Pons</text>
+<text x="760.6666666666666" y="135" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="12" fill="#94A0AD">ponsfamily.com</text>
+<text x="441.3333333333333" y="168" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" fill="#94A0AD">HEY reads each launch record and the day</text><text x="441.3333333333333" y="187" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" fill="#94A0AD">a launch graduates into a Uniswap v4</text><text x="441.3333333333333" y="206" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" fill="#94A0AD">pool.</text>
+<line x1="441.3333333333333" x2="760.6666666666666" y1="220" y2="220" stroke="#272D35"/>
+<text x="441.3333333333333" y="254" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" letter-spacing="-0.5" fill="#C2FB03">1,395</text>
+<text x="760.6666666666666" y="252" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" fill="#94A0AD">published pages on HEY launched here</text></g>
+<g class="t" style="animation-delay:0.30s"><rect x="798.6666666666666" y="96" width="361.3333333333333" height="178" rx="12" fill="#14181D" stroke="#272D35"/>
+<rect x="798.6666666666666" y="114" width="4" height="28" rx="2" fill="#C2FB03"/>
+<text x="820.6666666666666" y="136" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="22" font-weight="700" fill="#E9ECF0">Torch</text>
+<text x="1140" y="135" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="12" fill="#94A0AD">torchpad.fun</text>
+<text x="820.6666666666666" y="168" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" fill="#94A0AD">The Torch team sent HEY its factory, and</text><text x="820.6666666666666" y="187" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" fill="#94A0AD">every Torch launch says &quot;Launched via</text><text x="820.6666666666666" y="206" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" fill="#94A0AD">Torch&quot;.</text>
+<line x1="820.6666666666666" x2="1140" y1="220" y2="220" stroke="#272D35"/>
+<text x="820.6666666666666" y="254" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" letter-spacing="-0.5" fill="#C2FB03">16</text>
+<text x="1140" y="252" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" fill="#94A0AD">published pages on HEY launched here</text></g>
+<text x="40" y="318" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="12" fill="#94A0AD">57 launch factories indexed in all · heyresearch.xyz/passport</text>
+</svg>

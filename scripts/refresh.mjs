@@ -5,7 +5,7 @@
 //   GITHUB_TOKEN=... node scripts/refresh.mjs
 import { readFileSync, writeFileSync } from 'node:fs';
 
-import { agentCard, agentsChart, constellation, creditedAdvisories, fixesMap, fixesTimeline, launchesVsBuilders, shipTicker, THEMES } from './visuals.mjs';
+import { agentCard, agentsChart, constellation, creditedAdvisories, fixesMap, fixesTimeline, hero, launchesVsBuilders, launchpads, shipTicker, THEMES, validator } from './visuals.mjs';
 
 const ACCOUNT = 'hey-research-lab';
 const HEY = 'https://heyresearch.xyz';
@@ -122,6 +122,24 @@ const agentStats = await heyJson('/api/agent/stats');
 // The Uniswap v4 hooks directory (2026-11-05): how many hooks HEY ties to a published project, of how many it has seen.
 const hooksAggregate = (await heyJson('/api/v4-hooks?limit=1', (body) => [body?.aggregate?.listed, body?.aggregate?.listedProjects, body?.aggregate?.seen].every((v) => Number.isInteger(v)))).aggregate;
 if (![hooksAggregate?.listed, hooksAggregate?.listedProjects, hooksAggregate?.seen].every((v) => Number.isInteger(v))) throw new Error('HEY v4-hooks did not answer with its aggregate counts');
+// The launchpads HEY credits by name (2026-11-13), A to Z: published project pages launched on each, read from
+// /api/projects's own launchpad filter (its `total`), and the launch factories HEY indexes, from /api/status. A failed
+// read draws "not read", never 0.
+const PADS = [
+  { key: 'fobo', name: 'FOBO', host: 'fobo.fun', reads: 'HEY reads its launch factory on chain, and every FOBO launch says "Launched via FOBO".' },
+  { key: 'pons', name: 'Pons', host: 'ponsfamily.com', reads: 'HEY reads each launch record and the day a launch graduates into a Uniswap v4 pool.' },
+  { key: 'torch', name: 'Torch', host: 'torchpad.fun', reads: 'The Torch team sent HEY its factory, and every Torch launch says "Launched via Torch".' },
+];
+for (const pad of PADS) {
+  try {
+    const body = await heyJson(`/api/projects?launchpad=${pad.key}&limit=1`, (b) => Number.isInteger(b?.total));
+    pad.pages = Number.isInteger(body?.total) ? body.total : undefined;
+  } catch {
+    pad.pages = undefined;
+  }
+}
+const factorySource = (status.sources ?? []).find((s) => s.id === 'FACTORIES');
+const factories = Number.isInteger(factorySource?.count) ? factorySource.count : undefined;
 // The MCP server's newest version in the Official MCP Registry. Not HEY's own service: a failed read keeps yesterday's line.
 const MCP_NAME = 'io.github.hey-research-lab/hey-research';
 let mcpVersion = null;
@@ -162,6 +180,9 @@ for (const theme of ['light', 'dark']) {
   writeFileSync(`assets/agents-${theme}.svg`, agentsChart(agentStats, theme));
   writeFileSync(`assets/fixes-timeline-${theme}.svg`, fixesTimeline(prs, theme));
   writeFileSync(`assets/agent-${theme}.svg`, agentCard(theme));
+  writeFileSync(`assets/banner-${theme}.svg`, hero({ chain, builders, pages }, theme));
+  writeFileSync(`assets/launchpads-${theme}.svg`, launchpads({ pads: PADS, factories }, theme));
+  writeFileSync(`assets/validator-${theme}.svg`, validator(agentStats, theme));
 }
 
 // ---------------------------------------------------------------- the README's live sections
@@ -194,4 +215,4 @@ between('LISTED', listedLinks.length
 between('HOOKS', `Of the **${n(hooksAggregate.seen)} hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **${n(hooksAggregate.listed)}** are tied to **${n(hooksAggregate.listedProjects)} published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](${HEY}/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>`);
 if (mcpVersion) between('MCP', `It is also listed in the [Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers/${encodeURIComponent(MCP_NAME)}/versions/latest) as \`${MCP_NAME}\`, version ${mcpVersion}, and on [mcptry](https://mcptry.com/servers/${MCP_NAME}).`);
 writeFileSync('README.md', readme);
-console.log(`hooks=${hooksAggregate.listed}/${hooksAggregate.seen} mcp=${mcpVersion ?? 'not read'} advisories=${publishedAdvisories.length} prs=${prs.length} repos=${repos.size} merged=${merged.length} listings=${allPrs.length - prs.length} listed=${listedIn.length} pages=${pages} builders=${builders} records=${records}`);
+console.log(`launchpads=${PADS.map((p) => `${p.key}:${p.pages ?? 'not read'}`).join(',')} factories=${factories ?? 'not read'} hooks=${hooksAggregate.listed}/${hooksAggregate.seen} mcp=${mcpVersion ?? 'not read'} advisories=${publishedAdvisories.length} prs=${prs.length} repos=${repos.size} merged=${merged.length} listings=${allPrs.length - prs.length} listed=${listedIn.length} pages=${pages} builders=${builders} records=${records}`);
