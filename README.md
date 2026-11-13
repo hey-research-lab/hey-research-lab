@@ -183,10 +183,11 @@ Building on Robinhood Chain? Everything here is free, and none of it buys a plac
 <summary><b>The latest fixes merged</b></summary>
 
 <!-- FIXES:START -->
-**273 pull requests** sent to **215 repositories** we don’t own, **50 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
+**272 pull requests** sent to **214 repositories** we don’t own, **51 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
 
 | Merged into | The fix |
 | --- | --- |
+| [ethereum-lists/chains](https://github.com/ethereum-lists/chains/pull/8997) | Remove unresolvable OrdoFi RPC from Robinhood Chain (eip155-4663) |
 | [beefyfinance/beefy-api](https://github.com/beefyfinance/beefy-api/pull/1975) | fix(robinhood): drop the OrdoFi RPC, which no longer resolves |
 | [0xfnzero/FnzSafe](https://github.com/0xfnzero/FnzSafe/pull/10) | evm-services: replace the unreachable OrdoFi fallback for Robinhood Chain |
 | [graphprotocol/networks-registry](https://github.com/graphprotocol/networks-registry/pull/261) | Fix uniqueness check for firehose.firstStreamableBlock.id |
@@ -198,7 +199,6 @@ Building on Robinhood Chain? Everything here is free, and none of it buys a plac
 | [1Shot-API/embedded-wallet](https://github.com/1Shot-API/embedded-wallet/pull/154) | Fix the Ethereum BTC/USD and PAXG/USD addresses in the trusted Chainlink feed list |
 | [DefiLlama/chainlist](https://github.com/DefiLlama/chainlist/pull/3309) | fix(4663): remove OrdoFi RPC, whose domain no longer resolves |
 | [blockscout/chainscout](https://github.com/blockscout/chainscout/pull/319) | Robinhood Chain Testnet: settlement layer is Sepolia (11155111), not Ethereum mainnet |
-| [Hookr-fun/hookr-contracts](https://github.com/Hookr-fun/hookr-contracts/pull/22) | Add a security policy for private vulnerability reports |
 
 Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://heyresearch.xyz/contributions)** · <sub>refreshed daily</sub>
 <!-- FIXES:END -->
@@ -304,7 +304,7 @@ on your repository, and we report there.
 ## Uniswap v4 hooks and open data
 
 <!-- HOOKS:START -->
-Of the **32,290 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **152** are tied to **69 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
+Of the **32,314 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **152** are tied to **69 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
 <!-- HOOKS:END -->
 
 We proposed to Uniswap's public hooklist an optional way to name the project behind a hook, with its public evidence,
