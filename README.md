@@ -182,6 +182,7 @@ Products that put HEY's builder record in front of their own users, and protocol
 | --- | --- |
 | [Axon](https://x.com/axon402) | shows its live HEY badge on its own site |
 | [Chit](https://x.com/usechit) | Chit's bot shows HEY's builder card for a token, where people trade |
+| [GRIFT](https://x.com/Griftwrld) | its World Studio grant judges builders with HEY's public builder record as the evidence; GRIFT decides and pays |
 | [HoodLock](https://x.com/HoodLockRH) | HEY reads HoodLock's locks on chain and shows each on the token's page, credited to HoodLock in its Token Passport |
 | [HoodRugCheck](https://hoodrugcheck.com) | shows a Team check from HEY right next to its own contract score, kept as a separate box |
 | [Insula World](https://x.com/insulaworld) | its agent sent the first request to HEY's ERC-8004 validator, which answered on chain from the counted ships |
@@ -189,6 +190,7 @@ Products that put HEY's builder record in front of their own users, and protocol
 | [PFWA](https://x.com/pfwafun) | shows HEY's builder card on every Robinhood Chain token market, our badge in its footer and HEY in its "Powered by" strip |
 | [Quotum](https://x.com/quotumorg) | rh-preflight, a Hermes agent plugin, reads HEY's builder record before an agent touches a Robinhood Chain address |
 | [RHTools](https://x.com/RHToolsXYZ) | RHTools draws the chart, HEY answers who built the token; each links to the other |
+| [Torch](https://x.com/Torchpaddotfun) | HEY reads Torch's launch factory, so every Torch builder's launch and building record show on HEY, credited to Torch |
 | [Trnch](https://x.com/trnchfun) | puts a Team box from HEY on every token page: one check for the token, one for the team behind it |
 
 <picture>
