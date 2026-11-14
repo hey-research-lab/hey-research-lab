@@ -100,7 +100,7 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 </details>
 
 <details>
-<summary><b>Teams that credited us in their own channels (6)</b></summary>
+<summary><b>Teams that credited us in their own channels (7)</b></summary>
 
 | Team | What we reported | Credit |
 | --- | --- | --- |
@@ -109,6 +109,7 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 | LoomDesk (loomdesk-sdk) | four gaps in the SDK's send gate (Low) | [0.7.1, commit 2e97226](https://github.com/loomdesk-hq/sdk/commit/2e97226) |
 | Gloam | eight items across the vault contracts, relay, SDK, MCP server and app (Low to Medium) | [joint post on X](https://x.com/HeyResearch/status/2117263881815118077) |
 | Autonomo (autonomo-sdk) | the Borro borrow path signed every transaction in its answer, outside the agent's spending caps (Medium); fixed and re-tested the same day | [post on X](https://x.com/useautonomo/status/2121624143187812566) |
+| QHooks | a key-storage issue in how the quantum key was protected (Medium); fixed the same day | [security changelog](https://qhooks.com/changelog#quantum-key-protection) |
 | 1Shot (embedded wallet) | hardening across the open-source embedded wallet: host-replaceable warnings, cross-site extension sessions, requester origins (Low to Medium) | [post on X](https://x.com/1shotapi/status/2121327154864738646) |
 
 </details>
