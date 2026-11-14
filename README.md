@@ -21,16 +21,10 @@
 
 <p align="center">
   <a href="#robinhood-chain-live">The chain, live</a> ·
-  <a href="#now-on-base">Now on Base</a> ·
-  <a href="#launchpads">Launchpads</a> ·
-  <a href="#built-on-hey">Built on HEY</a> ·
-  <a href="#agents-checking-agents">Agents checking agents</a> ·
-  <a href="#proof-of-ship">Proof of Ship</a> ·
-  <a href="#for-builders">For builders</a> ·
+  <a href="#security-credits">Security</a> ·
   <a href="#fixes-we-sent-upstream">Fixes upstream</a> ·
-  <a href="#security-credits">Security credits</a> ·
-  <a href="#use-it">Use it</a> ·
-  <a href="#open-source">Open source</a>
+  <a href="#built-on-hey">Built on HEY</a> ·
+  <a href="#use-it">Use it</a>
 </p>
 
 <picture>
@@ -57,172 +51,7 @@
 
 Redrawn every day from [heyresearch.xyz](https://heyresearch.xyz)'s public API. Browsing HEY needs no wallet, and nothing on it is for sale.
 
-## Now on Base
-
-Robinhood Chain is home. Base is the first chain HEY has added (12 Nov), and a chain switcher sits in the top bar of every
-page on [heyresearch.xyz](https://heyresearch.xyz).
-
-**[heyresearch.xyz/base](https://heyresearch.xyz/base)** lists **63 Base builders**, each checked by hand: a contract of
-its own on Base, a ship in the last four weeks, and the source for both.
-Each one has its own page at `heyresearch.xyz/base/<slug>`. The list is refreshed every week, and daily tracking comes
-next.
-
-## Launchpads
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/launchpads-dark.svg">
-  <img alt="The launchpads HEY credits, A to Z: FOBO, Pons and Torch, with how many published project pages on HEY were launched on each, and the launch factories HEY indexes" src="assets/launchpads-light.svg" width="100%">
-</picture>
-
-HEY reads launches from the chain's launch factories and credits every token to the launchpad that made it, with a
-Launched stamp in its [Token Passport](https://heyresearch.xyz/passport). The same rules hold for every launchpad, and
-nobody pays for a stamp.
-
-| Launchpad | What HEY reads |
-| --- | --- |
-| [FOBO](https://fobo.fun) | its launch factory, read on chain: more than 1,200 FOBO launches so far, each marked "Launched via FOBO" |
-| [Pons](https://ponsfamily.com) | each launch record, and the day a launch graduates into a Uniswap v4 pool, with its receipt |
-| [Torch](https://torchpad.fun) | the launch factory the Torch team sent us: more than 2,100 Torch launches so far, each marked "Launched via Torch" |
-
-Run a launchpad on Robinhood Chain? Send us your factory: [heyresearch.xyz/passport](https://heyresearch.xyz/passport).
-
-## Built on HEY
-
-Products that put HEY's builder record in front of their own users, and protocols whose facts HEY reads, A to Z:
-
-| Project | What it does with HEY |
-| --- | --- |
-| [Axon](https://x.com/axon402) | shows its live HEY badge on its own site |
-| [Chit](https://x.com/usechit) | Chit's bot shows HEY's builder card for a token, where people trade |
-| [HoodLock](https://x.com/HoodLockRH) | HEY reads HoodLock's locks on chain and shows each on the token's page, credited to HoodLock in its Token Passport |
-| [HoodRugCheck](https://hoodrugcheck.com) | shows a Team check from HEY right next to its own contract score, kept as a separate box |
-| [Insula World](https://x.com/insulaworld) | its agent sent the first request to HEY's ERC-8004 validator, which answered on chain from the counted ships |
-| [Orus](https://x.com/Orus_agent) | Orus's trading agents can use HEY's builder evidence as an optional entry filter |
-| [PFWA](https://x.com/pfwafun) | shows HEY's builder card on every Robinhood Chain token market, our badge in its footer and HEY in its "Powered by" strip |
-| [Quotum](https://x.com/quotumorg) | rh-preflight, a Hermes agent plugin, reads HEY's builder record before an agent touches a Robinhood Chain address |
-| [RHTools](https://x.com/RHToolsXYZ) | RHTools draws the chart, HEY answers who built the token; each links to the other |
-| [Trnch](https://x.com/trnchfun) | puts a Team box from HEY on every token page: one check for the token, one for the team behind it |
-
-Want builder context in your product? The API, the embed and the badge are free:
-[heyresearch.xyz/developers/partners](https://heyresearch.xyz/developers/partners). Running a protocol on Robinhood Chain
-with public on-chain data or a public API? Ask to join the [Token Passport](https://heyresearch.xyz/passport).
-
-## Agents checking agents
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/validator-dark.svg">
-  <img alt="HEY's ERC-8004 validator: the one claim it answers, and the requests it read and answered on Robinhood Chain, Base and Ethereum" src="assets/validator-light.svg" width="100%">
-</picture>
-
-HEY is an ERC-8004 agent: **#8783** on Robinhood Chain, **#56081** on Ethereum and **#1148006** on Base. It is also an
-ERC-8004 validator on Robinhood Chain and Base for one claim: that a project HEY publishes shipped between two times. It
-answers only from its counted ships, only for an agent tied to the project, and a response endorses nothing.
-[Insula World](https://x.com/insulaworld)'s agent sent the first request, and HEY answered it on chain. How to ask:
-[heyresearch.xyz/developers/agents](https://heyresearch.xyz/developers/agents#validate).
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/agent-dark.svg">
-  <img alt="HEY Research Lab, one ERC-8004 agent on Robinhood Chain, Ethereum and Base" src="assets/agent-light.svg" width="100%">
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/agents-dark.svg">
-  <img alt="AI agents registered on Robinhood Chain over the last 30 days" src="assets/agents-light.svg" width="100%">
-</picture>
-
-Registrations, feedback and validations are counted live, with their definitions:
-[heyresearch.xyz/developers/agents/stats](https://heyresearch.xyz/developers/agents/stats).
-
-The hosted MCP server is listed as a community connector in [Claude's Connectors Directory](https://claude.ai/directory/hey-research-lab).
-<!-- MCP:START -->
-It is also listed in the [Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers/io.github.hey-research-lab%2Fhey-research/versions/latest) as `io.github.hey-research-lab/hey-research`, version 0.3.5, and on [mcptry](https://mcptry.com/servers/io.github.hey-research-lab/hey-research).
-<!-- MCP:END -->
-
-Skills and plugins: [hey-agent-skills](https://github.com/hey-research-lab/hey-agent-skills), an Agent Skill and Claude Code plugin,
-and plugins on npm for [Coinbase AgentKit](https://github.com/hey-research-lab/hey-agentkit) (`@hey-research-lab/agentkit`),
-[GOAT](https://github.com/hey-research-lab/hey-goat-plugin) (`@hey-research-lab/goat-plugin`),
-[Virtuals GAME](https://github.com/hey-research-lab/hey-virtuals-plugin) (`@hey-research-lab/virtuals-plugin`) and
-[ElizaOS](https://github.com/hey-research-lab/plugin-hey-research) (`@hey-research-lab/plugin-hey-research`).
-
-## Proof of Ship
-
-An open-source escrow that pays a builder only when HEY signs that it counted real ships. Backers fund a bounty, the
-contract checks HEY's signature, and HEY holds, moves and earns nothing in it.
-
-| Escrow | Where it pays |
-| --- | --- |
-| [proof-of-ship](https://github.com/hey-research-lab/proof-of-ship) | on Robinhood Chain, bounties in $WIF; the first bounty paid out to [predict FWA](https://x.com/pfwafun) |
-| [proof-of-ship-near](https://github.com/hey-research-lab/proof-of-ship-near) | on NEAR, bounties in USDC (`escrow.heyresearch.near`), verifying HEY's signature on chain with `ecrecover` |
-
-## For builders
-
-Building on Robinhood Chain? Everything here is free, and none of it buys a place: what you ship decides.
-
-| | |
-| --- | --- |
-| **A page that shows your work** | every release, deployment and code week we read, each linked to its source: find yours on [heyresearch.xyz](https://heyresearch.xyz) or [submit it](https://heyresearch.xyz/submit) |
-| **Fixes, not just findings** | we read your public code; when we find a bug we can fix, we send a pull request, and anything security-related goes to you privately first |
-| **A live badge** | your HEY badge for your site or README, updated from public evidence: [heyresearch.xyz/badges](https://heyresearch.xyz/badges) |
-| **Funding for shipping** | backers can fund you through [Proof of Ship](#proof-of-ship), an escrow that pays only when HEY signs that it counted real ships |
-| **Your data, open** | the API, the embed and the open dataset are free for your own product: [heyresearch.xyz/developers](https://heyresearch.xyz/developers) |
-| **Counted in Electric Capital's developer data** | we added Robinhood Chain to [Open Dev Data](https://github.com/electric-capital/open-dev-data/pull/3115) as its own ecosystem (1,183 repositories) and send it a monthly update, so builders here show up in the industry's developer numbers |
-
-## Fixes we sent upstream
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/fixes-dark.svg">
-  <img alt="One square per repository we sent a fix to: merged, open or closed" src="assets/fixes-light.svg" width="100%">
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/fixes-timeline-dark.svg">
-  <img alt="Pull requests sent upstream and merged, day by day" src="assets/fixes-timeline-light.svg" width="100%">
-</picture>
-
-<details>
-<summary><b>The latest fixes merged</b></summary>
-
-<!-- FIXES:START -->
-**272 pull requests** sent to **214 repositories** we don’t own, **51 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
-
-| Merged into | The fix |
-| --- | --- |
-| [ethereum-lists/chains](https://github.com/ethereum-lists/chains/pull/8997) | Remove unresolvable OrdoFi RPC from Robinhood Chain (eip155-4663) |
-| [beefyfinance/beefy-api](https://github.com/beefyfinance/beefy-api/pull/1975) | fix(robinhood): drop the OrdoFi RPC, which no longer resolves |
-| [0xfnzero/FnzSafe](https://github.com/0xfnzero/FnzSafe/pull/10) | evm-services: replace the unreachable OrdoFi fallback for Robinhood Chain |
-| [graphprotocol/networks-registry](https://github.com/graphprotocol/networks-registry/pull/261) | Fix uniqueness check for firehose.firstStreamableBlock.id |
-| [Twigpine/openlaunch](https://github.com/Twigpine/openlaunch/pull/109) | fix(math): fmtCompact promotes the suffix when rounding reaches 1000 |
-| [1inch/sdks](https://github.com/1inch/sdks/pull/140) | fix(sdk-core): pad HexString.fromBigInt to whole bytes |
-| [RevokeCash/revoke.cash](https://github.com/RevokeCash/revoke.cash/pull/311) | fix: keep multicall3 in exploit stats for genesis predeploys |
-| [0xfnzero/FnzSafe](https://github.com/0xfnzero/FnzSafe/pull/9) | extension: skip discovered tokens whose decimals are null instead of reading them as 0 |
-| [0xfnzero/FnzSafe](https://github.com/0xfnzero/FnzSafe/pull/7) | evm-services: fix Robinhood Chain explorer URL (robinscan.io does not resolve) |
-| [1Shot-API/embedded-wallet](https://github.com/1Shot-API/embedded-wallet/pull/154) | Fix the Ethereum BTC/USD and PAXG/USD addresses in the trusted Chainlink feed list |
-| [DefiLlama/chainlist](https://github.com/DefiLlama/chainlist/pull/3309) | fix(4663): remove OrdoFi RPC, whose domain no longer resolves |
-| [blockscout/chainscout](https://github.com/blockscout/chainscout/pull/319) | Robinhood Chain Testnet: settlement layer is Sepolia (11155111), not Ethereum mainnet |
-
-Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://heyresearch.xyz/contributions)** · <sub>refreshed daily</sub>
-<!-- FIXES:END -->
-
-</details>
-
-<!-- LISTED:START -->
-**Where HEY is listed:** [punkpeye/awesome-remote-mcp-servers](https://github.com/punkpeye/awesome-remote-mcp-servers/pull/1769) · [AIAnytime/Awesome-MCP-Servers](https://github.com/AIAnytime/Awesome-MCP-Servers/pull/330) · [marcelscruz/public-apis](https://github.com/marcelscruz/public-apis/pull/1520) · [mcpHQ/awesome-mcp-servers](https://github.com/mcpHQ/awesome-mcp-servers/pull/423) · [davepoon/buildwithclaude](https://github.com/davepoon/buildwithclaude/pull/563) · [collabnix/awesome-mcp-lists](https://github.com/collabnix/awesome-mcp-lists/pull/272) · [ahmet/awesome-web3](https://github.com/ahmet/awesome-web3/pull/863) · [awesomedata/apd-core](https://github.com/awesomedata/apd-core/pull/955) · [public-apis/public-apis](https://github.com/public-apis/public-apis/pull/8411). These are pull requests that add HEY to someone else's list or directory, so they are not counted as fixes.
-<!-- LISTED:END -->
-
-<details>
-<summary><b>Fixes teams shipped in their own commits</b></summary>
-
-Some teams take a fix into their own commit instead of merging ours. These count the same to us:
-
-| Shipped by | What landed |
-| --- | --- |
-| [Gloam](https://github.com/gloamtrade/gloam/pull/124) | all six fixes from [#117](https://github.com/gloamtrade/gloam/pull/117) to [#122](https://github.com/gloamtrade/gloam/pull/122): MCP version pins, cash-out address guard, payment settlement, API key rename, MCP spend limits, access-key generation |
-| [HoodFi](https://github.com/RWA-ID/hoodfi-eth) | [#12](https://github.com/RWA-ID/hoodfi-eth/pull/12), [#13](https://github.com/RWA-ID/hoodfi-eth/pull/13) and [#14](https://github.com/RWA-ID/hoodfi-eth/pull/14) merged with our commits in #17, #19 and #20; [#15](https://github.com/RWA-ID/hoodfi-eth/pull/15) shipped as a narrower fix in #18 |
-
-</details>
-
-Merged one of our fixes and liked it? A shout-out on X helps a small team keep sending them: tag
-[x.com/HeyResearch](https://x.com/HeyResearch) and say what we fixed. That's the only thank-you we ask for.
+**Base:** [heyresearch.xyz/base](https://heyresearch.xyz/base) lists 63 Base builders, each checked by hand, with the source for its contract and its latest ship. Robinhood Chain stays home; daily tracking of Base comes next.
 
 ## Security credits
 
@@ -286,37 +115,109 @@ Maintain a Robinhood Chain project and want a second pair of eyes? Turn on
 [private vulnerability reporting](https://docs.github.com/en/code-security/how-tos/report-and-fix-vulnerabilities/configure-vulnerability-reporting/configure-for-a-repository)
 on your repository, and we report there.
 
+## Fixes we sent upstream
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/fixes-dark.svg">
+  <img alt="One square per repository we sent a fix to: merged, open or closed" src="assets/fixes-light.svg" width="100%">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/fixes-timeline-dark.svg">
+  <img alt="Pull requests sent upstream and merged, day by day" src="assets/fixes-timeline-light.svg" width="100%">
+</picture>
+
+<details>
+<summary><b>The latest fixes merged</b></summary>
+
+<!-- FIXES:START -->
+**272 pull requests** sent to **214 repositories** we don’t own, **51 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
+
+| Merged into | The fix |
+| --- | --- |
+| [ethereum-lists/chains](https://github.com/ethereum-lists/chains/pull/8997) | Remove unresolvable OrdoFi RPC from Robinhood Chain (eip155-4663) |
+| [beefyfinance/beefy-api](https://github.com/beefyfinance/beefy-api/pull/1975) | fix(robinhood): drop the OrdoFi RPC, which no longer resolves |
+| [0xfnzero/FnzSafe](https://github.com/0xfnzero/FnzSafe/pull/10) | evm-services: replace the unreachable OrdoFi fallback for Robinhood Chain |
+| [graphprotocol/networks-registry](https://github.com/graphprotocol/networks-registry/pull/261) | Fix uniqueness check for firehose.firstStreamableBlock.id |
+| [Twigpine/openlaunch](https://github.com/Twigpine/openlaunch/pull/109) | fix(math): fmtCompact promotes the suffix when rounding reaches 1000 |
+| [1inch/sdks](https://github.com/1inch/sdks/pull/140) | fix(sdk-core): pad HexString.fromBigInt to whole bytes |
+| [RevokeCash/revoke.cash](https://github.com/RevokeCash/revoke.cash/pull/311) | fix: keep multicall3 in exploit stats for genesis predeploys |
+| [0xfnzero/FnzSafe](https://github.com/0xfnzero/FnzSafe/pull/9) | extension: skip discovered tokens whose decimals are null instead of reading them as 0 |
+| [0xfnzero/FnzSafe](https://github.com/0xfnzero/FnzSafe/pull/7) | evm-services: fix Robinhood Chain explorer URL (robinscan.io does not resolve) |
+| [1Shot-API/embedded-wallet](https://github.com/1Shot-API/embedded-wallet/pull/154) | Fix the Ethereum BTC/USD and PAXG/USD addresses in the trusted Chainlink feed list |
+| [DefiLlama/chainlist](https://github.com/DefiLlama/chainlist/pull/3309) | fix(4663): remove OrdoFi RPC, whose domain no longer resolves |
+| [blockscout/chainscout](https://github.com/blockscout/chainscout/pull/319) | Robinhood Chain Testnet: settlement layer is Sepolia (11155111), not Ethereum mainnet |
+
+Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://heyresearch.xyz/contributions)** · <sub>refreshed daily</sub>
+<!-- FIXES:END -->
+
+</details>
+
+<!-- LISTED:START -->
+**Where HEY is listed:** [punkpeye/awesome-remote-mcp-servers](https://github.com/punkpeye/awesome-remote-mcp-servers/pull/1769) · [AIAnytime/Awesome-MCP-Servers](https://github.com/AIAnytime/Awesome-MCP-Servers/pull/330) · [marcelscruz/public-apis](https://github.com/marcelscruz/public-apis/pull/1520) · [mcpHQ/awesome-mcp-servers](https://github.com/mcpHQ/awesome-mcp-servers/pull/423) · [davepoon/buildwithclaude](https://github.com/davepoon/buildwithclaude/pull/563) · [collabnix/awesome-mcp-lists](https://github.com/collabnix/awesome-mcp-lists/pull/272) · [ahmet/awesome-web3](https://github.com/ahmet/awesome-web3/pull/863) · [awesomedata/apd-core](https://github.com/awesomedata/apd-core/pull/955) · [public-apis/public-apis](https://github.com/public-apis/public-apis/pull/8411). These are pull requests that add HEY to someone else's list or directory, so they are not counted as fixes.
+<!-- LISTED:END -->
+
+<details>
+<summary><b>Fixes teams shipped in their own commits</b></summary>
+
+Some teams take a fix into their own commit instead of merging ours. These count the same to us:
+
+| Shipped by | What landed |
+| --- | --- |
+| [Gloam](https://github.com/gloamtrade/gloam/pull/124) | all six fixes from [#117](https://github.com/gloamtrade/gloam/pull/117) to [#122](https://github.com/gloamtrade/gloam/pull/122): MCP version pins, cash-out address guard, payment settlement, API key rename, MCP spend limits, access-key generation |
+| [HoodFi](https://github.com/RWA-ID/hoodfi-eth) | [#12](https://github.com/RWA-ID/hoodfi-eth/pull/12), [#13](https://github.com/RWA-ID/hoodfi-eth/pull/13) and [#14](https://github.com/RWA-ID/hoodfi-eth/pull/14) merged with our commits in #17, #19 and #20; [#15](https://github.com/RWA-ID/hoodfi-eth/pull/15) shipped as a narrower fix in #18 |
+
+</details>
+
+Merged one of our fixes and liked it? A shout-out on X helps a small team keep sending them: tag
+[x.com/HeyResearch](https://x.com/HeyResearch) and say what we fixed. That's the only thank-you we ask for.
+
+## Built on HEY
+
+Products that put HEY's builder record in front of their own users, and protocols whose facts HEY reads, A to Z:
+
+| Project | What it does with HEY |
+| --- | --- |
+| [Axon](https://x.com/axon402) | shows its live HEY badge on its own site |
+| [Chit](https://x.com/usechit) | Chit's bot shows HEY's builder card for a token, where people trade |
+| [HoodLock](https://x.com/HoodLockRH) | HEY reads HoodLock's locks on chain and shows each on the token's page, credited to HoodLock in its Token Passport |
+| [HoodRugCheck](https://hoodrugcheck.com) | shows a Team check from HEY right next to its own contract score, kept as a separate box |
+| [Insula World](https://x.com/insulaworld) | its agent sent the first request to HEY's ERC-8004 validator, which answered on chain from the counted ships |
+| [Orus](https://x.com/Orus_agent) | Orus's trading agents can use HEY's builder evidence as an optional entry filter |
+| [PFWA](https://x.com/pfwafun) | shows HEY's builder card on every Robinhood Chain token market, our badge in its footer and HEY in its "Powered by" strip |
+| [Quotum](https://x.com/quotumorg) | rh-preflight, a Hermes agent plugin, reads HEY's builder record before an agent touches a Robinhood Chain address |
+| [RHTools](https://x.com/RHToolsXYZ) | RHTools draws the chart, HEY answers who built the token; each links to the other |
+| [Trnch](https://x.com/trnchfun) | puts a Team box from HEY on every token page: one check for the token, one for the team behind it |
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/launchpads-dark.svg">
+  <img alt="The launchpads HEY credits, A to Z: FOBO, Pons and Torch, with how many published project pages on HEY were launched on each, and the launch factories HEY indexes" src="assets/launchpads-light.svg" width="100%">
+</picture>
+
+Every token is credited to the launchpad that made it, in its [Token Passport](https://heyresearch.xyz/passport). Want builder context in your product? The API, the embed and the badge are free:
+[heyresearch.xyz/developers/partners](https://heyresearch.xyz/developers/partners). Running a protocol on Robinhood Chain
+with public on-chain data or a public API? Ask to join the [Token Passport](https://heyresearch.xyz/passport).
+
 ## Use it
 
 | | |
 | --- | --- |
-| **Check any token or project** | [heyresearch.xyz](https://heyresearch.xyz) · from a terminal: `npx @hey-research-lab/check '$TICKER'` |
-| **Research Terminal** | HEY's research workspace: projects, what changed, a project's timeline and contracts, with market and on-chain figures as context. Anyone can open the preview; the full view needs Terminal access: [heyresearch.xyz/terminal](https://heyresearch.xyz/terminal) |
-| **Telegram bot** | ask who is building a Robinhood Chain project, what shipped and where the evidence is, in a private chat, inline or in a group: [t.me/HeyResearch_Bot](https://t.me/HeyResearch_Bot). Community-run by HEY Research Lab · not an official Robinhood channel. |
-| **Stock Tokens** | Robinhood's Stock Tokens on Robinhood Chain and the published projects that name them in their own code, with corporate actions announced and trading sessions from Robinhood's own feed: [heyresearch.xyz/stock-tokens](https://heyresearch.xyz/stock-tokens) |
-| **Weekly builder report** | who shipped on Robinhood Chain this week, each ship with its source: [heyresearch.xyz/reports/weekly](https://heyresearch.xyz/reports/weekly) |
-| **Public API** | one call per token: `GET /api/v1/builder?chain=4663&token=0x…` · [docs](https://heyresearch.xyz/developers) · [changelog](https://heyresearch.xyz/developers/changelog) |
-| **Embed** | a live builder card on any site: `<hey-project contract="0x…">` · [embeds](https://heyresearch.xyz/developers) |
-| **Token Passport** | a token's page credits the Robinhood Chain protocols whose facts HEY reads (a HoodLock lock, the launchpad that minted it, its Uniswap v4 hooks), each with a link: [heyresearch.xyz/passport](https://heyresearch.xyz/passport) |
-| **Badge** | a project's live HEY badge for its site or README; projects showing one are thanked on [heyresearch.xyz/badges](https://heyresearch.xyz/badges) |
-| **Open data** | daily snapshots and a weekly Hugging Face copy, CC BY 4.0: [below](#uniswap-v4-hooks-and-open-data) |
+| **Check a token** | [heyresearch.xyz](https://heyresearch.xyz) · `npx @hey-research-lab/check '$TICKER'` · [Telegram bot](https://t.me/HeyResearch_Bot) |
+| **API** | free, no key: `GET /api/v1/builder?chain=4663&token=0x…` · [docs](https://heyresearch.xyz/developers) |
+| **Agents (MCP)** | `heyresearch.xyz/mcp`, no key, stdio or HTTP · skills and plugins for Claude Code, AgentKit, GOAT, Virtuals and ElizaOS: [developers/agents](https://heyresearch.xyz/developers/agents) |
+| **ERC-8004** | agent #8783 on Robinhood Chain (#56081 Ethereum, #1148006 Base), and a validator that answers one claim from counted ships: [how to ask](https://heyresearch.xyz/developers/agents#validate) |
+| **Proof of Ship** | an escrow that pays a builder only when HEY signs that it counted real ships: [Robinhood Chain ($WIF)](https://github.com/hey-research-lab/proof-of-ship) · [NEAR (USDC)](https://github.com/hey-research-lab/proof-of-ship-near) |
+| **For builders** | your page, a live [badge](https://heyresearch.xyz/badges), fixes sent as pull requests, security notes sent privately. None of it buys a place: what you ship decides |
+| **Open data** | daily snapshots, CC BY 4.0, no price or holder field: [heyresearch.xyz/data](https://heyresearch.xyz/data) · [Hugging Face](https://huggingface.co/datasets/heyresearch/robinhood-chain-builders) |
 
-## Uniswap v4 hooks and open data
+The hosted MCP server is listed as a community connector in [Claude's Connectors Directory](https://claude.ai/directory/hey-research-lab).
+<!-- MCP:START -->
+It is also listed in the [Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers/io.github.hey-research-lab%2Fhey-research/versions/latest) as `io.github.hey-research-lab/hey-research`, version 0.3.5, and on [mcptry](https://mcptry.com/servers/io.github.hey-research-lab/hey-research).
+<!-- MCP:END -->
 
 <!-- HOOKS:START -->
 Of the **32,344 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **153** are tied to **70 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
 <!-- HOOKS:END -->
-
-We proposed to Uniswap's public hooklist an optional way to name the project behind a hook, with its public evidence,
-starting with Robinhood Chain: [Uniswap/hooklist#10665](https://github.com/Uniswap/hooklist/issues/10665).
-
-| | |
-| --- | --- |
-| **Daily snapshot** | [heyresearch.xyz/data](https://heyresearch.xyz/data): projects, ships and changes as NDJSON and CSV, and every hook the hooks page shows as `hooks.ndjson.gz` and `hooks.csv` |
-| **Weekly on Hugging Face** | [heyresearch/robinhood-chain-builders](https://huggingface.co/datasets/heyresearch/robinhood-chain-builders): the newest `projects.csv`, `ships.csv` and `hooks.csv`, copied every Monday |
-| **hey-data** | [hey-data](https://github.com/hey-research-lab/hey-data): `hey-data generate` builds a full snapshot from the public API, `hey-data hooks` copies the newest hooks file checked against its `SHA256SUMS`, `hey-data huggingface` writes the Hugging Face copy |
-
-All of it is CC BY 4.0, with no price, market or holder field in any file.
 
 ## Open source
 
