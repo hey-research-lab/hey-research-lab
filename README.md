@@ -206,7 +206,7 @@ Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://hey
 </details>
 
 <!-- LISTED:START -->
-**Where HEY is listed:** [punkpeye/awesome-remote-mcp-servers](https://github.com/punkpeye/awesome-remote-mcp-servers/pull/1769) · [AIAnytime/Awesome-MCP-Servers](https://github.com/AIAnytime/Awesome-MCP-Servers/pull/330) · [marcelscruz/public-apis](https://github.com/marcelscruz/public-apis/pull/1520) · [mcpHQ/awesome-mcp-servers](https://github.com/mcpHQ/awesome-mcp-servers/pull/423) · [davepoon/buildwithclaude](https://github.com/davepoon/buildwithclaude/pull/563) · [collabnix/awesome-mcp-lists](https://github.com/collabnix/awesome-mcp-lists/pull/272) · [ahmet/awesome-web3](https://github.com/ahmet/awesome-web3/pull/863) · [awesomedata/apd-core](https://github.com/awesomedata/apd-core/pull/955) · [public-apis/public-apis](https://github.com/public-apis/public-apis/pull/8410). These are pull requests that add HEY to someone else's list or directory, so they are not counted as fixes.
+**Where HEY is listed:** [punkpeye/awesome-remote-mcp-servers](https://github.com/punkpeye/awesome-remote-mcp-servers/pull/1769) · [AIAnytime/Awesome-MCP-Servers](https://github.com/AIAnytime/Awesome-MCP-Servers/pull/330) · [marcelscruz/public-apis](https://github.com/marcelscruz/public-apis/pull/1520) · [mcpHQ/awesome-mcp-servers](https://github.com/mcpHQ/awesome-mcp-servers/pull/423) · [davepoon/buildwithclaude](https://github.com/davepoon/buildwithclaude/pull/563) · [collabnix/awesome-mcp-lists](https://github.com/collabnix/awesome-mcp-lists/pull/272) · [ahmet/awesome-web3](https://github.com/ahmet/awesome-web3/pull/863) · [awesomedata/apd-core](https://github.com/awesomedata/apd-core/pull/955) · [public-apis/public-apis](https://github.com/public-apis/public-apis/pull/8411). These are pull requests that add HEY to someone else's list or directory, so they are not counted as fixes.
 <!-- LISTED:END -->
 
 <details>
@@ -304,7 +304,7 @@ on your repository, and we report there.
 ## Uniswap v4 hooks and open data
 
 <!-- HOOKS:START -->
-Of the **32,314 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **152** are tied to **69 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
+Of the **32,344 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **153** are tied to **70 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
 <!-- HOOKS:END -->
 
 We proposed to Uniswap's public hooklist an optional way to name the project behind a hook, with its public evidence,
