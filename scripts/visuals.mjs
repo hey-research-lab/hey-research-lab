@@ -300,18 +300,26 @@ export function creditedAdvisories({ hand, published }, theme, now = new Date())
   const publishedTotal = published.length;
 
   const w = 1200, top = 112, rowH = 46, size = 22, gap = 7, sq = 650;
-  const weeksTop = top + rows.length * rowH + 40;
-  const h = weeksTop + 196;
+  // A row wraps its squares onto more lines once it reaches the right edge (the filed row runs to dozens).
+  const perLine = Math.floor((w - 40 - 56 - sq) / (size + gap));
+  const lineH = size + gap;
+  let cursor = top;
   const squares = rows.map((r, i) => {
-    const y = top + i * rowH;
-    const cells = [];
-    for (let k = 0; k < r.published; k++) cells.push(`<rect class="m" style="animation-delay:${((i + k) * 0.31 % 4).toFixed(2)}s" x="${sq + k * (size + gap)}" y="${y}" width="${size}" height="${size}" rx="5" fill="${t.lime}"/>`);
-    for (let k = 0; k < r.accepted; k++) { const x = sq + (r.published + k) * (size + gap); cells.push(`<rect x="${x + 0.75}" y="${y + 0.75}" width="${size - 1.5}" height="${size - 1.5}" rx="5" fill="${t.panel}" stroke="${t.lime}" stroke-width="1.5"/>`); }
-    for (let k = 0; k < (r.filed ?? 0); k++) cells.push(`<rect x="${sq + k * (size + gap)}" y="${y}" width="${size}" height="${size}" rx="5" fill="${t.line}"/>`);
+    const y = cursor;
     const total = r.published + r.accepted + (r.filed ?? 0);
+    const lines = Math.max(1, Math.ceil(total / perLine));
+    cursor += rowH + (lines - 1) * lineH;
+    const at = (k) => ({ x: sq + (k % perLine) * (size + gap), y: y + Math.floor(k / perLine) * lineH });
+    const cells = [];
+    for (let k = 0; k < r.published; k++) { const c = at(k); cells.push(`<rect class="m" style="animation-delay:${((i + k) * 0.31 % 4).toFixed(2)}s" x="${c.x}" y="${c.y}" width="${size}" height="${size}" rx="5" fill="${t.lime}"/>`); }
+    for (let k = 0; k < r.accepted; k++) { const c = at(r.published + k); cells.push(`<rect x="${c.x + 0.75}" y="${c.y + 0.75}" width="${size - 1.5}" height="${size - 1.5}" rx="5" fill="${t.panel}" stroke="${t.lime}" stroke-width="1.5"/>`); }
+    for (let k = 0; k < (r.filed ?? 0); k++) { const c = at(k); cells.push(`<rect x="${c.x}" y="${c.y}" width="${size}" height="${size}" rx="5" fill="${t.line}"/>`); }
     const note = r.filed ? `${r.filed}` : [r.published && `${r.published} published`, r.accepted && `${r.accepted} accepted`].filter(Boolean).join(' · ');
-    return `<text x="380" y="${y + 16}" font-family="${FONT}" font-size="15" font-weight="${r.filed ? 400 : 600}" fill="${r.filed ? t.sec : t.ink}">${esc(r.label)}</text>${cells.join('')}<text x="${sq + total * (size + gap) + 8}" y="${y + 16}" font-family="${MONO}" font-size="12" fill="${t.sec}">${esc(note)}</text>`;
+    const end = at(total - 1);
+    return `<text x="380" y="${y + 16}" font-family="${FONT}" font-size="15" font-weight="${r.filed ? 400 : 600}" fill="${r.filed ? t.sec : t.ink}">${esc(r.label)}</text>${cells.join('')}<text x="${end.x + size + 8}" y="${end.y + 16}" font-family="${MONO}" font-size="12" fill="${t.sec}">${esc(note)}</text>`;
   }).join('\n');
+  const weeksTop = Math.max(cursor, top + 230) + 40;
+  const h = weeksTop + 196;
 
   // Published by the week GitHub published them, from the first such week to this one.
   const weeks = [];
@@ -320,7 +328,9 @@ export function creditedAdvisories({ hand, published }, theme, now = new Date())
     const last = isoWeekStart(now.toISOString());
     for (let d = new Date(`${first}T00:00:00Z`); d.toISOString().slice(0, 10) <= last; d.setUTCDate(d.getUTCDate() + 7)) weeks.push(d.toISOString().slice(0, 10));
   }
-  const bw = 64, unit = 14, baseY = weeksTop + 126;
+  // The tallest week fits the 100 px under the heading: a busy week draws thinner bricks, never taller ones.
+  const most = Math.max(1, ...weeks.map((wk) => published.filter((a) => isoWeekStart(a.publishedAt) === wk).length));
+  const bw = 64, unit = Math.max(4, Math.min(14, Math.floor(100 / most) - 3)), baseY = weeksTop + 126;
   const weekBars = weeks.map((wk, i) => {
     const count = published.filter((a) => isoWeekStart(a.publishedAt) === wk).length;
     const x = 380 + i * (bw + 16);

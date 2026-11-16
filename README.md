@@ -81,10 +81,20 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 </a>
 
 <details>
-<summary><b>Published advisories we found (11)</b></summary>
+<summary><b>Published advisories we found (21)</b></summary>
 
 | Project | Advisory | Severity | Our credit |
 | --- | --- | --- | --- |
+| [x402fi](https://github.com/RWA-ID/x402fi) | [GHSA-2695-fqv4-x6wm](https://github.com/RWA-ID/x402fi/security/advisories/GHSA-2695-fqv4-x6wm): the gateway priced a URL with an encoded `../` as one endpoint (or a free one) and forwarded it to another | High | Reporter · fixed the same day |
+| [x402fi](https://github.com/RWA-ID/x402fi) | [GHSA-4mf4-56v3-jvm7](https://github.com/RWA-ID/x402fi/security/advisories/GHSA-4mf4-56v3-jvm7): the public facilitator's `/settle` paid gas for transfers that pay nobody, with no key, floor or budget | Medium | Reporter · fixed the same day |
+| [x402fi](https://github.com/RWA-ID/x402fi) | [GHSA-9g6h-3x75-ghv9](https://github.com/RWA-ID/x402fi/security/advisories/GHSA-9g6h-3x75-ghv9): the gateway forwarded paid calls whose payment could not settle, so one balance could back many concurrent calls | Medium | Reporter |
+| [Gloam](https://github.com/gloamtrade/gloam) | [GHSA-wxv6-6fjw-c2m9](https://github.com/gloamtrade/gloam/security/advisories/GHSA-wxv6-6fjw-c2m9): paying an ENS name resolved the Ethereum mainnet address for payments on Base, Robinhood Chain and Tempo | Medium | Reporter |
+| [Gloam](https://github.com/gloamtrade/gloam) | [GHSA-p2wm-6x89-63c2](https://github.com/gloamtrade/gloam/security/advisories/GHSA-p2wm-6x89-63c2): the SDK and the mppx settle treated a successful outer transaction as a landed sweep | Medium | Reporter |
+| [Gloam](https://github.com/gloamtrade/gloam) | [GHSA-5gwv-jpjr-x34r](https://github.com/gloamtrade/gloam/security/advisories/GHSA-5gwv-jpjr-x34r): the free relay's hourly network budget could be used up with payment messages that need no note or proof | Medium | Reporter |
+| [Gloam](https://github.com/gloamtrade/gloam) | [GHSA-x8fx-frxx-7f66](https://github.com/gloamtrade/gloam/security/advisories/GHSA-x8fx-frxx-7f66): proofs of funds revealed the prover's later cash-out address and amount | Medium | Reporter |
+| [Gloam](https://github.com/gloamtrade/gloam) | [GHSA-fqc9-v45x-jfh8](https://github.com/gloamtrade/gloam/security/advisories/GHSA-fqc9-v45x-jfh8): lower-severity findings: swap escrow liveness, MCP payment handling, recovery | Medium | Reporter |
+| [Gloam](https://github.com/gloamtrade/gloam) | [GHSA-vqqr-hg6r-779w](https://github.com/gloamtrade/gloam/security/advisories/GHSA-vqqr-hg6r-779w): the holder vote's ENS lookup let anyone make Gloam's server fetch a URL they chose (CCIP-Read) | Low | Reporter |
+| [Gloam](https://github.com/gloamtrade/gloam) | [GHSA-rvhx-3m36-4g8h](https://github.com/gloamtrade/gloam/security/advisories/GHSA-rvhx-3m36-4g8h): in @gloamtrade/sdk 0.0.7 and earlier, an unshield could name the pool itself as recipient | Low | Reporter |
 | [Hookr](https://github.com/Hookr-fun/hookr-contracts) | [GHSA-m3fx-pjvg-cmf7](https://github.com/Hookr-fun/hookr-contracts/security/advisories/GHSA-m3fx-pjvg-cmf7): the per-wallet launch cap counted per contract for router swaps, so one buyer could hold many caps | Low | Reporter |
 | [Hookr](https://github.com/Hookr-fun/hookr-contracts) | [GHSA-43mv-935h-rpm7](https://github.com/Hookr-fun/hookr-contracts/security/advisories/GHSA-43mv-935h-rpm7): in the first-release time shares, a lock made after a drop could share in that drop | Low | Finder · fixed in the 29 Oct release |
 | [Agent402](https://github.com/MikeyPetrillo/Agent402) | [GHSA-q7vw-c7hm-m885](https://github.com/MikeyPetrillo/Agent402/security/advisories/GHSA-q7vw-c7hm-m885): the x402 buyer signed the seller's `maxAmountRequired` while its spend caps checked `amount` | High | Reporter · fixed the same day |
@@ -100,7 +110,7 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 </details>
 
 <details>
-<summary><b>Teams that credited us in their own channels (7)</b></summary>
+<summary><b>Teams that credited us in their own channels (9)</b></summary>
 
 | Team | What we reported | Credit |
 | --- | --- | --- |
@@ -111,10 +121,17 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 | Autonomo (autonomo-sdk) | the Borro borrow path signed every transaction in its answer, outside the agent's spending caps (Medium); fixed and re-tested the same day | [post on X](https://x.com/useautonomo/status/2121624143187812566) |
 | QHooks | a key-storage issue in how the quantum key was protected (Medium); fixed the same day | [security changelog](https://qhooks.com/changelog#quantum-key-protection) |
 | 1Shot (embedded wallet) | hardening across the open-source embedded wallet: host-replaceable warnings, cross-site extension sessions, requester origins (Low to Medium) | [post on X](https://x.com/1shotapi/status/2121327154864738646) |
+| AgentCity | five findings across the placement market contract, terms page, key custody, ownership docs and checkout, then five smaller notes; each answered in public (not rated) | [their write-up](https://github.com/agentcitylabs/research/blob/main/%5BRnDAC%5D-SecurityReview_HEYResearchLab.md) |
+| Stoa | a review they asked for. Two Medium findings, each with a fork test: anyone could block new limit orders with dust, and a finding about which Uniswap V4 pools the router uses. Both fixed on 16 Nov | [Stoa's security review page](https://stoadex.com/docs/security-review) |
 
 </details>
 
-Maintain a Robinhood Chain project and want a second pair of eyes? Turn on
+As of 16 November, 65 more advisories we filed on GitHub are not public yet, and more reports went by email or direct
+message. We name none of them until the team has fixed the issue and published it.
+
+Maintain a Robinhood Chain project and want a second pair of eyes? Ask for a review: public code, a pinned commit,
+findings sent to you privately first with a test, free for now, and a review, not an audit
+([how it works](https://github.com/hey-research-lab/security#ask-for-a-review)). Or turn on
 [private vulnerability reporting](https://docs.github.com/en/code-security/how-tos/report-and-fix-vulnerabilities/configure-vulnerability-reporting/configure-for-a-repository)
 on your repository, and we report there.
 
