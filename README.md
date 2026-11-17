@@ -81,10 +81,16 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 </a>
 
 <details>
-<summary><b>Published advisories we found (27)</b></summary>
+<summary><b>Published advisories we found (33)</b></summary>
 
 | Project | Advisory | Severity | Our credit |
 | --- | --- | --- | --- |
+| [Sourcify](https://github.com/argotorg/sourcify) | [GHSA-726m-wjrf-m267](https://github.com/argotorg/sourcify/security/advisories/GHSA-726m-wjrf-m267): two input checks in the public verify endpoint could be combined so that anyone, with no account, made the verification server download a git repository and run a file from it | Critical | Reporter · fixed within about a day |
+| [Sourcify](https://github.com/argotorg/sourcify) | [GHSA-w97v-g4q9-998q](https://github.com/argotorg/sourcify/security/advisories/GHSA-w97v-g4q9-998q): a match on an old creation transaction alone stored an Exact Match for an address that now holds different code | Medium | Reporter · fixed within about a day |
+| [Sourcify](https://github.com/argotorg/sourcify) | [GHSA-mg7q-xhfh-rmfq](https://github.com/argotorg/sourcify/security/advisories/GHSA-mg7q-xhfh-rmfq): the library call protection left the first 21 bytes of on-chain code unchecked, so a library that starts with other code still got an Exact Match | Medium | Reporter · fixed within about a day |
+| [Purser](https://github.com/PurserAgents/purser) | [GHSA-59mh-vw5p-vr3f](https://github.com/PurserAgents/purser/security/advisories/GHSA-59mh-vw5p-vr3f): one request with no key could put an honest payee on the shared Purser Shield list, so accounts paying it were refused or frozen | Medium | Reporter · fixed the same day |
+| [Purser](https://github.com/PurserAgents/purser) | [GHSA-gx7f-32pr-9pmr](https://github.com/PurserAgents/purser/security/advisories/GHSA-gx7f-32pr-9pmr): the firewall's check for takeover calls such as `transferOwnership` never saw the agent's own call on the simulation backend the live node uses | Medium | Reporter · fixed the same day |
+| [Purser](https://github.com/PurserAgents/purser) | [GHSA-6gqp-w3qv-9vfv](https://github.com/PurserAgents/purser/security/advisories/GHSA-6gqp-w3qv-9vfv): with models at cost, calls sent at the same time all passed the check before the call, so an account could run up model calls it never paid for | Medium | Reporter · fixed the same day |
 | [Purser](https://github.com/PurserAgents/purser) | [GHSA-ch98-775j-jhhv](https://github.com/PurserAgents/purser/security/advisories/GHSA-ch98-775j-jhhv): any contract could pose as a Purser account, and the engine took the module's `Paid` event as proof of payment, so a payment that moved nothing still counted | High | Reporter · fixed within two hours |
 | [Purser](https://github.com/PurserAgents/purser) | [GHSA-3h6j-gjj9-vwcm](https://github.com/PurserAgents/purser/security/advisories/GHSA-3h6j-gjj9-vwcm): the engine fetched any URL for an agent key, internal addresses included, and returned the status, headers and body | Medium | Reporter · fixed within two hours |
 | [Purser](https://github.com/PurserAgents/purser) | [GHSA-mwgj-gf6x-gm67](https://github.com/PurserAgents/purser/security/advisories/GHSA-mwgj-gf6x-gm67): a caller with no key could use up the relayer's daily gas budget through the x402 facilitator, stopping relayed payments until midnight UTC | Medium | Reporter · fixed within two hours |
@@ -132,7 +138,7 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 
 </details>
 
-As of 17 November, 79 more advisories we filed on GitHub are not public yet, and more reports went by email or direct
+As of 17 November, 74 more advisories we filed on GitHub are not public yet, and more reports went by email or direct
 message. We name none of them until the team has fixed the issue and published it.
 
 Maintain a Robinhood Chain project and want a second pair of eyes? Ask for a review: public code, a pinned commit,
@@ -244,7 +250,7 @@ It is also listed in the [Official MCP Registry](https://registry.modelcontextpr
 <!-- MCP:END -->
 
 <!-- HOOKS:START -->
-Of the **32,738 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **157** are tied to **73 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
+Of the **32,746 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **157** are tied to **73 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
 <!-- HOOKS:END -->
 
 ## Open source
