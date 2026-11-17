@@ -81,10 +81,13 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 </a>
 
 <details>
-<summary><b>Published advisories we found (21)</b></summary>
+<summary><b>Published advisories we found (24)</b></summary>
 
 | Project | Advisory | Severity | Our credit |
 | --- | --- | --- | --- |
+| [NOUNY](https://github.com/nounyagent/nouny-agent) | [GHSA-9j35-fvff-78xp](https://github.com/nounyagent/nouny-agent/security/advisories/GHSA-9j35-fvff-78xp): new AgentVaults could not be created while the stock price feeds paused each weekend | Low | Reporter · fixed within the hour |
+| [NOUNY](https://github.com/nounyagent/nouny-agent) | [GHSA-2f3v-w6ff-pm77](https://github.com/nounyagent/nouny-agent/security/advisories/GHSA-2f3v-w6ff-pm77): removed payroll recipients still counted toward the 100-recipient cap, so a payroll could fill up for good | Low | Reporter · fixed within the hour |
+| [NOUNY](https://github.com/nounyagent/nouny-agent) | [GHSA-ggxm-63r4-39pp](https://github.com/nounyagent/nouny-agent/security/advisories/GHSA-ggxm-63r4-39pp): NounyHook's one-swap-per-block limit used the L1 block number on Robinhood Chain, not the L2 block | Low | Reporter · fixed within the hour |
 | [x402fi](https://github.com/RWA-ID/x402fi) | [GHSA-2695-fqv4-x6wm](https://github.com/RWA-ID/x402fi/security/advisories/GHSA-2695-fqv4-x6wm): the gateway priced a URL with an encoded `../` as one endpoint (or a free one) and forwarded it to another | High | Reporter · fixed the same day |
 | [x402fi](https://github.com/RWA-ID/x402fi) | [GHSA-4mf4-56v3-jvm7](https://github.com/RWA-ID/x402fi/security/advisories/GHSA-4mf4-56v3-jvm7): the public facilitator's `/settle` paid gas for transfers that pay nobody, with no key, floor or budget | Medium | Reporter · fixed the same day |
 | [x402fi](https://github.com/RWA-ID/x402fi) | [GHSA-9g6h-3x75-ghv9](https://github.com/RWA-ID/x402fi/security/advisories/GHSA-9g6h-3x75-ghv9): the gateway forwarded paid calls whose payment could not settle, so one balance could back many concurrent calls | Medium | Reporter |
@@ -126,7 +129,7 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 
 </details>
 
-As of 16 November, 65 more advisories we filed on GitHub are not public yet, and more reports went by email or direct
+As of 17 November, 76 more advisories we filed on GitHub are not public yet, and more reports went by email or direct
 message. We name none of them until the team has fixed the issue and published it.
 
 Maintain a Robinhood Chain project and want a second pair of eyes? Ask for a review: public code, a pinned commit,
@@ -151,10 +154,11 @@ on your repository, and we report there.
 <summary><b>The latest fixes merged</b></summary>
 
 <!-- FIXES:START -->
-**272 pull requests** sent to **214 repositories** we don’t own, **51 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
+**272 pull requests** sent to **214 repositories** we don’t own, **52 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
 
 | Merged into | The fix |
 | --- | --- |
+| [priors-agents/priors](https://github.com/priors-agents/priors/pull/28) | Drop the OrdoFi RPC (domain gone) and fix the skill's explorer link |
 | [ethereum-lists/chains](https://github.com/ethereum-lists/chains/pull/8997) | Remove unresolvable OrdoFi RPC from Robinhood Chain (eip155-4663) |
 | [beefyfinance/beefy-api](https://github.com/beefyfinance/beefy-api/pull/1975) | fix(robinhood): drop the OrdoFi RPC, which no longer resolves |
 | [0xfnzero/FnzSafe](https://github.com/0xfnzero/FnzSafe/pull/10) | evm-services: replace the unreachable OrdoFi fallback for Robinhood Chain |
@@ -166,7 +170,6 @@ on your repository, and we report there.
 | [0xfnzero/FnzSafe](https://github.com/0xfnzero/FnzSafe/pull/7) | evm-services: fix Robinhood Chain explorer URL (robinscan.io does not resolve) |
 | [1Shot-API/embedded-wallet](https://github.com/1Shot-API/embedded-wallet/pull/154) | Fix the Ethereum BTC/USD and PAXG/USD addresses in the trusted Chainlink feed list |
 | [DefiLlama/chainlist](https://github.com/DefiLlama/chainlist/pull/3309) | fix(4663): remove OrdoFi RPC, whose domain no longer resolves |
-| [blockscout/chainscout](https://github.com/blockscout/chainscout/pull/319) | Robinhood Chain Testnet: settlement layer is Sepolia (11155111), not Ethereum mainnet |
 
 Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://heyresearch.xyz/contributions)** · <sub>refreshed daily</sub>
 <!-- FIXES:END -->
@@ -174,7 +177,7 @@ Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://hey
 </details>
 
 <!-- LISTED:START -->
-**Where HEY is listed:** [punkpeye/awesome-remote-mcp-servers](https://github.com/punkpeye/awesome-remote-mcp-servers/pull/1769) · [AIAnytime/Awesome-MCP-Servers](https://github.com/AIAnytime/Awesome-MCP-Servers/pull/330) · [marcelscruz/public-apis](https://github.com/marcelscruz/public-apis/pull/1520) · [mcpHQ/awesome-mcp-servers](https://github.com/mcpHQ/awesome-mcp-servers/pull/423) · [davepoon/buildwithclaude](https://github.com/davepoon/buildwithclaude/pull/563) · [collabnix/awesome-mcp-lists](https://github.com/collabnix/awesome-mcp-lists/pull/272) · [ahmet/awesome-web3](https://github.com/ahmet/awesome-web3/pull/863) · [awesomedata/apd-core](https://github.com/awesomedata/apd-core/pull/955) · [public-apis/public-apis](https://github.com/public-apis/public-apis/pull/8411). These are pull requests that add HEY to someone else's list or directory, so they are not counted as fixes.
+**Where HEY is listed:** [punkpeye/awesome-remote-mcp-servers](https://github.com/punkpeye/awesome-remote-mcp-servers/pull/1769) · [AIAnytime/Awesome-MCP-Servers](https://github.com/AIAnytime/Awesome-MCP-Servers/pull/330) · [marcelscruz/public-apis](https://github.com/marcelscruz/public-apis/pull/1520) · [mcpHQ/awesome-mcp-servers](https://github.com/mcpHQ/awesome-mcp-servers/pull/423) · [davepoon/buildwithclaude](https://github.com/davepoon/buildwithclaude/pull/563) · [collabnix/awesome-mcp-lists](https://github.com/collabnix/awesome-mcp-lists/pull/272) · [ahmet/awesome-web3](https://github.com/ahmet/awesome-web3/pull/863) · [awesomedata/apd-core](https://github.com/awesomedata/apd-core/pull/955) · [public-apis/public-apis](https://github.com/public-apis/public-apis/pull/8411) · [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers/pull/16368). These are pull requests that add HEY to someone else's list or directory, so they are not counted as fixes.
 <!-- LISTED:END -->
 
 <details>
@@ -238,7 +241,7 @@ It is also listed in the [Official MCP Registry](https://registry.modelcontextpr
 <!-- MCP:END -->
 
 <!-- HOOKS:START -->
-Of the **32,686 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **156** are tied to **72 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
+Of the **32,723 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **157** are tied to **73 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
 <!-- HOOKS:END -->
 
 ## Open source
