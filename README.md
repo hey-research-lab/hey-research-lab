@@ -81,10 +81,13 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 </a>
 
 <details>
-<summary><b>Published advisories we found (24)</b></summary>
+<summary><b>Published advisories we found (27)</b></summary>
 
 | Project | Advisory | Severity | Our credit |
 | --- | --- | --- | --- |
+| [Purser](https://github.com/PurserAgents/purser) | [GHSA-ch98-775j-jhhv](https://github.com/PurserAgents/purser/security/advisories/GHSA-ch98-775j-jhhv): any contract could pose as a Purser account, and the engine took the module's `Paid` event as proof of payment, so a payment that moved nothing still counted | High | Reporter · fixed within two hours |
+| [Purser](https://github.com/PurserAgents/purser) | [GHSA-3h6j-gjj9-vwcm](https://github.com/PurserAgents/purser/security/advisories/GHSA-3h6j-gjj9-vwcm): the engine fetched any URL for an agent key, internal addresses included, and returned the status, headers and body | Medium | Reporter · fixed within two hours |
+| [Purser](https://github.com/PurserAgents/purser) | [GHSA-mwgj-gf6x-gm67](https://github.com/PurserAgents/purser/security/advisories/GHSA-mwgj-gf6x-gm67): a caller with no key could use up the relayer's daily gas budget through the x402 facilitator, stopping relayed payments until midnight UTC | Medium | Reporter · fixed within two hours |
 | [NOUNY](https://github.com/nounyagent/nouny-agent) | [GHSA-9j35-fvff-78xp](https://github.com/nounyagent/nouny-agent/security/advisories/GHSA-9j35-fvff-78xp): new AgentVaults could not be created while the stock price feeds paused each weekend | Low | Reporter · fixed within the hour |
 | [NOUNY](https://github.com/nounyagent/nouny-agent) | [GHSA-2f3v-w6ff-pm77](https://github.com/nounyagent/nouny-agent/security/advisories/GHSA-2f3v-w6ff-pm77): removed payroll recipients still counted toward the 100-recipient cap, so a payroll could fill up for good | Low | Reporter · fixed within the hour |
 | [NOUNY](https://github.com/nounyagent/nouny-agent) | [GHSA-ggxm-63r4-39pp](https://github.com/nounyagent/nouny-agent/security/advisories/GHSA-ggxm-63r4-39pp): NounyHook's one-swap-per-block limit used the L1 block number on Robinhood Chain, not the L2 block | Low | Reporter · fixed within the hour |
@@ -129,7 +132,7 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 
 </details>
 
-As of 17 November, 76 more advisories we filed on GitHub are not public yet, and more reports went by email or direct
+As of 17 November, 79 more advisories we filed on GitHub are not public yet, and more reports went by email or direct
 message. We name none of them until the team has fixed the issue and published it.
 
 Maintain a Robinhood Chain project and want a second pair of eyes? Ask for a review: public code, a pinned commit,
@@ -241,7 +244,7 @@ It is also listed in the [Official MCP Registry](https://registry.modelcontextpr
 <!-- MCP:END -->
 
 <!-- HOOKS:START -->
-Of the **32,723 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **157** are tied to **73 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
+Of the **32,730 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **157** are tied to **73 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
 <!-- HOOKS:END -->
 
 ## Open source
