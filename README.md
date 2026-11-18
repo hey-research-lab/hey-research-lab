@@ -163,7 +163,7 @@ on your repository, and we report there.
 <summary><b>The latest fixes merged</b></summary>
 
 <!-- FIXES:START -->
-**272 pull requests** sent to **214 repositories** we don’t own, **52 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
+**271 pull requests** sent to **213 repositories** we don’t own, **52 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
 
 | Merged into | The fix |
 | --- | --- |
@@ -250,7 +250,7 @@ It is also listed in the [Official MCP Registry](https://registry.modelcontextpr
 <!-- MCP:END -->
 
 <!-- HOOKS:START -->
-Of the **32,773 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **158** are tied to **74 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
+Of the **32,782 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **158** are tied to **74 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
 <!-- HOOKS:END -->
 
 ## Open source
