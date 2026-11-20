@@ -5,14 +5,14 @@
 <rect x="48" y="50" width="14" height="14" rx="3" fill="#4F7A00"/>
 <text x="72" y="63" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="14" letter-spacing="3" fill="#0B0E11">HEY RESEARCH LAB<tspan class="k" fill="#4F7A00"> _</tspan></text>
 <text x="48" y="128" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="46" font-weight="800" letter-spacing="-1.6" fill="#0B0E11">The public record of building</text>
-<text x="48" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="46" font-weight="800" letter-spacing="-1.6" fill="#0B0E11">on <tspan fill="#4F7A00">Robinhood Chain</tspan> and <tspan fill="#0052FF">Base.</tspan></text>
+<text x="48" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="46" font-weight="800" letter-spacing="-1.6" fill="#0B0E11">on <tspan fill="#4F7A00">Robinhood Chain</tspan> and <tspan fill="#0000FF">Base.</tspan></text>
 <text x="48" y="226" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#535B66">Every ship with its source. Price is context, never the verdict.</text>
 <text x="48" y="254" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#535B66">1,338 teams proven building · 5,564 project pages · free, no wallet.</text>
 <g><rect x="48" y="300" width="219" height="36" rx="18" fill="rgba(79,122,0,0.14)" stroke="#4F7A00"/>
 <circle cx="68" cy="318" r="4.5" fill="#4F7A00"/>
 <text x="82" y="323" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" font-weight="600" fill="#0B0E11">Robinhood Chain<tspan font-weight="400" fill="#535B66"> · home</tspan></text></g>
-<g><rect x="279.4" y="300" width="305" height="36" rx="18" fill="rgba(0,82,255,0.10)" stroke="#0052FF"/>
-<circle cx="299.4" cy="318" r="4.5" fill="#0052FF"/>
+<g><rect x="279.4" y="300" width="305" height="36" rx="18" fill="rgba(0,0,255,0.08)" stroke="#0000FF"/>
+<circle cx="299.4" cy="318" r="4.5" fill="#0000FF"/>
 <text x="313.4" y="323" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" font-weight="600" fill="#0B0E11">Base<tspan font-weight="400" fill="#535B66"> · 114 builders, checked by hand</tspan></text></g>
 <text x="1144" y="63" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="12" letter-spacing="2" fill="#4F7A00">ROBINHOOD CHAIN · BUILDERS SHIPPING · 14 DAYS</text>
 <text x="1144" y="84" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" fill="#535B66">one square, five builders who shipped that day</text>

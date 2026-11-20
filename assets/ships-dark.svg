@@ -14,29 +14,29 @@
 <g class="r" style="animation-delay:0.35s">
 <rect x="32" y="114" width="1136" height="36" rx="9" fill="#14181D" stroke="#272D35"/>
 <text x="52" y="140" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#C2FB03">release</text>
-<text x="140" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">Autonolas</text>
-<text x="420" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">2 releases in valory-xyz/connect today</text>
+<text x="140" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">Cofer</text>
+<text x="420" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">17 releases in coferdev/cofer today</text>
 <text x="1148" y="140" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-11-20</text>
 </g>
 <g class="r" style="animation-delay:0.50s">
 <rect x="32" y="158" width="1136" height="36" rx="9" fill="#14181D" stroke="#272D35"/>
 <text x="52" y="184" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#C2FB03">release</text>
-<text x="140" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">Nautilo</text>
-<text x="420" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">CLI 0.1.41</text>
+<text x="140" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">Autonolas</text>
+<text x="420" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">2 releases in valory-xyz/connect today</text>
 <text x="1148" y="184" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-11-20</text>
 </g>
 <g class="r" style="animation-delay:0.65s">
 <rect x="32" y="202" width="1136" height="36" rx="9" fill="#14181D" stroke="#272D35"/>
 <text x="52" y="228" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#C2FB03">release</text>
-<text x="140" y="228" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">AgentOS</text>
-<text x="420" y="228" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">AgentOS 2026.11.21</text>
+<text x="140" y="228" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">Nautilo</text>
+<text x="420" y="228" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">CLI 0.1.41</text>
 <text x="1148" y="228" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-11-20</text>
 </g>
 <g class="r" style="animation-delay:0.80s">
 <rect x="32" y="246" width="1136" height="36" rx="9" fill="#14181D" stroke="#272D35"/>
 <text x="52" y="272" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#C2FB03">release</text>
-<text x="140" y="272" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">Cofer</text>
-<text x="420" y="272" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">16 releases in coferdev/cofer today</text>
+<text x="140" y="272" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9ECF0">AgentOS</text>
+<text x="420" y="272" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94A0AD">AgentOS 2026.11.21</text>
 <text x="1148" y="272" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13" fill="#94A0AD">2026-11-20</text>
 </g>
 <g class="r" style="animation-delay:0.95s">
