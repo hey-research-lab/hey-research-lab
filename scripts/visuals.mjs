@@ -6,8 +6,8 @@
 const FONT = "-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif";
 const MONO = "ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace";
 export const THEMES = {
-  dark: { bg: '#0B0E11', panel: '#14181D', line: '#272D35', ink: '#E9ECF0', sec: '#94A0AD', faint: '#3A424D', lime: '#C2FB03', limeSoft: 'rgba(194,251,3,0.16)' },
-  light: { bg: '#F5F6F8', panel: '#FFFFFF', line: '#DDE1E7', ink: '#0B0E11', sec: '#535B66', faint: '#C5CBD3', lime: '#4F7A00', limeSoft: 'rgba(79,122,0,0.14)' },
+  dark: { bg: '#0B0E11', panel: '#14181D', line: '#272D35', ink: '#E9ECF0', sec: '#94A0AD', faint: '#3A424D', lime: '#C2FB03', limeSoft: 'rgba(194,251,3,0.16)', base: '#4C8DFF', baseSoft: 'rgba(76,141,255,0.16)' },
+  light: { bg: '#F5F6F8', panel: '#FFFFFF', line: '#DDE1E7', ink: '#0B0E11', sec: '#535B66', faint: '#C5CBD3', lime: '#4F7A00', limeSoft: 'rgba(79,122,0,0.14)', base: '#0052FF', baseSoft: 'rgba(0,82,255,0.10)' },
 };
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const clip = (s, max) => (s.length > max ? `${s.slice(0, max - 1).trimEnd()}…` : s);
@@ -385,10 +385,11 @@ export function hero({ chain, builders, pages, baseBuilders }, theme) {
     const label = i === 0 || i === days.length - 1 ? `<text x="${x + size / 2}" y="${base + 22}" text-anchor="middle" font-family="${MONO}" font-size="11" fill="${t.sec}">${esc(shortDay(d.day))}</text>` : '';
     return `<g><title>${esc(`${d.day}: ${n(d.buildersShipping)} builders shipped${partial ? ' (day in progress)' : ''}`)}</title>${cells}</g>${label}`;
   }).join('');
-  const chip = (x, label, sub, filled) => {
+  // Each chain's chip in its own colour: Robinhood Chain in HEY's green, Base in Base's blue.
+  const chip = (x, label, sub, accent, soft) => {
     const wch = 24 + label.length * 8.6 + sub.length * 7.2 + 16;
-    return `<g><rect x="${x}" y="300" width="${wch.toFixed(0)}" height="36" rx="18" fill="${filled ? t.limeSoft : t.panel}" stroke="${filled ? t.lime : t.line}"/>
-<circle cx="${x + 20}" cy="318" r="4.5" fill="${filled ? t.lime : t.sec}"/>
+    return `<g><rect x="${x}" y="300" width="${wch.toFixed(0)}" height="36" rx="18" fill="${soft}" stroke="${accent}"/>
+<circle cx="${x + 20}" cy="318" r="4.5" fill="${accent}"/>
 <text x="${x + 34}" y="323" font-family="${FONT}" font-size="15" font-weight="600" fill="${t.ink}">${esc(label)}<tspan font-weight="400" fill="${t.sec}">${esc(sub)}</tspan></text></g>`;
   };
   const homeW = 24 + 'Robinhood Chain'.length * 8.6 + ' · home'.length * 7.2 + 16;
@@ -399,11 +400,11 @@ export function hero({ chain, builders, pages, baseBuilders }, theme) {
 <rect x="48" y="50" width="14" height="14" rx="3" fill="${t.lime}"/>
 <text x="72" y="63" font-family="${MONO}" font-size="14" letter-spacing="3" fill="${t.ink}">HEY RESEARCH LAB<tspan class="k" fill="${t.lime}"> _</tspan></text>
 <text x="48" y="128" font-family="${FONT}" font-size="46" font-weight="800" letter-spacing="-1.6" fill="${t.ink}">The public record of building</text>
-<text x="48" y="184" font-family="${FONT}" font-size="46" font-weight="800" letter-spacing="-1.6" fill="${t.ink}">on <tspan fill="${t.lime}">Robinhood Chain</tspan> and <tspan fill="${t.lime}">Base.</tspan></text>
+<text x="48" y="184" font-family="${FONT}" font-size="46" font-weight="800" letter-spacing="-1.6" fill="${t.ink}">on <tspan fill="${t.lime}">Robinhood Chain</tspan> and <tspan fill="${t.base}">Base.</tspan></text>
 <text x="48" y="226" font-family="${FONT}" font-size="19" fill="${t.sec}">Every ship with its source. Price is context, never the verdict.</text>
 <text x="48" y="254" font-family="${FONT}" font-size="19" fill="${t.sec}">${esc(`${n(builders)} teams proven building · ${n(pages)} project pages · free, no wallet.`)}</text>
-${chip(48, 'Robinhood Chain', ' · home', true)}
-${chip(48 + homeW + 12, 'Base', Number.isFinite(baseBuilders) ? ` · ${n(baseBuilders)} builders, checked by hand` : ' · first chain added', false)}
+${chip(48, 'Robinhood Chain', ' · home', t.lime, t.limeSoft)}
+${chip(48 + homeW + 12, 'Base', Number.isFinite(baseBuilders) ? ` · ${n(baseBuilders)} builders, checked by hand` : ' · first chain added', t.base, t.baseSoft)}
 <text x="${gridRight}" y="63" text-anchor="end" font-family="${MONO}" font-size="12" letter-spacing="2" fill="${t.lime}">ROBINHOOD CHAIN · BUILDERS SHIPPING · 14 DAYS</text>
 <text x="${gridRight}" y="84" text-anchor="end" font-family="${FONT}" font-size="13" fill="${t.sec}">one square, five builders who shipped that day</text>
 <line x1="${gridLeft - 4}" x2="${gridRight + 4}" y1="${base + 4}" y2="${base + 4}" stroke="${t.line}"/>
