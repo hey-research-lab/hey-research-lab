@@ -364,7 +364,7 @@ ${weekBars}
  * one square for every five builders HEY read shipping that day (rounded up), today's column lighter while it is read.
  * Complete at rest: the squares only rise in.
  */
-export function hero({ chain, builders, pages }, theme) {
+export function hero({ chain, builders, pages, baseBuilders }, theme) {
   const t = THEMES[theme];
   const w = 1200, h = 380;
   const days = (chain.days ?? []).filter((d) => Number.isFinite(d.buildersShipping)).slice(-14);
@@ -392,19 +392,19 @@ export function hero({ chain, builders, pages }, theme) {
 <text x="${x + 34}" y="323" font-family="${FONT}" font-size="15" font-weight="600" fill="${t.ink}">${esc(label)}<tspan font-weight="400" fill="${t.sec}">${esc(sub)}</tspan></text></g>`;
   };
   const homeW = 24 + 'Robinhood Chain'.length * 8.6 + ' · home'.length * 7.2 + 16;
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(`HEY Research Lab: the public record of building on Robinhood Chain, every ship with its source. ${n(builders)} teams proven building, ${n(pages)} project pages. Robinhood Chain is home; Base is the first chain added.`)}">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(`HEY Research Lab: the public record of building on Robinhood Chain and Base, every ship with its source. ${n(builders)} teams proven building, ${n(pages)} project pages. Robinhood Chain is home; Base is the first chain added${Number.isFinite(baseBuilders) ? `, with ${n(baseBuilders)} builders checked by hand` : ''}.`)}">
 <style>.q{transform-box:fill-box;transform-origin:bottom;animation:rise .6s ease-out both}@keyframes rise{from{opacity:0;transform:scaleY(.2)}}.k{animation:blink 1.1s steps(1) infinite}@keyframes blink{50%{opacity:0}}${REDUCED}</style>
 <rect width="${w}" height="${h}" rx="16" fill="${t.bg}"/>
 <rect x="0.5" y="0.5" width="${w - 1}" height="${h - 1}" rx="15.5" fill="none" stroke="${t.line}"/>
 <rect x="48" y="50" width="14" height="14" rx="3" fill="${t.lime}"/>
 <text x="72" y="63" font-family="${MONO}" font-size="14" letter-spacing="3" fill="${t.ink}">HEY RESEARCH LAB<tspan class="k" fill="${t.lime}"> _</tspan></text>
-<text x="48" y="128" font-family="${FONT}" font-size="48" font-weight="800" letter-spacing="-1.6" fill="${t.ink}">The public record</text>
-<text x="48" y="184" font-family="${FONT}" font-size="48" font-weight="800" letter-spacing="-1.6" fill="${t.ink}">of building on <tspan fill="${t.lime}">Robinhood Chain.</tspan></text>
+<text x="48" y="128" font-family="${FONT}" font-size="46" font-weight="800" letter-spacing="-1.6" fill="${t.ink}">The public record of building</text>
+<text x="48" y="184" font-family="${FONT}" font-size="46" font-weight="800" letter-spacing="-1.6" fill="${t.ink}">on <tspan fill="${t.lime}">Robinhood Chain</tspan> and <tspan fill="${t.lime}">Base.</tspan></text>
 <text x="48" y="226" font-family="${FONT}" font-size="19" fill="${t.sec}">Every ship with its source. Price is context, never the verdict.</text>
 <text x="48" y="254" font-family="${FONT}" font-size="19" fill="${t.sec}">${esc(`${n(builders)} teams proven building · ${n(pages)} project pages · free, no wallet.`)}</text>
 ${chip(48, 'Robinhood Chain', ' · home', true)}
-${chip(48 + homeW + 12, 'Base', ' · first chain added', false)}
-<text x="${gridRight}" y="63" text-anchor="end" font-family="${MONO}" font-size="12" letter-spacing="2" fill="${t.lime}">BUILDERS SHIPPING · 14 DAYS</text>
+${chip(48 + homeW + 12, 'Base', Number.isFinite(baseBuilders) ? ` · ${n(baseBuilders)} builders, checked by hand` : ' · first chain added', false)}
+<text x="${gridRight}" y="63" text-anchor="end" font-family="${MONO}" font-size="12" letter-spacing="2" fill="${t.lime}">ROBINHOOD CHAIN · BUILDERS SHIPPING · 14 DAYS</text>
 <text x="${gridRight}" y="84" text-anchor="end" font-family="${FONT}" font-size="13" fill="${t.sec}">one square, five builders who shipped that day</text>
 <line x1="${gridLeft - 4}" x2="${gridRight + 4}" y1="${base + 4}" y2="${base + 4}" stroke="${t.line}"/>
 ${cols}

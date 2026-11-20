@@ -171,6 +171,16 @@ for (const { project, repository } of securityData.publishedReadFrom ?? []) {
     if (a.state === 'published' && a.published_at && (a.credits ?? []).some((c) => c.login === ACCOUNT)) publishedAdvisories.push({ project, id: a.ghsa_id, publishedAt: a.published_at });
   }
 }
+// How many builders heyresearch.xyz/base lists (2026-11-21). The Base preview feeds no API, so this reads the public page's own
+// "of N Base builders" line; a page that does not say it leaves the number out (never 0) and the README line as it is.
+let baseBuilders = null;
+try {
+  const page = await (await fetch(`${HEY}/base`, { headers: { 'user-agent': headers['user-agent'] } })).text();
+  const m = page.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').match(/of (\d{1,4}) Base builders/);
+  if (m) baseBuilders = Number(m[1]);
+} catch {}
+if (!Number.isFinite(baseBuilders)) console.warn('Base builders not read: keeping the README line as it is');
+
 for (const theme of ['light', 'dark']) {
   writeFileSync(`assets/advisories-${theme}.svg`, creditedAdvisories({ hand: securityData, published: publishedAdvisories }, theme));
   writeFileSync(`assets/chain-${theme}.svg`, constellation(building, theme));
@@ -180,7 +190,7 @@ for (const theme of ['light', 'dark']) {
   writeFileSync(`assets/agents-${theme}.svg`, agentsChart(agentStats, theme));
   writeFileSync(`assets/fixes-timeline-${theme}.svg`, fixesTimeline(prs, theme));
   writeFileSync(`assets/agent-${theme}.svg`, agentCard(theme));
-  writeFileSync(`assets/banner-${theme}.svg`, hero({ chain, builders, pages }, theme));
+  writeFileSync(`assets/banner-${theme}.svg`, hero({ chain, builders, pages, baseBuilders }, theme));
   writeFileSync(`assets/launchpads-${theme}.svg`, launchpads({ pads: PADS, factories }, theme));
   writeFileSync(`assets/validator-${theme}.svg`, validator(agentStats, theme));
 }
@@ -214,5 +224,6 @@ between('LISTED', listedLinks.length
   : '**Where HEY is listed:** none merged yet.');
 between('HOOKS', `Of the **${n(hooksAggregate.seen)} hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **${n(hooksAggregate.listed)}** are tied to **${n(hooksAggregate.listedProjects)} published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](${HEY}/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>`);
 if (mcpVersion) between('MCP', `It is also listed in the [Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers/${encodeURIComponent(MCP_NAME)}/versions/latest) as \`${MCP_NAME}\`, version ${mcpVersion}, and on [mcptry](https://mcptry.com/servers/${MCP_NAME}).`);
+if (Number.isFinite(baseBuilders)) readme = readme.replace(/lists \d+ Base builders/, `lists ${baseBuilders} Base builders`);
 writeFileSync('README.md', readme);
 console.log(`launchpads=${PADS.map((p) => `${p.key}:${p.pages ?? 'not read'}`).join(',')} factories=${factories ?? 'not read'} hooks=${hooksAggregate.listed}/${hooksAggregate.seen} mcp=${mcpVersion ?? 'not read'} advisories=${publishedAdvisories.length} prs=${prs.length} repos=${repos.size} merged=${merged.length} listings=${allPrs.length - prs.length} listed=${listedIn.length} pages=${pages} builders=${builders} records=${records}`);
