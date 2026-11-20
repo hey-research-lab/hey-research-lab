@@ -81,7 +81,7 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 </a>
 
 <details>
-<summary><b>Published advisories we found (33)</b></summary>
+<summary><b>Published advisories we found (34)</b></summary>
 
 | Project | Advisory | Severity | Our credit |
 | --- | --- | --- | --- |
@@ -97,6 +97,7 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 | [Priors](https://github.com/priors-agents/priors) | [GHSA-qcrq-x8xg-25vg](https://github.com/priors-agents/priors/security/advisories/GHSA-qcrq-x8xg-25vg): the stock vault's `borrowRoom` quoted room the vault and pool refuse | Low | Finder · fixed in Priors' readers, listed as [SV-21](https://github.com/priors-agents/priors/blob/main/docs/SECURITY-v2.md) |
 | [Priors](https://github.com/priors-agents/priors) | [GHSA-xccq-5ghg-w7mq](https://github.com/priors-agents/priors/security/advisories/GHSA-xccq-5ghg-w7mq): a V5 borrow over 10 days sent a transaction before it was refused | Low | Finder · fixed in @priors/x402 0.8.3 and @priors/mcp 0.12.1, listed as [P-49](https://github.com/priors-agents/priors/blob/main/docs/SECURITY-v2.md) |
 | [Priors](https://github.com/priors-agents/priors) | [GHSA-3vg6-2f3m-j5qm](https://github.com/priors-agents/priors/security/advisories/GHSA-3vg6-2f3m-j5qm): a new PT-USDG price tape started at round 1 once the feed had dropped its old rounds | Low | Finder · fixed on chain, listed as [SV-20](https://github.com/priors-agents/priors/blob/main/docs/SECURITY-v2.md) |
+| [Gloam](https://github.com/gloamtrade/gloam) | [GHSA-4whx-32vw-75gp](https://github.com/gloamtrade/gloam/security/advisories/GHSA-4whx-32vw-75gp): in gloam-cashout a payment was tied to its quote only by amount G, so one payer's cash out could redeem another quote | Medium | Reporter · fixed in @gloamtrade/sdk 0.7.1 |
 | [Gloam](https://github.com/gloamtrade/gloam) | [GHSA-wxv6-6fjw-c2m9](https://github.com/gloamtrade/gloam/security/advisories/GHSA-wxv6-6fjw-c2m9): paying an ENS name resolved the Ethereum mainnet address for payments on Base, Robinhood Chain and Tempo | Medium | Reporter |
 | [Gloam](https://github.com/gloamtrade/gloam) | [GHSA-p2wm-6x89-63c2](https://github.com/gloamtrade/gloam/security/advisories/GHSA-p2wm-6x89-63c2): the SDK and the mppx settle treated a successful outer transaction as a landed sweep | Medium | Reporter |
 | [Gloam](https://github.com/gloamtrade/gloam) | [GHSA-5gwv-jpjr-x34r](https://github.com/gloamtrade/gloam/security/advisories/GHSA-5gwv-jpjr-x34r): the free relay's hourly network budget could be used up with payment messages that need no note or proof | Medium | Reporter |
