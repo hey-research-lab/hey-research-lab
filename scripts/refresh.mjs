@@ -190,7 +190,7 @@ for (const theme of ['light', 'dark']) {
   writeFileSync(`assets/agents-${theme}.svg`, agentsChart(agentStats, theme));
   writeFileSync(`assets/fixes-timeline-${theme}.svg`, fixesTimeline(prs, theme));
   writeFileSync(`assets/agent-${theme}.svg`, agentCard(theme));
-  writeFileSync(`assets/banner-${theme}.svg`, hero({ chain, builders, pages, baseBuilders }, theme));
+  writeFileSync(`assets/hero-${theme}.svg`, hero({ chain, builders, pages, baseBuilders }, theme));
   writeFileSync(`assets/launchpads-${theme}.svg`, launchpads({ pads: PADS, factories }, theme));
   writeFileSync(`assets/validator-${theme}.svg`, validator(agentStats, theme));
 }
