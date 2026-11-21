@@ -51,7 +51,7 @@
 
 Redrawn every day from [heyresearch.xyz](https://heyresearch.xyz)'s public API. Browsing HEY needs no wallet, and nothing on it is for sale.
 
-**Base:** [heyresearch.xyz/base](https://heyresearch.xyz/base) lists 114 Base builders, each checked by hand, with the source for its contract and its latest ship. Robinhood Chain stays home; daily tracking of Base comes next.
+**Base:** [heyresearch.xyz/base](https://heyresearch.xyz/base) lists 134 Base builders, each checked by hand, with the source for its contract and its latest ship. Robinhood Chain stays home; daily tracking of Base comes next.
 
 ## Security credits
 
@@ -164,7 +164,7 @@ on your repository, and we report there.
 <summary><b>The latest fixes merged</b></summary>
 
 <!-- FIXES:START -->
-**271 pull requests** sent to **213 repositories** we don’t own, **53 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
+**279 pull requests** sent to **221 repositories** we don’t own, **53 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
 
 | Merged into | The fix |
 | --- | --- |
@@ -251,7 +251,7 @@ It is also listed in the [Official MCP Registry](https://registry.modelcontextpr
 <!-- MCP:END -->
 
 <!-- HOOKS:START -->
-Of the **32,885 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **160** are tied to **76 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
+Of the **32,908 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **160** are tied to **76 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
 <!-- HOOKS:END -->
 
 ## Open source
