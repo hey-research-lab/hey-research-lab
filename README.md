@@ -51,7 +51,7 @@
 
 Redrawn every day from [heyresearch.xyz](https://heyresearch.xyz)'s public API. Browsing HEY needs no wallet, and nothing on it is for sale.
 
-**Base:** [heyresearch.xyz/base](https://heyresearch.xyz/base) lists 134 Base builders, each checked by hand, with the source for its contract and its latest ship. Robinhood Chain stays home; daily tracking of Base comes next.
+**Base:** [heyresearch.xyz/base](https://heyresearch.xyz/base) lists 134 Base builders, each checked by hand with the source for its Base evidence; each one's latest ship is read every day from its GitHub releases. Robinhood Chain stays home; daily tracking of Base starts in early December.
 
 ## Security credits
 
@@ -139,8 +139,10 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 
 </details>
 
-As of 18 November, 77 more advisories we filed on GitHub are not public yet, and more reports went by email or direct
+<!-- NOTPUBLIC:START -->
+As of 24 November, 96 more advisories we filed on GitHub are not public yet, and more reports went by email or direct
 message. We name none of them until the team has fixed the issue and published it.
+<!-- NOTPUBLIC:END -->
 
 Maintain a Robinhood Chain project and want a second pair of eyes? Ask for a review: public code, a pinned commit,
 findings sent to you privately first with a test, free for now, and a review, not an audit
@@ -207,7 +209,31 @@ Merged one of our fixes and liked it? A shout-out on X helps a small team keep s
 
 ## Built on HEY
 
-Products that put HEY's builder record in front of their own users, and protocols whose facts HEY reads, A to Z:
+Products that read HEY's builder record and name themselves on their calls:
+
+<!-- BUILTWITH:START -->
+| Product | Using HEY since | On HEY |
+| --- | --- | --- |
+| [Bucks (undertow)](https://www.undertow.agency) | 2026-11-04 or earlier | [its page](https://heyresearch.xyz/project/cleared) |
+| [Factor](https://factoragents.fun) | 2026-11-08 or earlier | [its page](https://heyresearch.xyz/project/factor) |
+| [Loudscene](https://www.loudscene.com) | 2026-11-04 or earlier | [its page](https://heyresearch.xyz/project/loudscene) |
+| [OakAgentKit](https://oakagentkit.org) | 2026-10-29 or earlier | [its page](https://heyresearch.xyz/project/oakagentkit) |
+| [OddsEngine](https://oddsengine.live) | 2026-11-08 or earlier | [its page](https://heyresearch.xyz/project/oddsengine) |
+| [Ostra](https://ostraagent.xyz) | 2026-11-05 or earlier | [its page](https://heyresearch.xyz/project/ostra-agent) |
+| [predict FWA](https://www.pfwa.fun) | 2026-10-22 or earlier | [its page](https://heyresearch.xyz/project/predict-fwa) |
+| [Quotum](https://quotum.org) | 2026-11-04 or earlier | [its page](https://heyresearch.xyz/project/quotum) |
+| [Reinkeep](https://reinkeep.xyz) | 2026-11-23 or earlier | no page |
+| [Toll](https://t0ll.xyz) | 2026-11-08 or earlier | [its page](https://heyresearch.xyz/project/toll) |
+| [Trnch](https://trnch.fun) | 2026-11-10 or earlier | [its page](https://heyresearch.xyz/project/trnch) |
+| [Wafermap](https://wafermap.xyz) | 2026-11-06 or earlier | [its page](https://heyresearch.xyz/project/wafermap) |
+
+As listed on **[heyresearch.xyz/developers/built-with](https://heyresearch.xyz/developers/built-with)**, A to Z, a credit and never a ranking. "Using HEY since" is the oldest call HEY's request log still holds (it keeps 90 days) · <sub>refreshed daily</sub>
+<!-- BUILTWITH:END -->
+
+<details>
+<summary><b>Teams that show HEY's record, and protocols whose facts HEY reads</b></summary>
+
+What each does with HEY, A to Z:
 
 | Project | What it does with HEY |
 | --- | --- |
@@ -223,6 +249,8 @@ Products that put HEY's builder record in front of their own users, and protocol
 | [RHTools](https://x.com/RHToolsXYZ) | RHTools draws the chart, HEY answers who built the token; each links to the other |
 | [Torch](https://x.com/Torchpaddotfun) | HEY reads Torch's launch factory, so every Torch builder's launch and building record show on HEY, credited to Torch |
 | [Trnch](https://x.com/trnchfun) | puts a Team box from HEY on every token page: one check for the token, one for the team behind it |
+
+</details>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/launchpads-dark.svg">
@@ -251,7 +279,7 @@ It is also listed in the [Official MCP Registry](https://registry.modelcontextpr
 <!-- MCP:END -->
 
 <!-- HOOKS:START -->
-Of the **32,978 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **161** are tied to **76 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
+Of the **32,989 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **161** are tied to **76 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
 <!-- HOOKS:END -->
 
 ## Open source

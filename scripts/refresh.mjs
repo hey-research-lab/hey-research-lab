@@ -23,7 +23,13 @@ if (process.env.GITHUB_TOKEN) headers.authorization = `Bearer ${process.env.GITH
 async function search(q) {
   const items = [];
   for (let page = 1; page <= 10; page++) {
-    const res = await fetch(`https://api.github.com/search/issues?q=${encodeURIComponent(q)}&per_page=100&page=${page}`, { headers });
+    // GitHub's search can answer a 5xx for a moment (2026-11-23, a 502 failed the run): three tries, a pause between.
+    let res;
+    for (let attempt = 1; ; attempt++) {
+      res = await fetch(`https://api.github.com/search/issues?q=${encodeURIComponent(q)}&per_page=100&page=${page}`, { headers });
+      if (res.ok || res.status < 500 || attempt === 3) break;
+      await new Promise((resolve) => setTimeout(resolve, attempt * 10_000));
+    }
     if (!res.ok) throw new Error(`GitHub search ${res.status}: ${(await res.text()).slice(0, 200)}`);
     const body = await res.json();
     items.push(...body.items);
@@ -180,6 +186,27 @@ try {
   if (m) baseBuilders = Number(m[1]);
 } catch {}
 if (!Number.isFinite(baseBuilders)) console.warn('Base builders not read: keeping the README line as it is');
+// The products heyresearch.xyz/developers/built-with lists (2026-11-24), in the page's own order (A to Z): its name, its
+// site, the oldest call HEY's 90-day request log holds and its HEY page when it has one. The page feeds no API, so this
+// reads the page's own data-testid marks; a page that lists nothing readable leaves the README table as it is.
+const unescapeHtml = (s) => s.replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16))).replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(Number(d)))
+  .replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+let builtWith = [];
+try {
+  const page = await (await fetch(`${HEY}/developers/built-with`, { headers: { 'user-agent': headers['user-agent'] } })).text();
+  for (const m of page.matchAll(/data-testid="built-with-entry"[^>]*>([\s\S]*?)<\/li>/g)) {
+    const block = m[1];
+    const name = block.match(/data-testid="built-with-name">([^<]+)</)?.[1];
+    const site = block.match(/<a href="(https:\/\/[^"]+)"[^>]*data-testid="built-with-site"/)?.[1];
+    const since = block.match(/dateTime="(\d{4}-\d{2}-\d{2})T/)?.[1];
+    const project = block.match(/data-testid="built-with-project" href="(\/project\/[a-z0-9-]+)"/)?.[1] ?? null;
+    if (!name || !site) { builtWith = []; break; }
+    builtWith.push({ name: unescapeHtml(name).trim(), site: unescapeHtml(site), since: since ?? null, project });
+  }
+} catch {
+  builtWith = [];
+}
+if (!builtWith.length) console.warn('Built with HEY not read: keeping the README table as it is');
 
 for (const theme of ['light', 'dark']) {
   writeFileSync(`assets/advisories-${theme}.svg`, creditedAdvisories({ hand: securityData, published: publishedAdvisories }, theme));
@@ -225,5 +252,19 @@ between('LISTED', listedLinks.length
 between('HOOKS', `Of the **${n(hooksAggregate.seen)} hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **${n(hooksAggregate.listed)}** are tied to **${n(hooksAggregate.listedProjects)} published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](${HEY}/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>`);
 if (mcpVersion) between('MCP', `It is also listed in the [Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers/${encodeURIComponent(MCP_NAME)}/versions/latest) as \`${MCP_NAME}\`, version ${mcpVersion}, and on [mcptry](https://mcptry.com/servers/${MCP_NAME}).`);
 if (Number.isFinite(baseBuilders)) readme = readme.replace(/lists \d+ Base builders/, `lists ${baseBuilders} Base builders`);
+if (builtWith.length) between('BUILTWITH', [
+  '| Product | Using HEY since | On HEY |',
+  '| --- | --- | --- |',
+  ...builtWith.map((p) => `| [${md(p.name)}](${p.site}) | ${p.since ? `${p.since} or earlier` : 'not read'} | ${p.project ? `[its page](${HEY}${p.project})` : 'no page'} |`),
+  '',
+  `As listed on **[heyresearch.xyz/developers/built-with](${HEY}/developers/built-with)**, A to Z, a credit and never a ranking. "Using HEY since" is the oldest call HEY's request log still holds (it keeps 90 days) · <sub>refreshed daily</sub>`,
+].join('\n'));
+// The advisories that are not public yet (2026-11-24): filed (kept by hand in the security repository) less the published
+// ones read live above, as of the day the hand count was made.
+{
+  const notPublic = securityData.filed.advisories - publishedAdvisories.length;
+  const asOf = new Date(`${securityData.asOf}T00:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', timeZone: 'UTC' });
+  if (notPublic >= 0) between('NOTPUBLIC', `As of ${asOf}, ${n(notPublic)} more advisories we filed on GitHub are not public yet, and more reports went by email or direct\nmessage. We name none of them until the team has fixed the issue and published it.`);
+}
 writeFileSync('README.md', readme);
 console.log(`launchpads=${PADS.map((p) => `${p.key}:${p.pages ?? 'not read'}`).join(',')} factories=${factories ?? 'not read'} hooks=${hooksAggregate.listed}/${hooksAggregate.seen} mcp=${mcpVersion ?? 'not read'} advisories=${publishedAdvisories.length} prs=${prs.length} repos=${repos.size} merged=${merged.length} listings=${allPrs.length - prs.length} listed=${listedIn.length} pages=${pages} builders=${builders} records=${records}`);
