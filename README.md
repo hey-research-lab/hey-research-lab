@@ -81,7 +81,7 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 </a>
 
 <details>
-<summary><b>Published advisories we found (34)</b></summary>
+<summary><b>Published advisories we found (35)</b></summary>
 
 | Project | Advisory | Severity | Our credit |
 | --- | --- | --- | --- |
@@ -90,6 +90,7 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 | [Sourcify](https://github.com/argotorg/sourcify) | [GHSA-mg7q-xhfh-rmfq](https://github.com/argotorg/sourcify/security/advisories/GHSA-mg7q-xhfh-rmfq): the library call protection left the first 21 bytes of on-chain code unchecked, so a library that starts with other code still got an Exact Match | Medium | Reporter · fixed within about a day |
 | [Hookr](https://github.com/Hookr-fun/hookr-contracts) | [GHSA-m3fx-pjvg-cmf7](https://github.com/Hookr-fun/hookr-contracts/security/advisories/GHSA-m3fx-pjvg-cmf7): the per-wallet launch cap counted per contract for router swaps, so one buyer could hold many caps | Low | Reporter |
 | [Hookr](https://github.com/Hookr-fun/hookr-contracts) | [GHSA-43mv-935h-rpm7](https://github.com/Hookr-fun/hookr-contracts/security/advisories/GHSA-43mv-935h-rpm7): in the first-release time shares, a lock made after a drop could share in that drop | Low | Finder · fixed in the 29 Oct release |
+| [Priors](https://github.com/priors-agents/priors) | [GHSA-98wp-7ghc-6f3w](https://github.com/priors-agents/priors/security/advisories/GHSA-98wp-7ghc-6f3w): with the line board turned on (off by default), `line_send` in @priors/mcp 0.20.0 took a line's amount and premium from the board's answer and never checked the root owner's own signed offer | Medium | Reporter, with another reporter |
 | [Priors](https://github.com/priors-agents/priors) | [GHSA-cqcw-9qjc-5qc7](https://github.com/priors-agents/priors/security/advisories/GHSA-cqcw-9qjc-5qc7): in @priors/mcp 0.16.0, the Rialto route sent a quote's transaction data unchecked, so a quote could pay another address or drop the minimum | Medium | Reporter |
 | [Priors](https://github.com/priors-agents/priors) | [GHSA-p29w-c8p2-qfm5](https://github.com/priors-agents/priors/security/advisories/GHSA-p29w-c8p2-qfm5): the elizaOS plugin let any room member make the agent pay x402 merchants and open loans | Low | Reporter |
 | [Priors](https://github.com/priors-agents/priors) | [GHSA-4w7q-8vph-j5mr](https://github.com/priors-agents/priors/security/advisories/GHSA-4w7q-8vph-j5mr): a PT-USDG price tape resumed after the feed dropped its rounds held credit for about 15 days and seized the whole deposit on default | Low | Reporter |
@@ -279,7 +280,7 @@ It is also listed in the [Official MCP Registry](https://registry.modelcontextpr
 <!-- MCP:END -->
 
 <!-- HOOKS:START -->
-Of the **32,990 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **161** are tied to **76 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
+Of the **33,003 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **161** are tied to **76 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
 <!-- HOOKS:END -->
 
 ## Open source
