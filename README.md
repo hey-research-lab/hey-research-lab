@@ -280,7 +280,7 @@ It is also listed in the [Official MCP Registry](https://registry.modelcontextpr
 <!-- MCP:END -->
 
 <!-- HOOKS:START -->
-Of the **33,003 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **161** are tied to **76 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
+Of the **33,016 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **162** are tied to **76 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
 <!-- HOOKS:END -->
 
 ## Open source
