@@ -81,13 +81,15 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 </a>
 
 <details>
-<summary><b>Published advisories we found (35)</b></summary>
+<summary><b>Published advisories we found (38)</b></summary>
 
 | Project | Advisory | Severity | Our credit |
 | --- | --- | --- | --- |
 | [Sourcify](https://github.com/argotorg/sourcify) | [GHSA-726m-wjrf-m267](https://github.com/argotorg/sourcify/security/advisories/GHSA-726m-wjrf-m267): two input checks in the public verify endpoint could be combined so that anyone, with no account, made the verification server download a git repository and run a file from it | Critical | Reporter · fixed within about a day |
 | [Sourcify](https://github.com/argotorg/sourcify) | [GHSA-w97v-g4q9-998q](https://github.com/argotorg/sourcify/security/advisories/GHSA-w97v-g4q9-998q): a match on an old creation transaction alone stored an Exact Match for an address that now holds different code | Medium | Reporter · fixed within about a day |
 | [Sourcify](https://github.com/argotorg/sourcify) | [GHSA-mg7q-xhfh-rmfq](https://github.com/argotorg/sourcify/security/advisories/GHSA-mg7q-xhfh-rmfq): the library call protection left the first 21 bytes of on-chain code unchecked, so a library that starts with other code still got an Exact Match | Medium | Reporter · fixed within about a day |
+| [Ethernal](https://github.com/tryethernal/ethernal) | [GHSA-h95w-84r3-2wmx](https://github.com/tryethernal/ethernal/security/advisories/GHSA-h95w-84r3-2wmx): when `AUTH_SECRET` was unset, as the self-hosted installer left it, any request naming a user id was accepted as that user, so anyone could read an admin's API token and the faucet's private key | Critical | Reporter · fixed in 5.19.5 |
+| [Ethernal](https://github.com/tryethernal/ethernal) | [GHSA-gcv3-72c3-2jq3](https://github.com/tryethernal/ethernal/security/advisories/GHSA-gcv3-72c3-2jq3): one unauthenticated contract-verification request with crafted constructor arguments looped the backend forever | High | Reporter · fixed in 5.19.5 |
 | [Hookr](https://github.com/Hookr-fun/hookr-contracts) | [GHSA-m3fx-pjvg-cmf7](https://github.com/Hookr-fun/hookr-contracts/security/advisories/GHSA-m3fx-pjvg-cmf7): the per-wallet launch cap counted per contract for router swaps, so one buyer could hold many caps | Low | Reporter |
 | [Hookr](https://github.com/Hookr-fun/hookr-contracts) | [GHSA-43mv-935h-rpm7](https://github.com/Hookr-fun/hookr-contracts/security/advisories/GHSA-43mv-935h-rpm7): in the first-release time shares, a lock made after a drop could share in that drop | Low | Finder · fixed in the 29 Oct release |
 | [Priors](https://github.com/priors-agents/priors) | [GHSA-98wp-7ghc-6f3w](https://github.com/priors-agents/priors/security/advisories/GHSA-98wp-7ghc-6f3w): with the line board turned on (off by default), `line_send` in @priors/mcp 0.20.0 took a line's amount and premium from the board's answer and never checked the root owner's own signed offer | Medium | Reporter, with another reporter |
@@ -115,6 +117,7 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 | [Purser](https://github.com/PurserAgents/purser) | [GHSA-ch98-775j-jhhv](https://github.com/PurserAgents/purser/security/advisories/GHSA-ch98-775j-jhhv): any contract could pose as a Purser account, and the engine took the module's `Paid` event as proof of payment, so a payment that moved nothing still counted | High | Reporter · fixed within two hours |
 | [Purser](https://github.com/PurserAgents/purser) | [GHSA-3h6j-gjj9-vwcm](https://github.com/PurserAgents/purser/security/advisories/GHSA-3h6j-gjj9-vwcm): the engine fetched any URL for an agent key, internal addresses included, and returned the status, headers and body | Medium | Reporter · fixed within two hours |
 | [Purser](https://github.com/PurserAgents/purser) | [GHSA-mwgj-gf6x-gm67](https://github.com/PurserAgents/purser/security/advisories/GHSA-mwgj-gf6x-gm67): a caller with no key could use up the relayer's daily gas budget through the x402 facilitator, stopping relayed payments until midnight UTC | Medium | Reporter · fixed within two hours |
+| [Agent402](https://github.com/MikeyPetrillo/Agent402) | [GHSA-fh6c-767w-5ppj](https://github.com/MikeyPetrillo/Agent402/security/advisories/GHSA-fh6c-767w-5ppj): the `/ref` re-send path served a buyer's paid answer to anyone who rebuilt the payment from its public settlement calldata | Medium | Reporter · fixed in 2.16.0 within a day |
 | [Agent402](https://github.com/MikeyPetrillo/Agent402) | [GHSA-q7vw-c7hm-m885](https://github.com/MikeyPetrillo/Agent402/security/advisories/GHSA-q7vw-c7hm-m885): the x402 buyer signed the seller's `maxAmountRequired` while its spend caps checked `amount` | High | Reporter · fixed the same day |
 | [Agent402](https://github.com/MikeyPetrillo/Agent402) | [GHSA-gcw5-6259-gh72](https://github.com/MikeyPetrillo/Agent402/security/advisories/GHSA-gcw5-6259-gh72): the Stellar settle fallback took any recent transfer from the payer to the treasury as payment | High | Reporter · fixed the same day |
 | [x402fi](https://github.com/RWA-ID/x402fi) | [GHSA-2695-fqv4-x6wm](https://github.com/RWA-ID/x402fi/security/advisories/GHSA-2695-fqv4-x6wm): the gateway priced a URL with an encoded `../` as one endpoint (or a free one) and forwarded it to another | High | Reporter · fixed the same day |
@@ -141,7 +144,7 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 </details>
 
 <!-- NOTPUBLIC:START -->
-As of 25 November, 97 more advisories we filed on GitHub are not public yet, and more reports went by email or direct
+As of 26 November, 104 more advisories we filed on GitHub are not public yet, and more reports went by email or direct
 message. We name none of them until the team has fixed the issue and published it.
 <!-- NOTPUBLIC:END -->
 
@@ -167,10 +170,12 @@ on your repository, and we report there.
 <summary><b>The latest fixes merged</b></summary>
 
 <!-- FIXES:START -->
-**278 pull requests** sent to **220 repositories** we don’t own, **52 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
+**278 pull requests** sent to **220 repositories** we don’t own, **54 merged** so far. When we read a team’s code to check what they shipped and find a bug we can fix, we send the fix: dead explorer links, wrong chain config, block-time maths, stale contract addresses. Each one is the team’s call to take.
 
 | Merged into | The fix |
 | --- | --- |
+| [EqualFiLabs/statics-sdk](https://github.com/EqualFiLabs/statics-sdk/pull/47) | fix(config): read the protocol manifest from the parent repository |
+| [EqualFiLabs/statics-sdk](https://github.com/EqualFiLabs/statics-sdk/pull/46) | fix(fees): route unavailable basket-staker share to treasury when POL share is zero |
 | [millw14/merrymen](https://github.com/millw14/merrymen/pull/388) | Add the MIT LICENSE file that package.json declares |
 | [priors-agents/priors](https://github.com/priors-agents/priors/pull/28) | Drop the OrdoFi RPC (domain gone) and fix the skill's explorer link |
 | [ethereum-lists/chains](https://github.com/ethereum-lists/chains/pull/8997) | Remove unresolvable OrdoFi RPC from Robinhood Chain (eip155-4663) |
@@ -181,8 +186,6 @@ on your repository, and we report there.
 | [1inch/sdks](https://github.com/1inch/sdks/pull/140) | fix(sdk-core): pad HexString.fromBigInt to whole bytes |
 | [RevokeCash/revoke.cash](https://github.com/RevokeCash/revoke.cash/pull/311) | fix: keep multicall3 in exploit stats for genesis predeploys |
 | [0xfnzero/FnzSafe](https://github.com/0xfnzero/FnzSafe/pull/9) | extension: skip discovered tokens whose decimals are null instead of reading them as 0 |
-| [0xfnzero/FnzSafe](https://github.com/0xfnzero/FnzSafe/pull/7) | evm-services: fix Robinhood Chain explorer URL (robinscan.io does not resolve) |
-| [1Shot-API/embedded-wallet](https://github.com/1Shot-API/embedded-wallet/pull/154) | Fix the Ethereum BTC/USD and PAXG/USD addresses in the trusted Chainlink feed list |
 
 Every fix, open, merged or closed: **[heyresearch.xyz/contributions](https://heyresearch.xyz/contributions)** · <sub>refreshed daily</sub>
 <!-- FIXES:END -->
@@ -280,7 +283,7 @@ It is also listed in the [Official MCP Registry](https://registry.modelcontextpr
 <!-- MCP:END -->
 
 <!-- HOOKS:START -->
-Of the **33,072 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **162** are tied to **76 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
+Of the **33,131 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **173** are tied to **77 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
 <!-- HOOKS:END -->
 
 ## Open source
