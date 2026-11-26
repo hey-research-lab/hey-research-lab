@@ -144,7 +144,7 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 </details>
 
 <!-- NOTPUBLIC:START -->
-As of 26 November, 104 more advisories we filed on GitHub are not public yet, and more reports went by email or direct
+As of 26 November, 107 more advisories we filed on GitHub are not public yet, and more reports went by email or direct
 message. We name none of them until the team has fixed the issue and published it.
 <!-- NOTPUBLIC:END -->
 
@@ -283,7 +283,7 @@ It is also listed in the [Official MCP Registry](https://registry.modelcontextpr
 <!-- MCP:END -->
 
 <!-- HOOKS:START -->
-Of the **33,131 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **173** are tied to **77 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
+Of the **33,135 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **186** are tied to **86 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
 <!-- HOOKS:END -->
 
 ## Open source
