@@ -51,7 +51,7 @@
 
 Redrawn every day from [heyresearch.xyz](https://heyresearch.xyz)'s public API. Browsing HEY needs no wallet, and nothing on it is for sale.
 
-**Base:** [heyresearch.xyz/base](https://heyresearch.xyz/base) lists 134 Base builders, each checked by hand with the source for its Base evidence; each one's latest ship is read every day from its GitHub releases. Robinhood Chain stays home; daily tracking of Base starts in early December.
+**Base:** [heyresearch.xyz/base](https://heyresearch.xyz/base) lists 131 Base builders, each checked by hand with the source for its Base evidence; each one's latest ship is read every day from its GitHub releases. Robinhood Chain stays home; daily tracking of Base starts in early December.
 
 ## Security credits
 
@@ -81,7 +81,7 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 </a>
 
 <details>
-<summary><b>Published advisories we found (38)</b></summary>
+<summary><b>Published advisories we found (42)</b></summary>
 
 | Project | Advisory | Severity | Our credit |
 | --- | --- | --- | --- |
@@ -123,6 +123,10 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 | [x402fi](https://github.com/RWA-ID/x402fi) | [GHSA-2695-fqv4-x6wm](https://github.com/RWA-ID/x402fi/security/advisories/GHSA-2695-fqv4-x6wm): the gateway priced a URL with an encoded `../` as one endpoint (or a free one) and forwarded it to another | High | Reporter · fixed the same day |
 | [x402fi](https://github.com/RWA-ID/x402fi) | [GHSA-4mf4-56v3-jvm7](https://github.com/RWA-ID/x402fi/security/advisories/GHSA-4mf4-56v3-jvm7): the public facilitator's `/settle` paid gas for transfers that pay nobody, with no key, floor or budget | Medium | Reporter · fixed the same day |
 | [x402fi](https://github.com/RWA-ID/x402fi) | [GHSA-9g6h-3x75-ghv9](https://github.com/RWA-ID/x402fi/security/advisories/GHSA-9g6h-3x75-ghv9): the gateway forwarded paid calls whose payment could not settle, so one balance could back many concurrent calls | Medium | Reporter |
+| [Fillmark](https://github.com/fillmarkagents/fillmark) | [GHSA-667m-mv54-j6fp](https://github.com/fillmarkagents/fillmark/security/advisories/GHSA-667m-mv54-j6fp): in router v3 the agent could choose the NAV at which units leaving a client account are booked, so it could charge a performance fee on a gain the client never had | Low | Reporter · mitigated in the reference agent and CLI within the hour (router v3 has no upgrade path) |
+| [Rheilon](https://github.com/rheilonfinance/rheilon-contracts) | [GHSA-fq8r-2cgq-j3gg](https://github.com/rheilonfinance/rheilon-contracts/security/advisories/GHSA-fq8r-2cgq-j3gg): in an open crew a newcomer's money could be traded in the same second it arrived, with no cool-off, by whoever held the voting shares | Medium | Reporter · fixed and deployed in v2 within a day |
+| [Rheilon](https://github.com/rheilonfinance/rheilon-contracts) | [GHSA-3chj-vh32-38qv](https://github.com/rheilonfinance/rheilon-contracts/security/advisories/GHSA-3chj-vh32-38qv): the cool-off started once and never started over when share weight left, so a proposal made ready inside one transaction ran 12 hours later with no exit window | Medium | Reporter · fixed and deployed in v2 within a day |
+| [Cirrava](https://github.com/cirrava/cirrava-xyz) | [GHSA-7hw7-pqjf-gcxx](https://github.com/cirrava/cirrava-xyz/security/advisories/GHSA-7hw7-pqjf-gcxx): StockOracle never read the Stock Token's `oraclePaused()` flag, so an answer published while Robinhood processes a corporate action was used as Fresh for borrowing and liquidation | Low | Reporter · fixed in v2 within the hour |
 
 </details>
 
@@ -144,7 +148,7 @@ We publish nothing until they do. How we report, and the teams that fixed what w
 </details>
 
 <!-- NOTPUBLIC:START -->
-As of 26 November, 107 more advisories we filed on GitHub are not public yet, and more reports went by email or direct
+As of 27 November, 106 more advisories we filed on GitHub are not public yet, and more reports went by email or direct
 message. We name none of them until the team has fixed the issue and published it.
 <!-- NOTPUBLIC:END -->
 
@@ -283,7 +287,7 @@ It is also listed in the [Official MCP Registry](https://registry.modelcontextpr
 <!-- MCP:END -->
 
 <!-- HOOKS:START -->
-Of the **33,212 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **189** are tied to **87 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
+Of the **33,213 hook contracts** HEY has seen in Robinhood Chain's Uniswap v4 pools, **189** are tied to **87 published projects**, each with the evidence that ties it: on chain, an address linked to the project, the project's factory, or HEY's review. **[heyresearch.xyz/integrations/uniswap/hooks](https://heyresearch.xyz/integrations/uniswap/hooks)** · <sub>refreshed daily</sub>
 <!-- HOOKS:END -->
 
 ## Open source
